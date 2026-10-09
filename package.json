@@ -24,6 +24,7 @@
     "check-fonts": "node scripts/check-font-loading.mjs",
     "prepare-images": "node scripts/prepare-default-images.mjs",
     "new-post": "node scripts/new-post.js",
+    "workbench": "node scripts/workbench/server.mjs",
     "format": "biome format --write ./src",
     "lint": "biome check --write ./src",
     "preinstall": "npx only-allow pnpm"

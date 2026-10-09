@@ -1,5 +1,6 @@
 // 日记数据配置
 // 用于管理日记页面的数据
+import diaryJson from "./diary.json";
 
 export interface DiaryItem {
 	id: number;
@@ -11,27 +12,8 @@ export interface DiaryItem {
 	tags?: string[];
 }
 
-// 示例日记数据
-// 写新日记：复制下面这段模板，粘贴到数组最前面，id 不要重复
-// {
-// 	id: 2,
-// 	content: "今天的日记内容……",
-// 	date: "2026-10-10T20:00:00+08:00", // 日期时间，+08:00 表示北京时间
-// 	images: ["/images/diary/2026-10-10.jpg"], // 可选，图片放在 public/images/diary/ 下
-// 	location: "北京", // 可选
-// 	mood: "开心", // 可选
-// 	tags: ["生活"], // 可选
-// },
-const diaryData: DiaryItem[] = [
-	{
-		id: 1,
-		content: "博客开张啦！换上了奇犽的主题，雷光已就位 ⚡",
-		date: "2026-10-09T12:00:00+08:00",
-		images: ["/images/albums/killua/1.webp"],
-		mood: "开心",
-		tags: ["博客"],
-	},
-];
+// 日记内容保存在 diary.json 中，推荐用工作台（双击根目录的「日记工作台.bat」）来写
+const diaryData: DiaryItem[] = diaryJson;
 
 // 获取日记列表（按时间倒序）
 export const getDiaryList = (limit?: number) => {
