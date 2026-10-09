@@ -1,0 +1,124 @@
+/* 奇犽主题：神速·雷光 —— 卡片悬停电弧、标题电光、选中高亮 */
+
+@keyframes killua-arc {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes killua-flicker {
+  0%, 92%, 100% { opacity: 1; }
+  93% { opacity: 0.55; }
+  95% { opacity: 1; }
+  97% { opacity: 0.7; }
+}
+
+/* 卡片悬停：蓝紫电弧描边 + 发光 */
+.card-base:where(:not(.sticky, .fixed, .absolute)) {
+  position: relative;
+}
+.card-base::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    oklch(0.80 0.16 var(--hue)) 20%,
+    #eef1ff 30%,
+    oklch(0.70 0.20 calc(var(--hue) - 30)) 45%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.card-base:hover::after {
+  opacity: 1;
+  animation: killua-arc 1.6s linear infinite;
+}
+.card-base:hover {
+  box-shadow:
+    0 0 0 1px oklch(0.70 0.16 var(--hue) / 0.25),
+    0 6px 24px -6px oklch(0.65 0.20 var(--hue) / 0.45);
+}
+
+/* 文字选中：蓝紫底 */
+::selection {
+  background: oklch(0.65 0.18 var(--hue) / 0.45);
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-base:hover::after,
+  .banner-title {
+    animation: none !important;
+  }
+}
+
+/* 侧栏卡片标题前的小闪电 */
+.killua-bolt-mark::before {
+  content: "";
+  position: absolute;
+  left: -1.1rem;
+  top: 50%;
+  width: 0.7rem;
+  height: 1.1rem;
+  transform: translateY(-50%);
+  background: var(--primary);
+  clip-path: polygon(62% 0, 8% 58%, 44% 58%, 30% 100%, 92% 38%, 55% 38%);
+  filter: drop-shadow(0 0 3px oklch(0.75 0.18 var(--hue) / 0.8));
+}
+
+/* 页脚签名 */
+.killua-signature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0.5rem 0;
+  color: var(--primary);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  opacity: 0.75;
+}
+.killua-signature svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* 回到顶部的溜溜球：悬停时像被拉回手里 */
+@keyframes killua-yoyo {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(5px) rotate(180deg); }
+}
+#back-to-top-btn:hover svg {
+  animation: killua-yoyo 0.8s ease-in-out infinite;
+}
+
+/* 点击迸出的电光 */
+.killua-zap {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  pointer-events: none;
+  z-index: 9999;
+  color: oklch(0.85 0.14 var(--hue));
+  filter: drop-shadow(0 0 4px oklch(0.7 0.2 var(--hue)));
+  animation: killua-zap 0.5s ease-out forwards;
+}
+@keyframes killua-zap {
+  0% { opacity: 1; transform: translate(0, 0) rotate(var(--r)) scale(0.6); }
+  100% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(1.1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #back-to-top-btn:hover svg { animation: none; }
+  .killua-zap { display: none; }
+}
