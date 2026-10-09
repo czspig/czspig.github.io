@@ -74,7 +74,7 @@ export const zh_CN: Translation = {
 	[Key.animeEmpty]: "暂无追番数据",
 	[Key.animeEmptyBangumi]: "请检查 Bangumi 配置或网络连接",
 	[Key.animeEmptyBilibili]: "请检查 Bilibili 配置或网络连接",
-	[Key.animeEmptyLocal]: "请在 src/data/anime.ts 文件中添加番剧信息",
+	[Key.animeEmptyLocal]: "请在个人工作台的「追番」页添加番剧",
 	[Key.animeConfigBilibili]:
 		"请在 src/config/siteConfig.ts 文件中设置您的 Bilibili vmid",
 	[Key.animeConfigBangumi]:

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>czspig 的个人工作台</title>
+<link rel="icon" href="/media/favicon/favicon-32.png">
+<link rel="stylesheet" href="/static/app.css">
+<script>window.__TOKEN__ = "{{TOKEN}}";</script>
+</head>
+<body>
+<header class="topbar">
+	<div class="brand">
+		<img src="/media/assets/home/home.webp" alt="">
+		<span>czspig 的个人工作台 <span class="bolt">⚡</span></span>
+	</div>
+	<span id="status" class="pill">读取中…</span>
+	<a class="btn" href="https://czspig.github.io/" target="_blank" rel="noopener">看看网站</a>
+	<button id="publish" class="btn primary">发布到网站</button>
+</header>
+
+<nav class="tabs" id="tabs">
+	<a href="#diary" data-tab="diary">📝 日记<span class="dot"></span></a>
+	<a href="#posts" data-tab="posts">📄 文章<span class="dot"></span></a>
+	<a href="#anime" data-tab="anime">📺 追番<span class="dot"></span></a>
+	<a href="#albums" data-tab="albums">🖼️ 相册<span class="dot"></span></a>
+</nav>
+
+<main>
+	<section id="panel-diary" class="panel" hidden></section>
+	<section id="panel-posts" class="panel" hidden></section>
+	<section id="panel-anime" class="panel" hidden></section>
+	<section id="panel-albums" class="panel" hidden></section>
+</main>
+
+<dialog id="publish-dialog" class="dialog">
+	<h3 id="publish-title">发布中…</h3>
+	<pre id="publish-log"></pre>
+	<p id="publish-tip" class="muted small"></p>
+	<div class="right"><button class="btn" data-close>关闭</button></div>
+</dialog>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="/static/js/main.js"></script>
+</body>
+</html>

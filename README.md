@@ -13,14 +13,18 @@ npx -y pnpm@11 dev
 
 然后打开 http://localhost:3000
 
-## 写作
+## 个人工作台
 
-- 文章：在 `src/content/posts/` 下新建文件夹，放一个 `index.md`
-- 日记：编辑 `src/data/diary.ts`，图片放 `public/images/diary/`
-- 追番：编辑 `src/data/anime.ts`
-- 相册：在 `public/images/albums/` 下新建文件夹，放图片和 `info.json`
+双击根目录的 **`个人工作台.bat`**（或运行 `npx -y pnpm@11 workbench`），浏览器会打开本地后台：
 
-写完后 `git push`，GitHub Actions 会自动重新部署。
+- **日记**：写文字、贴图片、选心情
+- **文章**：拖入飞书导出的 `.md` / `.zip`，自动匹配图片，在线编辑和预览
+- **追番**：添加番剧、上传封面、一键 +1 集
+- **相册**：新建相册、批量上传照片（支持 zip）、设封面
+
+改完点右上角「发布到网站」，会自动提交并推送，GitHub Actions 随后重新部署。
+
+数据位置：文章 `src/content/posts/`，日记 `src/data/diary.json`，追番 `src/data/anime.json`，相册 `public/images/albums/`。
 
 ## 许可
 

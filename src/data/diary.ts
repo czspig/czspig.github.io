@@ -12,7 +12,7 @@ export interface DiaryItem {
 	tags?: string[];
 }
 
-// 日记内容保存在 diary.json 中，推荐用工作台（双击根目录的「日记工作台.bat」）来写
+// 日记内容保存在 diary.json 中，推荐用工作台（双击根目录的「个人工作台.bat」）来写
 const diaryData: DiaryItem[] = diaryJson;
 
 // 获取日记列表（按时间倒序）

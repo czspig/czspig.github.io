@@ -1,0 +1,62 @@
+[
+	{
+		"title": "全职猎人",
+		"status": "completed",
+		"rating": 10,
+		"cover": "/assets/anime/hxh.webp",
+		"description": "小杰与奇犽的冒险，猎人试验、天空竞技场、贪婪之岛与嵌合蚁。",
+		"episodes": "148 集",
+		"year": "2011",
+		"genre": [
+			"冒险",
+			"热血",
+			"战斗"
+		],
+		"studio": "MADHOUSE",
+		"link": "https://search.bilibili.com/bangumi?keyword=全职猎人",
+		"progress": 148,
+		"totalEpisodes": 148,
+		"startDate": "2011-10",
+		"endDate": "2014-09"
+	},
+	{
+		"title": "进击的巨人",
+		"status": "completed",
+		"rating": 9.8,
+		"cover": "/assets/anime/aot.webp",
+		"description": "墙内的人类与巨人之间的战斗，以及墙外世界的真相。",
+		"episodes": "89 集",
+		"year": "2013",
+		"genre": [
+			"奇幻",
+			"战斗",
+			"剧情"
+		],
+		"studio": "WIT STUDIO / MAPPA",
+		"link": "https://search.bilibili.com/bangumi?keyword=进击的巨人",
+		"progress": 89,
+		"totalEpisodes": 89,
+		"startDate": "2013-04",
+		"endDate": "2023-11"
+	},
+	{
+		"title": "命运石之门",
+		"status": "completed",
+		"rating": 9.9,
+		"cover": "/assets/anime/sg.webp",
+		"description": "疯狂科学家冈部伦太郎与世界线变动的故事。",
+		"episodes": "24 集",
+		"year": "2011",
+		"genre": [
+			"科幻",
+			"悬疑",
+			"时间旅行"
+		],
+		"studio": "WHITE FOX",
+		"link": "https://search.bilibili.com/bangumi?keyword=命运石之门",
+		"progress": 24,
+		"totalEpisodes": 24,
+		"startDate": "2011-04",
+		"endDate": "2011-09"
+	}
+]
