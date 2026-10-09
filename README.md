@@ -2,7 +2,7 @@
 
 my home
 
-czspig 的个人博客，基于 [Mizuki](https://github.com/LyraVoid/Mizuki) 主题（Astro + Tailwind CSS），奇犽「神速·雷光」风格，部署在 Vercel。
+czspig 的个人博客，基于 [Mizuki](https://github.com/LyraVoid/Mizuki) 主题（Astro + Tailwind CSS），奇犽「神速·雷光」风格，部署在 GitHub Pages。
 
 ## 本地运行
 
@@ -20,7 +20,7 @@ npx -y pnpm@11 dev
 - 追番：编辑 `src/data/anime.ts`
 - 相册：在 `public/images/albums/` 下新建文件夹，放图片和 `info.json`
 
-写完后 `git push`，Vercel 会自动重新部署。
+写完后 `git push`，GitHub Actions 会自动重新部署。
 
 ## 许可
 
