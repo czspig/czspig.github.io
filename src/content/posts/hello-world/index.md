@@ -6,7 +6,7 @@ image: ./cover.webp
 tags: [博客, Astro, 奇犽]
 category: 随笔
 draft: false
-pinned: true
+pinned: false
 ---
 
 欢迎来到 **czspig's blog**！
