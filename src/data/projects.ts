@@ -51,7 +51,7 @@ export const projectsData: Project[] = [
 		id: "czspig-work-hunter",
 		title: "猪猪求职助手",
 		description:
-			"在自己电脑上运行、只读的 AI 岗位筛选助手。采集 BOSS 直聘岗位，经过关键词初筛、一票否决词和外包识别后，用 DeepSeek 对照简历打分并给出理由，还能按 JD 一键生成定制简历；不替你发任何消息，投不投由你决定。基于开源项目 BossHunter 二次开发。",
+			"在自己电脑上运行、只读的 AI 岗位筛选助手。采集 BOSS 直聘岗位，经过关键词初筛、一票否决词和外包识别后，用 DeepSeek 对照简历打分并给出理由，还能按 JD 一键生成定制简历；不替你发任何消息，投不投由你决定。",
 		image: "/assets/projects/czspig-work-hunter.webp",
 		category: "desktop",
 		techStack: ["Python", "React", "TypeScript", "SQLite", "DeepSeek"],
