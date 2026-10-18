@@ -67,6 +67,16 @@ export async function publish() {
 		push = await git(["push"], ["-c", "http.proxy=", "-c", "https.proxy="]);
 	}
 	log.push(push.out);
+	if (!push.ok && /rejected|fetch first|non-fast-forward/.test(push.out)) {
+		log.push("GitHub 上有本地没有的新提交，正在自动合并后重试……");
+		const pull = await git(["pull", "--rebase", "--autostash"], ["-c", "http.proxy=", "-c", "https.proxy="]);
+		log.push(pull.out);
+		if (!pull.ok) await git(["rebase", "--abort"]);
+		else {
+			push = await git(["push"], ["-c", "http.proxy=", "-c", "https.proxy="]);
+			log.push(push.out);
+		}
+	}
 	if (!push.ok) {
 		const hint = /rejected|fetch first|non-fast-forward/.test(push.out)
 			? "\n\nGitHub 上有你本地没有的新提交（比如在网页上改过东西）。请告诉 Claude 帮你合并。"
