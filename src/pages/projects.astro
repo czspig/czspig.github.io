@@ -97,7 +97,8 @@ const subtitle = i18n(I18nKey.projectsSubtitle);
 				class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start"
 			>
 				{
-					projectsData.map((project) => (
+					// 新项目追加在数组末尾，倒序显示让最新的排在最上面
+				[...projectsData].reverse().map((project) => (
 						<ProjectCard project={project} maxTechStack={4} />
 					))
 				}
