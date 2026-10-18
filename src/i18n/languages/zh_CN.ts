@@ -137,7 +137,7 @@ export const zh_CN: Translation = {
 	[Key.devicesViewDetails]: "查看详情",
 
 	// 项目展示页面
-	[Key.projects]: "项目展示",
+	[Key.projects]: "作品集",
 	[Key.projectsSubtitle]: "我的开发项目作品集",
 	[Key.projectsAll]: "全部",
 	[Key.projectsWeb]: "网页应用",
