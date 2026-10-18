@@ -12,6 +12,7 @@ export interface Project {
 	liveDemo?: string;
 	sourceCode?: string;
 	visitUrl?: string;
+	visitLabel?: string; // 访问按钮文字，默认「访问」
 	startDate: string;
 	endDate?: string;
 	featured?: boolean;
@@ -60,6 +61,22 @@ export const projectsData: Project[] = [
 		startDate: "2026-10-18",
 		featured: true,
 		tags: ["AI", "求职"],
+	},
+	{
+		id: "njupt-ima-wiki",
+		title: "南京邮电大学发展规划知识库",
+		description:
+			"作为腾讯云校园大使，我在腾讯 ima 上搭建的南京邮电大学发展规划知识库，把学校发展规划相关资料整理到一处，可以直接在 ima 里检索、用 AI 提问。",
+		image: "/assets/projects/njupt-ima-wiki.webp",
+		category: "other",
+		techStack: ["ima", "知识库"],
+		status: "in-progress",
+		visitUrl:
+			"https://ima.qq.com/wiki/?shareId=a0f7a557924d4013bfb1679eff4b291f031e1d245884a699039234740ab4ed3a",
+		visitLabel: "ima知识库",
+		startDate: "2026-10-18",
+		featured: true,
+		tags: ["知识库", "腾讯云校园大使"],
 	},
 ];
 

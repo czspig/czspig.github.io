@@ -11,6 +11,7 @@ export interface Project {
 	liveDemo?: string;
 	sourceCode?: string;
 	visitUrl?: string;
+	visitLabel?: string;
 	startDate: string;
 	endDate?: string;
 	featured?: boolean;
