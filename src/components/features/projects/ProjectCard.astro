@@ -27,8 +27,9 @@ const getStatusText = (status: string) => {
 ---
 
 <div
-	class="project-card group relative rounded-xl border border-black/10 dark:border-white/10 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+	class="project-card group relative rounded-xl border border-black/10 dark:border-white/10 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
 	data-category={project.category}
+	tabindex="0"
 >
 	{
 		showImageArea && (
@@ -112,7 +113,7 @@ const getStatusText = (status: string) => {
 								name="material-symbols:open-in-new"
 								class="text-base w-4 h-4"
 							/>
-							{i18n(I18nKey.projectsVisit)}
+							{project.visitLabel ?? i18n(I18nKey.projectsVisit)}
 						</a>
 					)}
 					{hasSourceCode && (
@@ -136,7 +137,127 @@ const getStatusText = (status: string) => {
 		class="absolute inset-0 bg-linear-to-br from-(--primary)/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
 	>
 	</div>
+
+	<dialog
+		class="project-dialog card-base fixed m-auto w-[min(36rem,calc(100vw-2rem))] max-h-[calc(100vh-4rem)] rounded-xl p-0 overflow-y-auto cursor-auto"
+		aria-label={project.title}
+	>
+		{
+			hasImage && (
+				<img
+					src={project.image!}
+					alt={project.title}
+					class="w-full aspect-video object-cover"
+					loading="lazy"
+				/>
+			)
+		}
+		<div class="p-6">
+			<div class="flex items-start justify-between gap-3 mb-3">
+				<h3 class="text-xl font-bold text-black/90 dark:text-white/90">
+					{project.title}
+				</h3>
+				<span
+					class="shrink-0 mt-1 px-2 py-0.5 text-xs rounded-md bg-(--primary)/10 text-(--primary) font-medium"
+				>
+					{getStatusText(project.status)}
+				</span>
+			</div>
+
+			<p class="text-sm leading-relaxed text-black/70 dark:text-white/70 mb-4">
+				{project.description}
+			</p>
+
+			{
+				project.techStack.length > 0 && (
+					<div class="flex flex-wrap gap-2 mb-3">
+						{project.techStack.map((tech) => (
+							<span class="px-2 py-1 text-xs rounded-md bg-(--primary)/10 text-(--primary) font-medium">
+								{tech}
+							</span>
+						))}
+					</div>
+				)
+			}
+
+			{
+				project.tags && project.tags.length > 0 && (
+					<div class="flex flex-wrap gap-2 mb-3">
+						{project.tags.map((tag) => (
+							<span class="text-xs text-black/50 dark:text-white/50">
+								#{tag}
+							</span>
+						))}
+					</div>
+				)
+			}
+
+			<p class="text-xs text-black/40 dark:text-white/40 mb-5">
+				{project.startDate}
+				{project.endDate && ` ~ ${project.endDate}`}
+			</p>
+
+			<div class="flex gap-2">
+				{
+					hasVisitUrl && (
+						<a
+							href={project.visitUrl!}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="btn-regular flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+						>
+							<Icon name="material-symbols:open-in-new" class="text-base w-4 h-4" />
+							{project.visitLabel ?? i18n(I18nKey.projectsVisit)}
+						</a>
+					)
+				}
+				{
+					hasSourceCode && (
+						<a
+							href={project.sourceCode!}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="btn-regular flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+						>
+							<Icon name="mdi:github" class="text-base w-4 h-4" />
+							GitHub
+						</a>
+					)
+				}
+				<button
+					type="button"
+					class="project-dialog-close btn-regular flex-1 px-4 py-2 rounded-lg text-sm font-medium"
+				>
+					关闭
+				</button>
+			</div>
+		</div>
+	</dialog>
 </div>
+
+<script>
+	// Delegated on document so it survives Swup page swaps; runs once per full load.
+	const openDialog = (card: Element) =>
+		card.querySelector<HTMLDialogElement>(":scope > .project-dialog")?.showModal();
+
+	document.addEventListener("click", (e) => {
+		const target = e.target as HTMLElement;
+		const dialog = target.closest<HTMLDialogElement>(".project-dialog");
+		if (dialog) {
+			// Close on the backdrop (the dialog element itself) or the close button.
+			if (target === dialog || target.closest(".project-dialog-close")) dialog.close();
+			return;
+		}
+		if (target.closest("a, button")) return;
+		const card = target.closest(".project-card");
+		if (card) openDialog(card);
+	});
+
+	document.addEventListener("keydown", (e) => {
+		const target = e.target as HTMLElement;
+		if (e.key === "Enter" && target.classList.contains("project-card")) openDialog(target);
+	});
+</script>
 
 <style>
 	.project-card {
@@ -182,6 +303,16 @@ const getStatusText = (status: string) => {
 	}
 	.project-card:nth-child(8) {
 		animation-delay: 0.4s;
+	}
+
+	.project-dialog {
+		border: none;
+		color: inherit;
+	}
+
+	.project-dialog::backdrop {
+		background: rgb(0 0 0 / 0.5);
+		backdrop-filter: blur(2px);
 	}
 
 	.line-clamp-2 {
