@@ -1,20 +1,21 @@
-// AI 开发风向标：抓取过去 7 天的 AI 一手资讯，用 Claude 写成中文周报，存为博客文章。
+// AI 开发风向标：抓取过去 7 天的 AI 一手资讯，用 DeepSeek 写成中文周报，存为博客文章。
 //
 // 用法：
-//   node scripts/ai-weekly.mjs          生成本周周报（需要环境变量 ANTHROPIC_API_KEY）
-//   node scripts/ai-weekly.mjs --dry    只抓取并打印资讯列表，不调用 Claude、不写文件
+//   node scripts/ai-weekly.mjs          生成本周周报（需要环境变量 DEEPSEEK_API_KEY）
+//   node scripts/ai-weekly.mjs --dry    只抓取并打印资讯列表，不调用 DeepSeek、不写文件
 //
 // 本周的文章已存在时直接跳过，所以重复运行是安全的。
 
 import fs from "node:fs";
 import path from "node:path";
-import Anthropic from "@anthropic-ai/sdk";
 import { XMLParser } from "fast-xml-parser";
 
 const DRY = process.argv.includes("--dry");
 const DAY = 24 * 60 * 60 * 1000;
 const now = new Date();
 const since = new Date(now.getTime() - 7 * DAY);
+const DEEPSEEK_BASE_URL = process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com";
+const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL ?? "deepseek-v4-pro";
 const UA = { "User-Agent": "Mozilla/5.0 (czspig-blog ai-weekly)" };
 
 const RSS_FEEDS = [
@@ -163,9 +164,10 @@ const SYSTEM = `你是「czspig's blog」的 AI 技术编辑，负责写每周�
   2. 「## 🔥 本周重点」：3～5 条最重要的内容，每条用 ### 小标题，2～4 段；
   3. 「## 🧪 模型与产品」「## 📄 值得一读的论文」「## 🛠️ 开发者工具与社区」：各若干条，每条一个列表项，格式为「**标题**：一两句话点评 [原文](链接)」，没有合适内容的小节可以省略；
   4. 「## 💡 编辑点评」：一段话总结本周趋势。
-- description 字段写一句 60 字以内的中文简介，用于首页卡片。`;
+- 以 JSON 格式输出，只包含两个字段：description（一句 60 字以内的中文简介，用于首页卡片）和 body（Markdown 正文）。示例：
+  {"description": "本周 ……", "body": "本周速览：……\\n\\n## 🔥 本周重点\\n\\n……"}`;
 
-async function writeWithClaude(items, title) {
+async function writeWithDeepSeek(items, title) {
 	const list = items
 		.map(
 			(it, i) =>
@@ -173,51 +175,53 @@ async function writeWithClaude(items, title) {
 		)
 		.join("\n\n");
 
-	const client = new Anthropic();
-	const response = await client.beta.messages.create({
-		model: "claude-opus-5-5",
-		max_tokens: 16000,
-		// 遇到误拒答时由服务端自动换模型重试
-		betas: ["server-side-fallback-2026-07-01"],
-		fallbacks: "default",
-		output_config: {
-			effort: "high",
-			format: {
-				type: "json_schema",
-				schema: {
-					type: "object",
-					properties: {
-						description: { type: "string" },
-						body: { type: "string" },
+	// JSON Output 偶尔会返回空内容，最多试 3 次
+	for (let attempt = 1; attempt <= 3; attempt++) {
+		const res = await fetch(`${DEEPSEEK_BASE_URL}/chat/completions`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+			},
+			body: JSON.stringify({
+				model: DEEPSEEK_MODEL,
+				max_tokens: 32000,
+				response_format: { type: "json_object" },
+				messages: [
+					{ role: "system", content: SYSTEM },
+					{
+						role: "user",
+						content: `本期标题：${title}\n统计区间：${shanghaiDate(since)} ～ ${shanghaiDate(now)}\n\n以下是本周抓取到的 ${items.length} 条资讯：\n\n${list}`,
 					},
-					required: ["description", "body"],
-					additionalProperties: false,
-				},
-			},
-		},
-		system: SYSTEM,
-		messages: [
-			{
-				role: "user",
-				content: `本期标题：${title}\n统计区间：${shanghaiDate(since)} ～ ${shanghaiDate(now)}\n\n以下是本周抓取到的 ${items.length} 条资讯：\n\n${list}`,
-			},
-		],
-	});
-
-	if (response.stop_reason !== "end_turn") {
-		throw new Error(`Claude 没有正常结束：stop_reason=${response.stop_reason}`);
+				],
+			}),
+			signal: AbortSignal.timeout(10 * 60 * 1000),
+		});
+		if (!res.ok) {
+			throw new Error(`DeepSeek 接口出错：HTTP ${res.status} ${await res.text()}`);
+		}
+		const data = await res.json();
+		const choice = data.choices?.[0];
+		console.log(
+			`DeepSeek 用量：输入 ${data.usage?.prompt_tokens} tokens，输出 ${data.usage?.completion_tokens} tokens`,
+		);
+		if (choice?.finish_reason !== "stop") {
+			throw new Error(`DeepSeek 没有正常结束：finish_reason=${choice?.finish_reason}`);
+		}
+		try {
+			const out = JSON.parse(choice.message.content);
+			if (out.description && out.body) return out;
+		} catch {}
+		console.warn(`第 ${attempt} 次返回的 JSON 无效，重试…`);
 	}
-	const text = response.content.find((b) => b.type === "text")?.text;
-	console.log(
-		`Claude 用量：输入 ${response.usage.input_tokens} tokens，输出 ${response.usage.output_tokens} tokens`,
-	);
-	return JSON.parse(text);
+	throw new Error("DeepSeek 连续 3 次没有返回有效 JSON");
 }
 
 // ---------- 主流程 ----------
 
 const today = shanghaiDate(now);
-const { year, week } = isoWeek(today);
+// 按前一天所在的周编号：周日晚的定时任务算本周，周一补跑时算刚结束的那一周
+const { year, week } = isoWeek(shanghaiDate(new Date(now.getTime() - DAY)));
 const slug = `ai-weekly-${year}-w${String(week).padStart(2, "0")}`;
 const postDir = path.join("src", "content", "posts", slug);
 const title = `AI 开发风向标 · ${year} 年第 ${week} 周`;
@@ -227,6 +231,10 @@ if (fs.existsSync(postDir)) {
 	process.exit(0);
 }
 
+if (!DRY && !process.env.DEEPSEEK_API_KEY) {
+	throw new Error("缺少环境变量 DEEPSEEK_API_KEY");
+}
+
 const items = await collect();
 if (items.length < 5) {
 	throw new Error(`只抓到 ${items.length} 条资讯，太少了，本次不生成。`);
@@ -234,11 +242,11 @@ if (items.length < 5) {
 
 if (DRY) {
 	for (const it of items) console.log(`- [${it.source}] ${it.title}\n  ${it.link}`);
-	console.log(`\n共 ${items.length} 条，将写入 ${postDir}/index.md（--dry 模式未调用 Claude）`);
+	console.log(`\n共 ${items.length} 条，将写入 ${postDir}/index.md（--dry 模式未调用 DeepSeek）`);
 	process.exit(0);
 }
 
-const { description, body } = await writeWithClaude(items, title);
+const { description, body } = await writeWithDeepSeek(items, title);
 
 const md = `---
 title: ${JSON.stringify(title)}
@@ -249,7 +257,7 @@ category: AI 风向标
 draft: false
 ---
 
-> 本文由脚本自动抓取 ${shanghaiDate(since)} ～ ${today} 的公开资讯，并由 Claude 整理点评，内容以原文链接为准。
+> 本文由脚本自动抓取 ${shanghaiDate(since)} ～ ${today} 的公开资讯，并由 DeepSeek 整理点评，内容以原文链接为准。
 
 ${body.trim()}
 `;
