@@ -61,6 +61,21 @@ export const projectsData: Project[] = [
 		featured: true,
 		tags: ["AI", "求职"],
 	},
+	{
+		id: "czspig-repo-lab",
+		title: "猪猪 Repo 研究所",
+		description:
+			"开源项目源码级解析合集。挑选值得研究的开源仓库，按「取样 → 测绘 → 解剖 → 复现 → 结论」五步，从目录结构、核心链路读到运行方式，每份报告都附带能在本地跑起来的最小实验；首页提供研究台账搜索、标签筛选和技术栈雷达。首批解析报告整理中。",
+		image: "/assets/projects/czspig-repo-lab.webp",
+		category: "web",
+		techStack: ["HTML", "CSS", "JavaScript"],
+		status: "in-progress",
+		sourceCode: "https://github.com/czspig/czspig-repo-lab",
+		visitUrl: "https://czspig.github.io/czspig-repo-lab/",
+		startDate: "2026-10-19",
+		featured: true,
+		tags: ["开源", "源码解析"],
+	},
 ];
 
 // Get project statistics
