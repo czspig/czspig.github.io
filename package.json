@@ -25,6 +25,7 @@
     "prepare-images": "node scripts/prepare-default-images.mjs",
     "new-post": "node scripts/new-post.js",
     "workbench": "node scripts/workbench/server.mjs",
+    "ai-weekly": "node scripts/ai-weekly.mjs",
     "format": "biome format --write ./src",
     "lint": "biome check --write ./src",
     "preinstall": "npx only-allow pnpm"
@@ -82,6 +83,7 @@
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.135.0",
     "@astrojs/ts-plugin": "^1.10.10",
     "@biomejs/biome": "^2.5.5",
     "@iconify-json/fa7-brands": "^1.2.4",

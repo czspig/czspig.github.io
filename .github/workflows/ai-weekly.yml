@@ -1,0 +1,51 @@
+name: AI 开发风向标周报
+
+on:
+  schedule:
+    # 每周日 20:00（北京时间）= 12:00 UTC
+    - cron: "0 12 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: ai-weekly
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+
+      - name: 生成周报
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: pnpm ai-weekly
+
+      - name: 提交并发布
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add src/content/posts
+          if git diff --cached --quiet; then
+            echo "没有新周报，跳过发布。"
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "AI 开发风向标：自动生成本周周报"
+          git push
+          # 用 GITHUB_TOKEN 推送不会触发其他工作流，所以手动触发部署
+          gh workflow run deploy.yml --ref main
