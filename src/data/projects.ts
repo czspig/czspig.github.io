@@ -32,6 +32,21 @@ export const projectsData: Project[] = [
 		featured: true,
 		tags: ["博客", "Astro"],
 	},
+	{
+		id: "czspig-product-critic",
+		title: "猪猪产品毒舌官",
+		description:
+			"犀利但鼓励的 AI 产品经理评审工具。输入产品想法，选择温和导师 / 毒舌 PM / 甲方视角和毒舌程度，生成含评分、证据链、MVP 建议与验证计划的结构化报告；支持项目版本迭代对比，以及 Markdown、开发 Prompt 和任务包导出。",
+		image: "/assets/projects/czspig-product-critic.webp",
+		category: "web",
+		techStack: ["Vue 3", "TypeScript", "Spring Boot", "MySQL", "DeepSeek"],
+		status: "in-progress",
+		sourceCode: "https://github.com/czspig/czspig-product-critic",
+		visitUrl: "", // TODO: 上线后填入在线地址
+		startDate: "2026-06-23",
+		featured: true,
+		tags: ["AI", "产品评审"],
+	},
 ];
 
 // Get project statistics
