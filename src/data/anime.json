@@ -1,5 +1,24 @@
 [
 	{
+		"title": "吹响吧！上低音号",
+		"status": "completed",
+		"rating": 9.8,
+		"cover": "/assets/anime/20261019-041948-bab7b4.webp",
+		"description": "高坂丽奈赛高！",
+		"episodes": "14 集",
+		"year": "2015",
+		"genre": [
+			"校园",
+			"轻百合"
+		],
+		"studio": "Kyoto Animation",
+		"link": "https://b23.tv/ep62436",
+		"progress": 14,
+		"totalEpisodes": 14,
+		"startDate": "2023-10",
+		"endDate": "2023-10"
+	},
+	{
 		"title": "全职猎人",
 		"status": "completed",
 		"rating": 10,
@@ -23,7 +42,7 @@
 		"title": "进击的巨人",
 		"status": "completed",
 		"rating": 9.8,
-		"cover": "/assets/anime/aot.webp",
+		"cover": "/assets/anime/20261019-041549-c121b6.webp",
 		"description": "墙内的人类与巨人之间的战斗，以及墙外世界的真相。",
 		"episodes": "89 集",
 		"year": "2013",
@@ -43,7 +62,7 @@
 		"title": "命运石之门",
 		"status": "completed",
 		"rating": 9.9,
-		"cover": "/assets/anime/sg.webp",
+		"cover": "/assets/anime/20261019-041606-9946c6.webp",
 		"description": "疯狂科学家冈部伦太郎与世界线变动的故事。",
 		"episodes": "24 集",
 		"year": "2011",
