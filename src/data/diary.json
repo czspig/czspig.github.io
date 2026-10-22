@@ -1,10 +1,28 @@
 [
 	{
+		"id": 2,
+		"content": "今天又来上班了，下午探索了一下grok bot，把头像换了换，还拉了个项目群聊，grok bot还是不错的，给了我很新的体验，我同学问我什么时候对实习去魅，不太清楚，估计不远了",
+		"date": "2026-10-22T17:55:00+08:00",
+		"images": [
+			"/images/diary/20261022-180127-3f732d.webp"
+		],
+		"location": "建邺.阿里中心",
+		"mood": "开心",
+		"tags": [
+			"上班",
+			"学习"
+		]
+	},
+	{
 		"id": 1,
 		"content": "博客开张啦！换上了奇犽的主题，雷光已就位 ⚡",
 		"date": "2026-10-09T12:00:00+08:00",
-		"images": ["/images/albums/killua/1.webp"],
+		"images": [
+			"/images/albums/killua/1.webp"
+		],
 		"mood": "开心",
-		"tags": ["博客"]
+		"tags": [
+			"博客"
+		]
 	}
 ]
