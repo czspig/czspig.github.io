@@ -113,6 +113,27 @@ const subtitle = i18n(I18nKey.diarySubtitle);
 						))
 					}
 				</div>
+				<script is:inline>
+					// 相对时间在构建时就写死了，打开页面时按当前时间重算
+					(function () {
+						const container = document.getElementById("diary-list");
+						if (!container) {return;}
+						const minutesAgo = container.dataset.minutesAgo || "minutes ago";
+						const hoursAgo = container.dataset.hoursAgo || "hours ago";
+						const daysAgo = container.dataset.daysAgo || "days ago";
+						container.querySelectorAll("time[datetime]").forEach(function (el) {
+							const diffInMinutes = Math.floor(
+								(Date.now() - new Date(el.getAttribute("datetime")).getTime()) / (1000 * 60),
+							);
+							if (isNaN(diffInMinutes)) {return;}
+							if (diffInMinutes < 60)
+								{el.textContent = Math.max(diffInMinutes, 0) + minutesAgo;}
+							else if (diffInMinutes < 1440)
+								{el.textContent = Math.floor(diffInMinutes / 60) + hoursAgo;}
+							else {el.textContent = Math.floor(diffInMinutes / 1440) + daysAgo;}
+						});
+					})();
+				</script>
 
 				<div id="no-results" class="hidden text-center py-16">
 					<Icon
