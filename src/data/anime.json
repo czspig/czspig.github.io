@@ -517,5 +517,625 @@
 		"totalEpisodes": 10,
 		"startDate": "2022-09",
 		"endDate": "2022-09"
+	},
+	{
+		"title": "CLANNAD 〜AFTER STORY〜",
+		"status": "completed",
+		"rating": 9.1,
+		"cover": "/assets/anime/clannad-as.webp",
+		"description": "朋也与渚组成家庭之后的故事，「人生」篇。",
+		"episodes": "24 集",
+		"year": "2008",
+		"genre": [
+			"剧情",
+			"家庭",
+			"催泪"
+		],
+		"studio": "Kyoto Animation",
+		"link": "https://search.bilibili.com/bangumi?keyword=CLANNAD 〜AFTER STORY〜",
+		"progress": 24,
+		"totalEpisodes": 24,
+		"startDate": "2008-10",
+		"endDate": "2009-03"
+	},
+	{
+		"title": "轻音少女 第二季",
+		"status": "completed",
+		"rating": 8.4,
+		"cover": "/assets/anime/k-on-2.webp",
+		"description": "唯她们升上三年级，迎来毕业前最后的社团时光。",
+		"episodes": "26 集",
+		"year": "2010",
+		"genre": [
+			"日常",
+			"音乐",
+			"校园"
+		],
+		"studio": "Kyoto Animation",
+		"link": "https://search.bilibili.com/bangumi?keyword=轻音少女 第二季",
+		"progress": 26,
+		"totalEpisodes": 26,
+		"startDate": "2010-04",
+		"endDate": "2010-09"
+	},
+	{
+		"title": "吹响吧！上低音号 第二季",
+		"status": "completed",
+		"rating": 8.5,
+		"cover": "/assets/anime/eupho-2.webp",
+		"description": "北宇治吹奏乐部向全国大赛进发。",
+		"episodes": "13 集",
+		"year": "2016",
+		"genre": [
+			"校园",
+			"音乐",
+			"青春"
+		],
+		"studio": "Kyoto Animation",
+		"link": "https://search.bilibili.com/bangumi?keyword=吹响吧！上低音号 第二季",
+		"progress": 13,
+		"totalEpisodes": 13,
+		"startDate": "2016-10",
+		"endDate": "2016-12"
+	},
+	{
+		"title": "吹响吧！上低音号 第三季",
+		"status": "completed",
+		"rating": 5,
+		"cover": "/assets/anime/eupho-3.webp",
+		"description": "久美子升上三年级成为部长，最后的夏天。",
+		"episodes": "13 集",
+		"year": "2024",
+		"genre": [
+			"校园",
+			"音乐",
+			"青春"
+		],
+		"studio": "Kyoto Animation",
+		"link": "https://search.bilibili.com/bangumi?keyword=吹响吧！上低音号 第三季",
+		"progress": 13,
+		"totalEpisodes": 13,
+		"startDate": "2024-04",
+		"endDate": "2024-06"
+	},
+	{
+		"title": "摇曳露营△ 第二季",
+		"status": "completed",
+		"rating": 8.3,
+		"cover": "/assets/anime/yurucamp-2.webp",
+		"description": "凛的独自旅行与野营社的新年露营。",
+		"episodes": "13 集",
+		"year": "2021",
+		"genre": [
+			"日常",
+			"露营",
+			"治愈"
+		],
+		"studio": "C-Station",
+		"link": "https://search.bilibili.com/bangumi?keyword=摇曳露营△ 第二季",
+		"progress": 13,
+		"totalEpisodes": 13,
+		"startDate": "2021-01",
+		"endDate": "2021-04"
+	},
+	{
+		"title": "摇曳露营△ 第三季",
+		"status": "completed",
+		"rating": 6.9,
+		"cover": "/assets/anime/yurucamp-3.webp",
+		"description": "女孩们继续在各地露营、吃好吃的。",
+		"episodes": "12 集",
+		"year": "2024",
+		"genre": [
+			"日常",
+			"露营",
+			"治愈"
+		],
+		"studio": "8bit",
+		"link": "https://search.bilibili.com/bangumi?keyword=摇曳露营△ 第三季",
+		"progress": 12,
+		"totalEpisodes": 12,
+		"startDate": "2024-04",
+		"endDate": "2024-06"
+	},
+	{
+		"title": "银魂'",
+		"status": "completed",
+		"rating": 8.7,
+		"cover": "/assets/anime/gintama-2.webp",
+		"description": "万事屋回归，搞笑与热血一如既往。",
+		"episodes": "51 集",
+		"year": "2011",
+		"genre": [
+			"搞笑",
+			"热血",
+			"时代剧"
+		],
+		"studio": "SUNRISE",
+		"link": "https://search.bilibili.com/bangumi?keyword=银魂'",
+		"progress": 51,
+		"totalEpisodes": 51,
+		"startDate": "2011-04",
+		"endDate": "2012-03"
+	},
+	{
+		"title": "银魂' 延长战",
+		"status": "completed",
+		"rating": 8.3,
+		"cover": "/assets/anime/gintama-2-ext.webp",
+		"description": "银魂' 的延长战，继续江户的日常。",
+		"episodes": "13 集",
+		"year": "2012",
+		"genre": [
+			"搞笑",
+			"热血",
+			"时代剧"
+		],
+		"studio": "SUNRISE",
+		"link": "https://search.bilibili.com/bangumi?keyword=银魂' 延长战",
+		"progress": 13,
+		"totalEpisodes": 13,
+		"startDate": "2012-10",
+		"endDate": "2013-03"
+	},
+	{
+		"title": "银魂°",
+		"status": "completed",
+		"rating": 8.2,
+		"cover": "/assets/anime/gintama-3.webp",
+		"description": "将军篇、真选组动乱篇……笑点与泪点并存。",
+		"episodes": "51 集",
+		"year": "2015",
+		"genre": [
+			"搞笑",
+			"热血",
+			"时代剧"
+		],
+		"studio": "BN Pictures",
+		"link": "https://search.bilibili.com/bangumi?keyword=银魂°",
+		"progress": 51,
+		"totalEpisodes": 51,
+		"startDate": "2015-04",
+		"endDate": "2016-03"
+	},
+	{
+		"title": "银魂.",
+		"status": "completed",
+		"rating": 7.7,
+		"cover": "/assets/anime/gintama-4.webp",
+		"description": "洛阳决战篇，松阳与松下私塾的过去。",
+		"episodes": "12 集",
+		"year": "2017",
+		"genre": [
+			"热血",
+			"剧情",
+			"时代剧"
+		],
+		"studio": "BN Pictures",
+		"link": "https://search.bilibili.com/bangumi?keyword=银魂.",
+		"progress": 12,
+		"totalEpisodes": 12,
+		"startDate": "2017-01",
+		"endDate": "2017-03"
+	},
+	{
+		"title": "银魂. 银之魂篇",
+		"status": "completed",
+		"rating": 7.3,
+		"cover": "/assets/anime/gintama-5.webp",
+		"description": "银之魂篇，最终决战开始。",
+		"episodes": "12 集",
+		"year": "2018",
+		"genre": [
+			"热血",
+			"剧情",
+			"时代剧"
+		],
+		"studio": "BN Pictures",
+		"link": "https://search.bilibili.com/bangumi?keyword=银魂. 银之魂篇",
+		"progress": 12,
+		"totalEpisodes": 12,
+		"startDate": "2018-01",
+		"endDate": "2018-03"
+	},
+	{
+		"title": "银魂. 银之魂篇 第二季",
+		"status": "completed",
+		"rating": 7.3,
+		"cover": "/assets/anime/gintama-6.webp",
+		"description": "银之魂篇后半，江户的最后一战。",
+		"episodes": "14 集",
+		"year": "2018",
+		"genre": [
+			"热血",
+			"剧情",
+			"时代剧"
+		],
+		"studio": "BN Pictures",
+		"link": "https://search.bilibili.com/bangumi?keyword=银魂. 银之魂篇 第二季",
+		"progress": 14,
+		"totalEpisodes": 14,
+		"startDate": "2018-07",
+		"endDate": "2018-10"
+	},
+	{
+		"title": "鬼灭之刃 无限列车篇（剧场版）",
+		"status": "completed",
+		"rating": 7.2,
+		"cover": "/assets/anime/kimetsu-mugen.webp",
+		"description": "炭治郎一行与炎柱炼狱杏寿郎登上无限列车。",
+		"episodes": "剧场版",
+		"year": "2020",
+		"genre": [
+			"战斗",
+			"奇幻",
+			"热血"
+		],
+		"studio": "ufotable",
+		"link": "https://search.bilibili.com/bangumi?keyword=鬼灭之刃 无限列车篇",
+		"progress": 1,
+		"totalEpisodes": 1,
+		"startDate": "2020-10",
+		"endDate": "2020-10"
+	},
+	{
+		"title": "鬼灭之刃 游郭篇",
+		"status": "completed",
+		"rating": 7.3,
+		"cover": "/assets/anime/kimetsu-yukaku.webp",
+		"description": "音柱宇髄天元带队潜入游郭，对战上弦之六。",
+		"episodes": "11 集",
+		"year": "2021",
+		"genre": [
+			"战斗",
+			"奇幻",
+			"热血"
+		],
+		"studio": "ufotable",
+		"link": "https://search.bilibili.com/bangumi?keyword=鬼灭之刃 游郭篇",
+		"progress": 11,
+		"totalEpisodes": 11,
+		"startDate": "2021-12",
+		"endDate": "2022-02"
+	},
+	{
+		"title": "鬼灭之刃 刀匠村篇",
+		"status": "completed",
+		"rating": 6.6,
+		"cover": "/assets/anime/kimetsu-katanakaji.webp",
+		"description": "锻刀村遭上弦袭击，霞柱与恋柱登场。",
+		"episodes": "11 集",
+		"year": "2023",
+		"genre": [
+			"战斗",
+			"奇幻",
+			"热血"
+		],
+		"studio": "ufotable",
+		"link": "https://search.bilibili.com/bangumi?keyword=鬼灭之刃 刀匠村篇",
+		"progress": 11,
+		"totalEpisodes": 11,
+		"startDate": "2023-04",
+		"endDate": "2023-06"
+	},
+	{
+		"title": "鬼灭之刃 柱训练篇",
+		"status": "completed",
+		"rating": 6.7,
+		"cover": "/assets/anime/kimetsu-hashira.webp",
+		"description": "柱们的特训，为最终决战做准备。",
+		"episodes": "8 集",
+		"year": "2024",
+		"genre": [
+			"战斗",
+			"奇幻",
+			"热血"
+		],
+		"studio": "ufotable",
+		"link": "https://search.bilibili.com/bangumi?keyword=鬼灭之刃 柱训练篇",
+		"progress": 8,
+		"totalEpisodes": 8,
+		"startDate": "2024-05",
+		"endDate": "2024-06"
+	},
+	{
+		"title": "一拳超人 第二季",
+		"status": "completed",
+		"rating": 6.5,
+		"cover": "/assets/anime/one-punch-man-2.webp",
+		"description": "怪人协会来袭，饿狼开始「猎杀英雄」。",
+		"episodes": "12 集",
+		"year": "2019",
+		"genre": [
+			"动作",
+			"搞笑",
+			"超级英雄"
+		],
+		"studio": "J.C.STAFF",
+		"link": "https://search.bilibili.com/bangumi?keyword=一拳超人 第二季",
+		"progress": 12,
+		"totalEpisodes": 12,
+		"startDate": "2019-04",
+		"endDate": "2019-07"
+	},
+	{
+		"title": "一拳超人 第三季",
+		"status": "completed",
+		"rating": 4.5,
+		"cover": "/assets/anime/one-punch-man-3.webp",
+		"description": "怪人协会决战，英雄们攻入地下。",
+		"episodes": "12 集",
+		"year": "2025",
+		"genre": [
+			"动作",
+			"搞笑",
+			"超级英雄"
+		],
+		"studio": "J.C.STAFF",
+		"link": "https://search.bilibili.com/bangumi?keyword=一拳超人 第三季",
+		"progress": 12,
+		"totalEpisodes": 12,
+		"startDate": "2025-10",
+		"endDate": "2025-12"
+	},
+	{
+		"title": "某科学的超电磁炮S",
+		"status": "completed",
+		"rating": 7.6,
+		"cover": "/assets/anime/railgun-s.webp",
+		"description": "美琴直面「妹妹们」实验的真相。",
+		"episodes": "24 集",
+		"year": "2013",
+		"genre": [
+			"科幻",
+			"超能力",
+			"校园"
+		],
+		"studio": "J.C.STAFF",
+		"link": "https://search.bilibili.com/bangumi?keyword=某科学的超电磁炮S",
+		"progress": 24,
+		"totalEpisodes": 24,
+		"startDate": "2013-04",
+		"endDate": "2013-09"
+	},
+	{
+		"title": "某科学的超电磁炮T",
+		"status": "completed",
+		"rating": 7.6,
+		"cover": "/assets/anime/railgun-t.webp",
+		"description": "大霸星祭与食蜂操祈篇。",
+		"episodes": "25 集",
+		"year": "2020",
+		"genre": [
+			"科幻",
+			"超能力",
+			"校园"
+		],
+		"studio": "J.C.STAFF",
+		"link": "https://search.bilibili.com/bangumi?keyword=某科学的超电磁炮T",
+		"progress": 25,
+		"totalEpisodes": 25,
+		"startDate": "2020-01",
+		"endDate": "2020-09"
+	},
+	{
+		"title": "命运石之门 0",
+		"status": "completed",
+		"rating": 8.2,
+		"cover": "/assets/anime/steins-gate-0.webp",
+		"description": "没能救下红莉栖的 β 世界线，冈部的另一条路。",
+		"episodes": "24 集",
+		"year": "2018",
+		"genre": [
+			"科幻",
+			"悬疑",
+			"时间旅行"
+		],
+		"studio": "WHITE FOX",
+		"link": "https://search.bilibili.com/bangumi?keyword=命运石之门 0",
+		"progress": 24,
+		"totalEpisodes": 24,
+		"startDate": "2018-04",
+		"endDate": "2018-09"
+	},
+	{
+		"title": "86 -不存在的战区- 第2部分",
+		"status": "completed",
+		"rating": 8,
+		"cover": "/assets/anime/eighty-six-2.webp",
+		"description": "辛一行人抵达联邦，与蕾娜再次走向重逢。",
+		"episodes": "12 集",
+		"year": "2021",
+		"genre": [
+			"科幻",
+			"机战",
+			"战争"
+		],
+		"studio": "A-1 Pictures",
+		"link": "https://search.bilibili.com/bangumi?keyword=86 -不存在的战区- 第2部分",
+		"progress": 12,
+		"totalEpisodes": 12,
+		"startDate": "2021-10",
+		"endDate": "2022-03"
+	},
+	{
+		"title": "三月的狮子 第二季",
+		"status": "completed",
+		"rating": 8.8,
+		"cover": "/assets/anime/3gatsu-2.webp",
+		"description": "零的高中生活与日向的校园霸凌事件。",
+		"episodes": "22 集",
+		"year": "2017",
+		"genre": [
+			"剧情",
+			"治愈",
+			"将棋"
+		],
+		"studio": "SHAFT",
+		"link": "https://search.bilibili.com/bangumi?keyword=三月的狮子 第二季",
+		"progress": 22,
+		"totalEpisodes": 22,
+		"startDate": "2017-10",
+		"endDate": "2018-03"
+	},
+	{
+		"title": "葬送的芙莉莲 第二季",
+		"status": "completed",
+		"rating": 7.5,
+		"cover": "/assets/anime/frieren-2.webp",
+		"description": "芙莉莲一行继续向北方的魂之长眠地前进。",
+		"episodes": "10 集",
+		"year": "2026",
+		"genre": [
+			"奇幻",
+			"冒险",
+			"治愈"
+		],
+		"studio": "MADHOUSE",
+		"link": "https://search.bilibili.com/bangumi?keyword=葬送的芙莉莲 第二季",
+		"progress": 10,
+		"totalEpisodes": 10,
+		"startDate": "2026-01",
+		"endDate": "2026-03"
+	},
+	{
+		"title": "福音战士新剧场版：序",
+		"status": "completed",
+		"rating": 8,
+		"cover": "/assets/anime/eva-jo.webp",
+		"description": "新剧场版第一部，重新讲述 EVA 的故事。",
+		"episodes": "剧场版",
+		"year": "2007",
+		"genre": [
+			"机战",
+			"科幻",
+			"剧场版"
+		],
+		"studio": "khara",
+		"link": "https://search.bilibili.com/bangumi?keyword=福音战士新剧场版：序",
+		"progress": 1,
+		"totalEpisodes": 1,
+		"startDate": "2007-09",
+		"endDate": "2007-09"
+	},
+	{
+		"title": "福音战士新剧场版：破",
+		"status": "completed",
+		"rating": 8.4,
+		"cover": "/assets/anime/eva-ha.webp",
+		"description": "真希波登场，故事开始走向不同的方向。",
+		"episodes": "剧场版",
+		"year": "2009",
+		"genre": [
+			"机战",
+			"科幻",
+			"剧场版"
+		],
+		"studio": "khara",
+		"link": "https://search.bilibili.com/bangumi?keyword=福音战士新剧场版：破",
+		"progress": 1,
+		"totalEpisodes": 1,
+		"startDate": "2009-06",
+		"endDate": "2009-06"
+	},
+	{
+		"title": "福音战士新剧场版：Q",
+		"status": "completed",
+		"rating": 7.4,
+		"cover": "/assets/anime/eva-q.webp",
+		"description": "14 年后的世界，真嗣醒来时一切都变了。",
+		"episodes": "剧场版",
+		"year": "2012",
+		"genre": [
+			"机战",
+			"科幻",
+			"剧场版"
+		],
+		"studio": "khara",
+		"link": "https://search.bilibili.com/bangumi?keyword=福音战士新剧场版：Q",
+		"progress": 1,
+		"totalEpisodes": 1,
+		"startDate": "2012-11",
+		"endDate": "2012-11"
+	},
+	{
+		"title": "新・福音战士剧场版：终",
+		"status": "completed",
+		"rating": 8.4,
+		"cover": "/assets/anime/eva-final.webp",
+		"description": "再见了，所有的福音战士。",
+		"episodes": "剧场版",
+		"year": "2021",
+		"genre": [
+			"机战",
+			"科幻",
+			"剧场版"
+		],
+		"studio": "khara",
+		"link": "https://search.bilibili.com/bangumi?keyword=新・福音战士剧场版：终",
+		"progress": 1,
+		"totalEpisodes": 1,
+		"startDate": "2021-03",
+		"endDate": "2021-03"
+	},
+	{
+		"title": "魔法少女小圆 [新篇] 叛逆的物语（剧场版）",
+		"status": "completed",
+		"rating": 8.6,
+		"cover": "/assets/anime/madoka-rebellion.webp",
+		"description": "圆环之理之后，晓美焰的选择。",
+		"episodes": "剧场版",
+		"year": "2013",
+		"genre": [
+			"魔法少女",
+			"奇幻",
+			"剧场版"
+		],
+		"studio": "SHAFT",
+		"link": "https://search.bilibili.com/bangumi?keyword=魔法少女小圆 [新篇] 叛逆的物语",
+		"progress": 1,
+		"totalEpisodes": 1,
+		"startDate": "2013-10",
+		"endDate": "2013-10"
+	},
+	{
+		"title": "紫罗兰永恒花园 外传 - 永远与自动手记人偶 -（剧场版）",
+		"status": "completed",
+		"rating": 7.5,
+		"cover": "/assets/anime/violet-gaiden.webp",
+		"description": "薇尔莉特担任贵族女校学生的家庭教师。",
+		"episodes": "剧场版",
+		"year": "2019",
+		"genre": [
+			"剧情",
+			"治愈",
+			"剧场版"
+		],
+		"studio": "Kyoto Animation",
+		"link": "https://search.bilibili.com/bangumi?keyword=紫罗兰永恒花园 外传 - 永远与自动手记人偶 -",
+		"progress": 1,
+		"totalEpisodes": 1,
+		"startDate": "2019-09",
+		"endDate": "2019-09"
+	},
+	{
+		"title": "紫罗兰永恒花园（剧场版）",
+		"status": "completed",
+		"rating": 7.5,
+		"cover": "/assets/anime/violet-movie.webp",
+		"description": "薇尔莉特与少佐故事的最终章。",
+		"episodes": "剧场版",
+		"year": "2020",
+		"genre": [
+			"剧情",
+			"催泪",
+			"剧场版"
+		],
+		"studio": "Kyoto Animation",
+		"link": "https://search.bilibili.com/bangumi?keyword=紫罗兰永恒花园",
+		"progress": 1,
+		"totalEpisodes": 1,
+		"startDate": "2020-09",
+		"endDate": "2020-09"
 	}
 ]
