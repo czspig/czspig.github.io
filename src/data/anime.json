@@ -77,5 +77,445 @@
 		"totalEpisodes": 24,
 		"startDate": "2011-04",
 		"endDate": "2011-09"
+	},
+	{
+		"title": "CLANNAD",
+		"status": "completed",
+		"rating": 8.4,
+		"cover": "/assets/anime/clannad.webp",
+		"description": "冈崎朋也与古河渚在坡道上相遇，关于家人与小镇的故事。",
+		"episodes": "23 集",
+		"year": "2007",
+		"genre": [
+			"恋爱",
+			"校园",
+			"治愈"
+		],
+		"studio": "Kyoto Animation",
+		"link": "https://search.bilibili.com/bangumi?keyword=CLANNAD",
+		"progress": 23,
+		"totalEpisodes": 23,
+		"startDate": "2007-10",
+		"endDate": "2008-03"
+	},
+	{
+		"title": "钢之炼金术师 FULLMETAL ALCHEMIST",
+		"status": "completed",
+		"rating": 8.8,
+		"cover": "/assets/anime/fma.webp",
+		"description": "为了找回失去的身体，爱德华与阿尔冯斯踏上寻找贤者之石的旅程。",
+		"episodes": "64 集",
+		"year": "2009",
+		"genre": [
+			"冒险",
+			"奇幻",
+			"战斗"
+		],
+		"studio": "BONES",
+		"link": "https://search.bilibili.com/bangumi?keyword=钢之炼金术师 FULLMETAL ALCHEMIST",
+		"progress": 64,
+		"totalEpisodes": 64,
+		"startDate": "2009-04",
+		"endDate": "2010-07"
+	},
+	{
+		"title": "新世纪福音战士",
+		"status": "completed",
+		"rating": 8.7,
+		"cover": "/assets/anime/eva.webp",
+		"description": "少年碇真嗣驾驶 EVA 对抗使徒，也直面自己的内心。",
+		"episodes": "26 集",
+		"year": "1995",
+		"genre": [
+			"机战",
+			"科幻",
+			"心理"
+		],
+		"studio": "GAINAX",
+		"link": "https://search.bilibili.com/bangumi?keyword=新世纪福音战士",
+		"progress": 26,
+		"totalEpisodes": 26,
+		"startDate": "1995-10",
+		"endDate": "1996-03"
+	},
+	{
+		"title": "星际牛仔",
+		"status": "completed",
+		"rating": 9.1,
+		"cover": "/assets/anime/cowboy-bebop.webp",
+		"description": "赏金猎人们在太空中漂泊，爵士乐与宿命交织。",
+		"episodes": "26 集",
+		"year": "1998",
+		"genre": [
+			"科幻",
+			"动作",
+			"爵士"
+		],
+		"studio": "SUNRISE",
+		"link": "https://search.bilibili.com/bangumi?keyword=星际牛仔",
+		"progress": 26,
+		"totalEpisodes": 26,
+		"startDate": "1998-10",
+		"endDate": "1999-04"
+	},
+	{
+		"title": "魔法少女小圆",
+		"status": "completed",
+		"rating": 8.6,
+		"cover": "/assets/anime/madoka.webp",
+		"description": "「和我签订契约，成为魔法少女吧！」",
+		"episodes": "12 集",
+		"year": "2011",
+		"genre": [
+			"魔法少女",
+			"奇幻",
+			"黑暗"
+		],
+		"studio": "SHAFT",
+		"link": "https://search.bilibili.com/bangumi?keyword=魔法少女小圆",
+		"progress": 12,
+		"totalEpisodes": 12,
+		"startDate": "2011-01",
+		"endDate": "2011-04"
+	},
+	{
+		"title": "紫罗兰永恒花园",
+		"status": "completed",
+		"rating": 7.6,
+		"cover": "/assets/anime/violet-evergarden.webp",
+		"description": "自动手记人偶薇尔莉特，在代写书信中学会「我爱你」的含义。",
+		"episodes": "13 集",
+		"year": "2018",
+		"genre": [
+			"剧情",
+			"治愈",
+			"奇幻"
+		],
+		"studio": "Kyoto Animation",
+		"link": "https://search.bilibili.com/bangumi?keyword=紫罗兰永恒花园",
+		"progress": 13,
+		"totalEpisodes": 13,
+		"startDate": "2018-01",
+		"endDate": "2018-04"
+	},
+	{
+		"title": "比宇宙更远的地方",
+		"status": "completed",
+		"rating": 8.2,
+		"cover": "/assets/anime/yorimoi.webp",
+		"description": "四个女高中生踏上去南极的旅程。",
+		"episodes": "13 集",
+		"year": "2018",
+		"genre": [
+			"青春",
+			"冒险",
+			"友情"
+		],
+		"studio": "MADHOUSE",
+		"link": "https://search.bilibili.com/bangumi?keyword=比宇宙更远的地方",
+		"progress": 13,
+		"totalEpisodes": 13,
+		"startDate": "2018-01",
+		"endDate": "2018-03"
+	},
+	{
+		"title": "轻音少女",
+		"status": "completed",
+		"rating": 8.3,
+		"cover": "/assets/anime/k-on.webp",
+		"description": "轻音部的日常：蛋糕、红茶，偶尔练琴。",
+		"episodes": "14 集",
+		"year": "2009",
+		"genre": [
+			"日常",
+			"音乐",
+			"校园"
+		],
+		"studio": "Kyoto Animation",
+		"link": "https://search.bilibili.com/bangumi?keyword=轻音少女",
+		"progress": 14,
+		"totalEpisodes": 14,
+		"startDate": "2009-04",
+		"endDate": "2009-06"
+	},
+	{
+		"title": "银魂",
+		"status": "completed",
+		"rating": 8.7,
+		"cover": "/assets/anime/gintama.webp",
+		"description": "万事屋阿银的江户日常，笑到一半突然燃起来。",
+		"episodes": "201 集",
+		"year": "2006",
+		"genre": [
+			"搞笑",
+			"热血",
+			"时代剧"
+		],
+		"studio": "SUNRISE",
+		"link": "https://search.bilibili.com/bangumi?keyword=银魂",
+		"progress": 201,
+		"totalEpisodes": 201,
+		"startDate": "2006-04",
+		"endDate": "2010-03"
+	},
+	{
+		"title": "三月的狮子",
+		"status": "completed",
+		"rating": 8.3,
+		"cover": "/assets/anime/3gatsu.webp",
+		"description": "少年棋士桐山零，在将棋与川本家的温暖中慢慢走出孤独。",
+		"episodes": "22 集",
+		"year": "2016",
+		"genre": [
+			"剧情",
+			"治愈",
+			"将棋"
+		],
+		"studio": "SHAFT",
+		"link": "https://search.bilibili.com/bangumi?keyword=三月的狮子",
+		"progress": 22,
+		"totalEpisodes": 22,
+		"startDate": "2016-10",
+		"endDate": "2017-03"
+	},
+	{
+		"title": "天元突破 红莲螺岩",
+		"status": "completed",
+		"rating": 8.5,
+		"cover": "/assets/anime/gurren-lagann.webp",
+		"description": "「你以为我是谁啊！」用钻头冲破天际。",
+		"episodes": "27 集",
+		"year": "2007",
+		"genre": [
+			"机战",
+			"热血",
+			"科幻"
+		],
+		"studio": "GAINAX",
+		"link": "https://search.bilibili.com/bangumi?keyword=天元突破 红莲螺岩",
+		"progress": 27,
+		"totalEpisodes": 27,
+		"startDate": "2007-04",
+		"endDate": "2007-09"
+	},
+	{
+		"title": "某科学的超电磁炮",
+		"status": "completed",
+		"rating": 7.5,
+		"cover": "/assets/anime/railgun.webp",
+		"description": "学园都市的超能力者御坂美琴与她的伙伴们。",
+		"episodes": "24 集",
+		"year": "2009",
+		"genre": [
+			"科幻",
+			"超能力",
+			"校园"
+		],
+		"studio": "J.C.STAFF",
+		"link": "https://search.bilibili.com/bangumi?keyword=某科学的超电磁炮",
+		"progress": 24,
+		"totalEpisodes": 24,
+		"startDate": "2009-10",
+		"endDate": "2010-03"
+	},
+	{
+		"title": "摇曳露营△",
+		"status": "completed",
+		"rating": 8.2,
+		"cover": "/assets/anime/yurucamp.webp",
+		"description": "冬天的富士山下，女孩们的露营日常。",
+		"episodes": "12 集",
+		"year": "2018",
+		"genre": [
+			"日常",
+			"露营",
+			"治愈"
+		],
+		"studio": "C-Station",
+		"link": "https://search.bilibili.com/bangumi?keyword=摇曳露营△",
+		"progress": 12,
+		"totalEpisodes": 12,
+		"startDate": "2018-01",
+		"endDate": "2018-03"
+	},
+	{
+		"title": "我们仍未知道那天所看见的花的名字。",
+		"status": "completed",
+		"rating": 7.5,
+		"cover": "/assets/anime/anohana.webp",
+		"description": "超和平 Busters 与回到身边的面码，一起完成她的愿望。",
+		"episodes": "11 集",
+		"year": "2011",
+		"genre": [
+			"剧情",
+			"青春",
+			"催泪"
+		],
+		"studio": "A-1 Pictures",
+		"link": "https://search.bilibili.com/bangumi?keyword=我们仍未知道那天所看见的花的名字。",
+		"progress": 11,
+		"totalEpisodes": 11,
+		"startDate": "2011-04",
+		"endDate": "2011-06"
+	},
+	{
+		"title": "一拳超人",
+		"status": "completed",
+		"rating": 8,
+		"cover": "/assets/anime/one-punch-man.webp",
+		"description": "兴趣使然的英雄埼玉，一拳解决一切。",
+		"episodes": "12 集",
+		"year": "2015",
+		"genre": [
+			"动作",
+			"搞笑",
+			"超级英雄"
+		],
+		"studio": "MADHOUSE",
+		"link": "https://search.bilibili.com/bangumi?keyword=一拳超人",
+		"progress": 12,
+		"totalEpisodes": 12,
+		"startDate": "2015-10",
+		"endDate": "2015-12"
+	},
+	{
+		"title": "鬼灭之刃",
+		"status": "completed",
+		"rating": 7.3,
+		"cover": "/assets/anime/kimetsu.webp",
+		"description": "炭治郎为了让变成鬼的妹妹祢豆子变回人类而战。",
+		"episodes": "26 集",
+		"year": "2019",
+		"genre": [
+			"战斗",
+			"奇幻",
+			"热血"
+		],
+		"studio": "ufotable",
+		"link": "https://search.bilibili.com/bangumi?keyword=鬼灭之刃",
+		"progress": 26,
+		"totalEpisodes": 26,
+		"startDate": "2019-04",
+		"endDate": "2019-09"
+	},
+	{
+		"title": "四月是你的谎言",
+		"status": "completed",
+		"rating": 8,
+		"cover": "/assets/anime/shigatsu.webp",
+		"description": "失去琴声的少年有马公生，遇见了自由的小提琴少女宫园薰。",
+		"episodes": "22 集",
+		"year": "2014",
+		"genre": [
+			"音乐",
+			"恋爱",
+			"催泪"
+		],
+		"studio": "A-1 Pictures",
+		"link": "https://search.bilibili.com/bangumi?keyword=四月是你的谎言",
+		"progress": 22,
+		"totalEpisodes": 22,
+		"startDate": "2014-10",
+		"endDate": "2015-03"
+	},
+	{
+		"title": "月色真美",
+		"status": "completed",
+		"rating": 7.9,
+		"cover": "/assets/anime/tsukigakirei.webp",
+		"description": "初三的小太郎与茜，青涩又真实的初恋。",
+		"episodes": "12 集",
+		"year": "2017",
+		"genre": [
+			"恋爱",
+			"校园",
+			"青春"
+		],
+		"studio": "feel.",
+		"link": "https://search.bilibili.com/bangumi?keyword=月色真美",
+		"progress": 12,
+		"totalEpisodes": 12,
+		"startDate": "2017-04",
+		"endDate": "2017-06"
+	},
+	{
+		"title": "葬送的芙莉莲",
+		"status": "completed",
+		"rating": 8.5,
+		"cover": "/assets/anime/frieren.webp",
+		"description": "勇者死后，精灵魔法使芙莉莲重新踏上旅途，去了解人类。",
+		"episodes": "28 集",
+		"year": "2023",
+		"genre": [
+			"奇幻",
+			"冒险",
+			"治愈"
+		],
+		"studio": "MADHOUSE",
+		"link": "https://search.bilibili.com/bangumi?keyword=葬送的芙莉莲",
+		"progress": 28,
+		"totalEpisodes": 28,
+		"startDate": "2023-09",
+		"endDate": "2024-03"
+	},
+	{
+		"title": "86 -不存在的战区-",
+		"status": "completed",
+		"rating": 7.6,
+		"cover": "/assets/anime/eighty-six.webp",
+		"description": "被称为「86」的少年们在战场上，与指挥官蕾娜之间的故事。",
+		"episodes": "11 集",
+		"year": "2021",
+		"genre": [
+			"科幻",
+			"机战",
+			"战争"
+		],
+		"studio": "A-1 Pictures",
+		"link": "https://search.bilibili.com/bangumi?keyword=86 -不存在的战区-",
+		"progress": 11,
+		"totalEpisodes": 11,
+		"startDate": "2021-04",
+		"endDate": "2021-06"
+	},
+	{
+		"title": "罪恶王冠",
+		"status": "completed",
+		"rating": 6.5,
+		"cover": "/assets/anime/guilty-crown.webp",
+		"description": "樱满集获得「王之能力」，卷入改变世界的战争。",
+		"episodes": "22 集",
+		"year": "2011",
+		"genre": [
+			"科幻",
+			"动作",
+			"机战"
+		],
+		"studio": "Production I.G",
+		"link": "https://search.bilibili.com/bangumi?keyword=罪恶王冠",
+		"progress": 22,
+		"totalEpisodes": 22,
+		"startDate": "2011-10",
+		"endDate": "2012-03"
+	},
+	{
+		"title": "赛博朋克：边缘行者",
+		"status": "completed",
+		"rating": 8.3,
+		"cover": "/assets/anime/cyberpunk-edgerunners.webp",
+		"description": "夜之城里，少年大卫成为边缘行者的故事。",
+		"episodes": "10 集",
+		"year": "2022",
+		"genre": [
+			"科幻",
+			"动作",
+			"赛博朋克"
+		],
+		"studio": "TRIGGER",
+		"link": "https://search.bilibili.com/bangumi?keyword=赛博朋克：边缘行者",
+		"progress": 10,
+		"totalEpisodes": 10,
+		"startDate": "2022-09",
+		"endDate": "2022-09"
 	}
 ]
