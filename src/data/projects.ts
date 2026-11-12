@@ -93,6 +93,22 @@ export const projectsData: Project[] = [
 		featured: true,
 		tags: ["开源", "源码解析"],
 	},
+	{
+		id: "czspig-oil-paint",
+		title: "czspig-oil-paint",
+		description:
+			"浏览器里能走动的实时油画。用 three.js 把 3D 场景画成厚涂油画：树叶、树干、雪、极光、斗篷褶皱都是一笔笔钉在世界上的笔触，镜头移动时颜料始终贴在物体上。有两个场景：极光下的雪山脊（尽头有一座可以进去的小木屋）和秋天的树林。WASD 移动、鼠标看、Shift 跑、空格跳，需要支持 WebGL2 的桌面浏览器。基于 Patch 的开源项目 oil-paint（MIT / CC0）。",
+		image: "/assets/projects/czspig-oil-paint.webp",
+		category: "web",
+		techStack: ["three.js", "WebGL2", "GLSL", "Vite"],
+		status: "completed",
+		sourceCode: "https://github.com/czspig/czspig-oil-paint",
+		visitUrl: "https://czspig.github.io/czspig-oil-paint/",
+		visitLabel: "在线体验",
+		startDate: "2026-11-12",
+		featured: true,
+		tags: ["3D", "油画渲染", "游戏"],
+	},
 ];
 
 // Get project statistics
