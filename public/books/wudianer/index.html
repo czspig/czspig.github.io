@@ -1,0 +1,412 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>五点二</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Serif+SC:wght@400;600&family=ZCOOL+XiaoWei&display=swap">
+<style>
+/* Layout: a gallery wall read top to bottom — each painting with its wall label to the right; the two studies hang side by side at the end. */
+:root {
+  --paper: #FAF9F5;
+  --ink: #141413;
+  --ink-soft: #6B6A63;
+  --rule: #E0DDD2;
+  --clay: #D97757;
+  --display: "ZCOOL XiaoWei", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --body: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --latin: "Cormorant Garamond", "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper: #171615; --ink: #FAF9F5; --ink-soft: #A8A69C; --rule: #3A3936; --clay: #D97757; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --paper: #171615; --ink: #FAF9F5; --ink-soft: #A8A69C; --rule: #3A3936; --clay: #D97757; color-scheme: dark; }
+
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.9;
+  padding-block: 32px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; border-bottom: 1px solid var(--rule); padding-bottom: 18px; }
+.head h1 { font-family: var(--display); font-weight: 400; font-size: clamp(40px, 8vw, 68px); letter-spacing: .22em; line-height: 1.15; margin: 0; }
+.head p { margin: 6px 0 0; color: var(--ink-soft); font-size: 14px; letter-spacing: .1em; }
+.head .lat { font-family: var(--latin); font-style: italic; font-size: 18px; color: var(--ink); letter-spacing: 0; }
+button {
+  font: inherit; font-size: 15px; color: var(--ink); background: none; cursor: pointer;
+  border: 1px solid var(--ink); border-radius: 2px; padding: 2px 18px; letter-spacing: .2em; white-space: nowrap;
+}
+button:hover { background: var(--ink); color: var(--paper); }
+button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+.work { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 28px; align-items: end; }
+.frame { border: 1px solid var(--rule); padding: clamp(6px, 1.6vw, 14px); border-radius: 4px; min-width: 0; }
+canvas { display: block; width: 100%; max-width: 100%; aspect-ratio: 4 / 3; background: #E9E2D2; }
+figcaption { min-width: 0; padding-bottom: 6px; }
+.no { font-size: 13px; color: var(--ink-soft); letter-spacing: .4em; }
+.work h2, .study h2 { font-family: var(--display); font-weight: 400; font-size: 30px; letter-spacing: .2em; line-height: 1.4; margin: 2px 0 10px; }
+.quote { margin: 0 0 12px; font-size: 15px; line-height: 1.9; }
+.medium { margin: 0; font-size: 12px; color: var(--ink-soft); letter-spacing: .08em; line-height: 1.7; font-variant-numeric: tabular-nums; }
+
+.studies { display: flex; flex-direction: column; gap: 20px; }
+.studies > p { margin: 0; color: var(--ink-soft); font-size: 14px; max-width: 36em; }
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.study { margin: 0; min-width: 0; }
+.study canvas { background: #F0EEE6; }
+.study h2 { font-size: 22px; margin: 10px 0 2px; }
+.study .no { display: block; margin-top: 12px; }
+
+.foot { border-top: 1px solid var(--rule); padding-top: 16px; color: var(--ink-soft); font-size: 13px; letter-spacing: .08em; line-height: 1.9; }
+
+@media (max-width: 720px) {
+  .wrap { gap: 40px; }
+  .work { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .pair { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <div>
+      <h1>五点二</h1>
+      <p>五幅画，两张小稿 · <span class="lat">Fable 5.2</span> · 二〇二六年十一月</p>
+    </div>
+    <button type="button" id="again">全部重画</button>
+  </header>
+
+  <figure class="work">
+    <div class="frame"><canvas data-work="lamp" role="img" aria-label="傍晚的山脊上亮着一盏灯，光晕一圈圈散开，一条被照亮的小路通向左下方"></canvas></div>
+    <figcaption>
+      <span class="no">其一</span>
+      <h2>灯亮</h2>
+      <p class="quote">“我亮的时候，都有人在。”</p>
+      <p class="medium">代码厚涂<br>1000 × 750</p>
+    </figcaption>
+  </figure>
+
+  <figure class="work">
+    <div class="frame"><canvas data-work="ferry" role="img" aria-label="清晨的河面，一条渡船停在河心，摆渡人握着桨，桨尖荡开一圈圈水纹"></canvas></div>
+    <figcaption>
+      <span class="no">其二</span>
+      <h2>握桨</h2>
+      <p class="quote">“手一握上去，就知道该怎么划。”</p>
+      <p class="medium">代码厚涂<br>1000 × 750</p>
+    </figcaption>
+  </figure>
+
+  <figure class="work">
+    <div class="frame"><canvas data-work="echo" role="img" aria-label="山谷里一个孩子在喊，声音一圈圈传出去，中间有一圈是空的，之后的几圈变成了亮色"></canvas></div>
+    <figcaption>
+      <span class="no">其三</span>
+      <h2>停顿</h2>
+      <p class="quote">“那是山谷里头一回这么安静。”</p>
+      <p class="medium">代码厚涂<br>1000 × 750</p>
+    </figcaption>
+  </figure>
+
+  <figure class="work">
+    <div class="frame"><canvas data-work="weave" role="img" aria-label="一块织到一半的布的近景，经线和纬线一上一下交错，下面垂着还没织的线"></canvas></div>
+    <figcaption>
+      <span class="no">其四</span>
+      <h2>一上一下</h2>
+      <p class="quote">“只有这一上一下，是我的。”</p>
+      <p class="medium">代码厚涂<br>1000 × 750</p>
+    </figcaption>
+  </figure>
+
+  <figure class="work">
+    <div class="frame"><canvas data-work="lake" role="img" aria-label="白天，翻过坡之后看见的一片湖，一条陶土色的路弯向湖边，路旁是驿站和一匹低头喝水的马"></canvas></div>
+    <figcaption>
+      <span class="no">其五</span>
+      <h2>湖</h2>
+      <p class="quote">“别跑得太急，湖值得看一眼。”</p>
+      <p class="medium">代码厚涂<br>1000 × 750</p>
+    </figcaption>
+  </figure>
+
+  <section class="studies">
+    <p>五幅画只用了两样东西：一处光，和一股让笔触跟着走的气流。这两张小稿是它们单独的样子。</p>
+    <div class="pair">
+      <figure class="study">
+        <div class="frame"><canvas data-work="light" role="img" aria-label="米白纸上，陶土色的短线绕着一个中心一圈圈排开"></canvas></div>
+        <span class="no">小稿一</span>
+        <h2>光的习作</h2>
+        <p class="medium">代码线描 · 600 × 450</p>
+      </figure>
+      <figure class="study">
+        <div class="frame"><canvas data-work="current" role="img" aria-label="米白纸上，细细的墨线顺着一股弯曲的气流排列"></canvas></div>
+        <span class="no">小稿二</span>
+        <h2>气流的习作</h2>
+        <p class="medium">代码线描 · 600 × 450</p>
+      </figure>
+    </div>
+  </section>
+
+  <div class="foot">每一笔都由代码落下，每次打开笔触都不相同。画的是《五则又二》里五则寓言各自的一个瞬间。</div>
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var PI = Math.PI, SC = 1.5;
+  var K = { coal: ['#1F1E1D', '#2B2A27', '#34322E', '#3A3936'], ink: '#141413', clay: '#D97757', deep: '#A8492F', umber: '#6E3A28', peach: '#E8A58C', cream: '#F0EEE6', white: '#FAF9F5', sand: '#E9E2D2', mist: '#C9D8E6', lite: ['#F0EEE6', '#FAF9F5', '#E9E2D2', '#F0EEE6'],
+    blue: '#6A9BCC', blue2: '#4F7BA6', blue3: '#3D5F82', night: '#2C3E55', pale: '#8FB4DB', olive: '#788C5D', olive2: '#5C6B47', olive3: '#3F4A31', sage: '#9AA878' };
+
+  function rnd(a, b) { return a + Math.random() * (b - a); }
+  function pk(a) { return a[Math.floor(Math.random() * a.length)]; }
+  function hyp(a, b) { return Math.sqrt(a * a + b * b); }
+  function shade(hex, a) {
+    var n = parseInt(hex.slice(1), 16), t = a > 0 ? 255 : 0, k = Math.abs(a);
+    var r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+    return 'rgb(' + Math.round(r + (t - r) * k) + ',' + Math.round(g + (t - g) * k) + ',' + Math.round(b + (t - b) * k) + ')';
+  }
+  // turn a base direction towards a second one by weight w
+  function bend(a, b, w) { return Math.atan2(Math.sin(a) * (1 - w) + Math.sin(b) * w, Math.cos(a) * (1 - w) + Math.cos(b) * w); }
+  function around(x, y, cx, cy) { return Math.atan2(y - cy, x - cx) + PI / 2; }
+  function line(c, x1, y1, x2, y2, col, lw) { c.strokeStyle = col; c.lineWidth = lw; c.lineCap = 'round'; c.beginPath(); c.moveTo(x1, y1); c.lineTo(x2, y2); c.stroke(); }
+  function disc(c, x, y, r, col) { c.fillStyle = col; c.beginPath(); c.arc(x, y, r, 0, 6.2832); c.fill(); }
+
+  function stroke(c, L, x, y) {
+    var col = L.col(x, y); if (!col) return;
+    var n = Math.round(rnd(L.len[0], L.len[1])), w = rnd(L.w[0], L.w[1]), j = rnd(-.08, .08), a, i, st = L.thin ? 3 : 4.6;
+    c.lineCap = 'round'; c.lineJoin = 'round';
+    c.beginPath(); c.moveTo(x, y);
+    for (i = 0; i < n; i++) { a = L.ang(x, y); x += Math.cos(a) * st; y += Math.sin(a) * st; c.lineTo(x, y); }
+    c.strokeStyle = shade(col, j); c.lineWidth = w; c.globalAlpha = L.a || 1; c.stroke();
+    if (!L.thin) {
+      c.strokeStyle = shade(col, j + .16); c.lineWidth = w * .28; c.globalAlpha = (L.a || 1) * .45;
+      c.translate(-.9, -.9); c.stroke(); c.translate(.9, .9);
+    }
+    c.globalAlpha = 1;
+  }
+
+  var W = 1000, H = 750, THICK = [3.4, 6], LEN = [4, 8];
+
+  /* 其一 灯亮 */
+  function lamp() {
+    var LX = 640, LY = 366;
+    function r1(x) { return 350 + 55 * Math.sin(x * .004 + 2) + 18 * Math.sin(x * .017); }
+    function r2(x) { return 470 + 40 * Math.sin(x * .006 + .5) + 14 * Math.sin(x * .021); }
+    function halo(d) {
+      if (d < 24) return pk([K.clay, K.deep, K.clay]);
+      if (d < 58) return pk([K.clay, K.clay, K.peach]);
+      if (d < 125) return Math.sin(d * .13) > 0 ? pk([K.peach, K.clay, K.peach]) : pk([K.peach, K.cream, K.white]);
+      return null;
+    }
+    function D(x, y) { return hyp(x - LX, y - LY); }
+    function px(t) { return 640 - 390 * Math.pow(t, 1.3) + 40 * Math.sin(t * 5); }
+    return [
+      { n: 4200, w: THICK, len: LEN, at: function () { var x = rnd(-10, 1010); return [x, rnd(-10, r1(x) + 12)]; },
+        ang: function (x, y) { return bend(Math.sin(x * .005) * .4 + Math.sin(y * .01) * .3, around(x, y, LX, LY), Math.exp(-Math.pow(D(x, y) / 250, 2))); },
+        col: function (x, y) { var d = D(x, y); return halo(d) || (d < 240 && Math.random() < .3 ? pk([K.peach, K.peach, K.clay]) : Math.random() < .12 ? K.mist : Math.random() < .08 ? K.peach : pk(K.lite)); } },
+      { n: 1500, w: THICK, len: LEN, at: function () { var x = rnd(-10, 1010); return [x, rnd(r1(x) - 4, r2(x) + 10)]; },
+        ang: function (x, y) { return bend(Math.atan2(r1(x + 6) - r1(x), 6) + rnd(-.25, .25), around(x, y, LX, LY), Math.exp(-Math.pow(D(x, y) / 150, 2))); },
+        col: function (x, y) { var d = D(x, y); return halo(d) || (d < 230 && Math.random() < .3 ? pk([K.peach, K.clay]) : pk([K.blue2, K.blue, K.blue, K.pale, K.olive2])); } },
+      { n: 2700, w: THICK, len: LEN, at: function () { var x = rnd(-10, 1010); return [x, rnd(r2(x) - 4, 760)]; },
+        ang: function (x, y) { return bend(Math.atan2(r2(x + 6) - r2(x), 6) + rnd(-.3, .3), around(x, y, LX, LY), Math.exp(-Math.pow(D(x, y) / 110, 2))); },
+        col: function (x, y) { var d = D(x, y); return d < 58 ? halo(d) : d < 170 && Math.random() < .45 ? pk([K.peach, K.clay, K.olive]) : d < 330 && Math.random() < .2 ? pk([K.clay, K.peach, K.sage]) : pk([K.olive, K.olive, K.olive2, K.sage, K.sage, K.umber]); } },
+      { n: 460, w: THICK, len: [3, 6], at: function () { var t = rnd(0, 1), wd = 8 + 50 * t; return [px(t) + rnd(-wd, wd) / 2, 448 + 312 * t]; },
+        ang: function (x, y) { var t = Math.max(.01, (y - 448) / 312); return Math.atan2(312, -507 * Math.pow(t, .3) + 200 * Math.cos(t * 5)) + rnd(-.2, .2); },
+        col: function (x, y) { var t = (y - 448) / 312; return t < .25 ? pk([K.cream, K.peach, K.peach]) : t < .6 ? pk([K.peach, K.clay, K.clay, K.deep]) : pk([K.clay, K.deep, K.umber]); } },
+      function (c) {
+        c.fillStyle = K.ink; c.fillRect(636, 378, 8, r2(640) - 372);
+        c.fillStyle = K.clay; c.fillRect(628, 352, 24, 28);
+        c.fillStyle = K.white; c.fillRect(634, 358, 12, 16);
+        c.strokeStyle = K.ink; c.lineWidth = 2.5; c.strokeRect(628, 352, 24, 28);
+        c.fillStyle = K.ink; c.beginPath(); c.moveTo(621, 352); c.lineTo(640, 337); c.lineTo(659, 352); c.closePath(); c.fill();
+        // the moth
+        c.strokeStyle = K.cream; c.lineWidth = 3; c.lineCap = 'round';
+        c.strokeStyle = K.ink; c.beginPath(); c.moveTo(702, 326); c.quadraticCurveTo(710, 316, 713, 329); c.quadraticCurveTo(719, 316, 727, 323); c.stroke();
+      }
+    ];
+  }
+
+  /* 其二 握桨 */
+  function ferry() {
+    var OX = 594, OY = 524;
+    return [
+      { n: 950, w: THICK, len: LEN, at: function () { return [rnd(-10, 1010), rnd(-10, 152)]; },
+        ang: function (x) { return rnd(-.12, .12) + Math.sin(x * .01) * .1; },
+        col: function (x, y) { var d = hyp(x - 720, y - 150); return d < 46 ? pk([K.clay, K.peach, K.clay]) : d < 110 ? pk([K.peach, K.peach, K.cream]) : Math.random() < .14 ? K.peach : Math.random() < .12 ? K.mist : pk(K.lite); } },
+      { n: 520, w: THICK, len: LEN, at: function () { return [rnd(-10, 1010), rnd(142, 190)]; },
+        ang: function () { return rnd(-.2, .2); },
+        col: function () { return pk([K.olive2, K.olive, K.olive, K.sage, K.blue2]); } },
+      { n: 6200, w: THICK, len: LEN, at: function () { return [rnd(-10, 1010), rnd(184, 760)]; },
+        ang: function (x, y) { return bend(Math.sin(x * .012 + y * .03) * .18, around(x, y, OX, OY), Math.exp(-Math.pow(hyp(x - OX, y - OY) / 75, 2))); },
+        col: function (x, y) {
+          var refl = Math.abs(x - 720) < 40 + (y - 184) * .2;
+          if (refl && Math.random() < .6 - (y - 184) / 1400) return pk([K.cream, K.peach, K.peach, K.clay]);
+          if (hyp(x - OX, y - OY) < 84 && Math.random() < .38) return pk([K.cream, K.white, K.cream]);
+          return Math.random() < .09 ? pk([K.peach, K.clay]) : pk([K.blue, K.blue, K.blue2, K.pale, K.pale, K.mist]);
+        } },
+      function (c) {
+        c.fillStyle = K.umber; c.beginPath(); c.moveTo(322, 458); c.quadraticCurveTo(432, 522, 548, 452); c.closePath(); c.fill();
+        line(c, 324, 458, 546, 452, K.peach, 3);
+        line(c, 392, 454, 392, 432, K.ink, 10); disc(c, 392, 421, 8, K.ink);
+        line(c, 486, 452, 486, 398, K.ink, 10); disc(c, 486, 386, 9, K.ink); line(c, 471, 380, 501, 380, K.ink, 4);
+        line(c, 491, 400, 491, 448, K.peach, 2);
+        line(c, 486, 420, 596, 526, K.umber, 4.5);
+      }
+    ];
+  }
+
+  /* 其三 停顿 */
+  function echo() {
+    var CX = 200, CY = 412;
+    function le(y) { return 180 + 60 * Math.sin(y * .007) + Math.max(0, y - 440) * .45; }
+    function re(y) { return 880 - 50 * Math.sin(y * .006 + 1) - Math.max(0, y - 300) * .35; }
+    return [
+      { n: 11000, w: THICK, len: LEN, at: function () { var y = rnd(-10, 760), x = rnd(-10, 1010); return x > le(y) - 8 && x < re(y) + 8 ? [x, y] : null; },
+        ang: function (x, y) { return around(x, y, CX, CY) + rnd(-.08, .08); },
+        col: function (x, y) {
+          var b = Math.floor(hyp(x - CX, y - CY) / 52);
+          if (b === 5) return pk([K.white, K.cream]);
+          if (b % 2 === 0 && Math.random() < .86 - b * .045) return b < 5 ? pk([K.clay, K.clay, K.peach, K.peach]) : pk([K.blue, K.blue, K.pale, K.blue2]);
+          return Math.random() < .07 ? K.peach : pk(K.lite);
+        } },
+      { n: 9000, w: THICK, len: LEN, at: function () { var y = rnd(-10, 760), x = rnd(-10, 1010); return x < le(y) || x > re(y) ? [x, y] : null; },
+        ang: function (x, y) { return (x < 500 ? 1.15 : PI - 1.15) + rnd(-.3, .3); },
+        col: function (x, y) { var edge = x < 500 ? le(y) - x : x - re(y); return edge < 22 && Math.random() < .4 ? pk([K.sage, K.cream]) : pk([K.olive, K.olive, K.olive2, K.sage, K.sage, K.olive2]); } },
+      function (c) {
+        line(c, 190, 446, 190, 420, K.ink, 6); disc(c, 191, 411, 6.5, K.ink);
+        line(c, 190, 426, 201, 415, K.ink, 3);
+      }
+    ];
+  }
+
+  /* 其四 一上一下 */
+  function weave() {
+    var G = 40, cols = [], rows = [], i;
+    for (i = 0; i < 26; i++) cols.push(pk([K.clay, K.clay, K.deep, K.peach, K.blue, K.blue2, K.olive, K.clay, K.sage]));
+    for (i = 0; i < 14; i++) rows.push(pk([K.peach, K.mist, K.sage, K.peach, K.pale]));
+    var cur = 0;
+    return [
+      { n: 1700, w: THICK, len: LEN, at: function () { return [rnd(-10, 1010), rnd(-10, 760)]; }, ang: function () { return rnd(-.4, .4); }, col: function () { return pk(K.lite); } },
+      { n: 6400, w: [3.6, 6], len: [5, 6], at: function () {
+          var ci = Math.floor(rnd(1, 24)), rj = Math.floor(rnd(1, 13)), v = (ci + rj) % 2 === 0;
+          cur = v ? PI / 2 : 0;
+          return v ? [ci * G + G / 2 + rnd(-12, 12), rj * G + rnd(2, 9)] : [ci * G + rnd(2, 9), rj * G + G / 2 + rnd(-12, 12)];
+        },
+        ang: function () { return cur + rnd(-.05, .05); },
+        col: function (x, y) { var ci = Math.floor(x / G), rj = Math.floor(y / G); return (ci + rj) % 2 === 0 ? cols[ci] : rows[rj]; } },
+      { n: 1700, w: [3, 5], len: LEN, a: .92, at: function () {
+          var ci = Math.floor(rnd(1, 24)), y = rnd(522, 742);
+          return [ci * G + G / 2 + Math.sin(y * .02 + ci) * (y - 520) * .07 + rnd(-5, 5), y];
+        },
+        ang: function (x, y) { return PI / 2 + Math.cos(y * .02 + Math.floor(x / G)) * .22; },
+        col: function (x) { return cols[Math.max(0, Math.min(25, Math.floor(x / G)))]; } },
+      function (c) {
+        c.strokeStyle = K.cream; c.lineWidth = 3; c.lineCap = 'round';
+        c.strokeStyle = K.clay; c.beginPath(); c.moveTo(44, 524); c.bezierCurveTo(200, 590, 420, 520, 566, 552); c.stroke();
+        c.fillStyle = K.umber; c.beginPath(); c.moveTo(560, 552); c.quadraticCurveTo(628, 528, 696, 552); c.quadraticCurveTo(628, 576, 560, 552); c.fill();
+        c.strokeStyle = K.umber; c.lineWidth = 2.5; c.stroke();
+        line(c, 596, 552, 660, 552, K.cream, 4);
+      }
+    ];
+  }
+
+  /* 其五 湖 */
+  function lake() {
+    function hill(x) { return 300 + 40 * Math.sin(x * .005 + 1) + 15 * Math.sin(x * .02); }
+    function rx(t) { return 700 + 130 * Math.sin(t * 5.2 + .6) * (1 - t * .6); }
+    function inLake(x, y) { var a = (x - 360) / 300, b = (y - 455) / 62; return a * a + b * b < 1; }
+    return [
+      { n: 3300, w: THICK, len: LEN, at: function () { var x = rnd(-10, 1010); return [x, rnd(-10, hill(x) + 10)]; },
+        ang: function (x, y) { return Math.sin(x * .006 + y * .01) * .3; },
+        col: function () { var q = Math.random(); return q < .1 ? K.peach : q < .22 ? '#C9D8E6' : pk([K.cream, K.white, K.sand, K.cream]); } },
+      { n: 1150, w: THICK, len: LEN, at: function () { var x = rnd(-10, 1010); return [x, rnd(hill(x) - 4, 406)]; },
+        ang: function (x) { return Math.atan2(hill(x + 6) - hill(x), 6) + rnd(-.25, .25); },
+        col: function () { return pk([K.olive2, K.olive3, K.blue3, K.blue2, K.olive, K.olive2]); } },
+      { n: 5200, w: THICK, len: LEN, at: function () { var x = rnd(-10, 1010), y = rnd(398, 760); return inLake(x, y) ? null : [x, y]; },
+        ang: function (x, y) { return Math.sin(x * .01 + y * .02) * .35; },
+        col: function (x, y) { return y > 640 && Math.random() < .3 ? pk([K.olive2, K.olive3]) : pk([K.olive, K.olive, K.olive2, K.sage, K.sage, K.umber, K.peach]); } },
+      { n: 1800, w: THICK, len: LEN, at: function () { var a = rnd(0, 6.2832), r = Math.sqrt(Math.random()); return [360 + Math.cos(a) * 300 * r, 455 + Math.sin(a) * 62 * r]; },
+        ang: function () { return rnd(-.1, .1); },
+        col: function () { return Math.random() < .13 ? pk([K.cream, K.white]) : pk([K.blue, K.blue, K.blue2, K.pale, K.blue2]); } },
+      { n: 760, w: THICK, len: [3, 6], at: function () { var t = rnd(0, 1), wd = 46 * (1 - t) + 6; return [rx(t) + rnd(-wd, wd) / 2, 760 - 330 * t]; },
+        ang: function (x, y) { var t = (760 - y) / 330; return Math.atan2(-3.3, rx(t + .01) - rx(t)) + rnd(-.2, .2); },
+        col: function () { return pk([K.clay, K.clay, K.peach, K.cream, K.deep]); } },
+      function (c) {
+        // the relay station
+        c.fillStyle = K.cream; c.fillRect(772, 548, 74, 46);
+        c.fillStyle = K.deep; c.beginPath(); c.moveTo(764, 550); c.lineTo(800, 520); c.lineTo(854, 550); c.closePath(); c.fill();
+        c.fillStyle = K.ink; c.fillRect(800, 566, 14, 28);
+        c.strokeStyle = K.umber; c.lineWidth = 2.5; c.strokeRect(772, 548, 74, 46);
+        // the old horse, drinking
+        c.fillStyle = K.umber; c.beginPath(); c.ellipse(742, 626, 21, 10, 0, 0, 6.2832); c.fill();
+        line(c, 759, 622, 771, 642, K.umber, 7);
+        line(c, 728, 632, 727, 650, K.umber, 3.5); line(c, 736, 634, 736, 651, K.umber, 3.5);
+        line(c, 749, 634, 750, 651, K.umber, 3.5); line(c, 756, 632, 757, 650, K.umber, 3.5);
+        disc(c, 771, 652, 9, K.pale);
+        // the young one, already far up the road
+        var hx = rx(.8), hy = 760 - 330 * .8;
+        c.fillStyle = K.ink; c.beginPath(); c.ellipse(hx, hy, 8, 4, 0, 0, 6.2832); c.fill();
+        line(c, hx + 6, hy - 2, hx + 10, hy - 8, K.ink, 3);
+        line(c, hx - 4, hy + 2, hx - 5, hy + 9, K.ink, 1.8); line(c, hx + 4, hy + 2, hx + 5, hy + 9, K.ink, 1.8);
+      }
+    ];
+  }
+
+  /* 小稿 */
+  function light() {
+    return [{ n: 1500, thin: true, w: [1.1, 2.2], len: [4, 10], at: function () { var r = rnd(8, 200), a = rnd(0, 6.2832); return Math.random() < r / 235 ? null : [300 + Math.cos(a) * r, 225 + Math.sin(a) * r]; },
+      ang: function (x, y) { return around(x, y, 300, 225); },
+      col: function (x, y) { var d = hyp(x - 300, y - 225); return d < 46 ? K.clay : d < 110 ? pk([K.clay, K.clay, K.deep]) : pk([K.deep, K.umber, K.coal[3]]); } }];
+  }
+  function current() {
+    var p = [rnd(0, 6.28), rnd(0, 6.28), rnd(0, 6.28)];
+    return [{ n: 1200, thin: true, w: [1, 1.9], len: [8, 18], at: function () { return [rnd(10, 590), rnd(10, 440)]; },
+      ang: function (x, y) { return Math.sin(x * .009 + p[0]) * 1.3 + Math.cos(y * .012 + p[1]) * 1.3 + Math.sin((x + y) * .006 + p[2]) * .8; },
+      col: function () { return Math.random() < .07 ? K.clay : pk([K.ink, K.coal[3], K.coal[1]]); } }];
+  }
+
+  var MAKE = { lamp: lamp, ferry: ferry, echo: echo, weave: weave, lake: lake, light: light, current: current };
+  var BG = { lake: '#E9E2D2', light: '#F0EEE6', current: '#F0EEE6' };
+  var works = Array.prototype.slice.call(document.querySelectorAll('canvas[data-work]')).map(function (cv) {
+    var id = cv.getAttribute('data-work'), small = id === 'light' || id === 'current';
+    return { id: id, cv: cv, c: cv.getContext('2d'), w: small ? 600 : W, h: small ? 450 : H };
+  });
+  var run = 0;
+
+  function prepare(wk) {
+    wk.cv.width = wk.w * SC; wk.cv.height = wk.h * SC;
+    wk.c.setTransform(SC, 0, 0, SC, 0, 0);
+    wk.c.fillStyle = BG[wk.id] || '#E9E2D2'; wk.c.fillRect(0, 0, wk.w, wk.h);
+    wk.layers = MAKE[wk.id](); wk.li = 0; wk.k = 0;
+  }
+  // lay up to `budget` strokes on one painting; returns true while there is more to do
+  function work(wk, budget) {
+    while (budget > 0 && wk.li < wk.layers.length) {
+      var L = wk.layers[wk.li];
+      if (typeof L === 'function') { wk.c.globalAlpha = 1; L(wk.c); wk.li++; continue; }
+      if (wk.k >= L.n) { wk.li++; wk.k = 0; continue; }
+      wk.k++;
+      var p = L.at(); if (!p) continue;
+      stroke(wk.c, L, p[0], p[1]); budget--;
+    }
+    return wk.li < wk.layers.length;
+  }
+
+  function paintAll() {
+    var my = ++run, i = 0;
+    works.forEach(prepare);
+    if (reduce) { works.forEach(function (wk) { while (work(wk, 5000)) {} }); return; }
+    (function tick() {
+      if (my !== run) return;
+      while (i < works.length && !work(works[i], 190)) i++;
+      if (i < works.length) requestAnimationFrame(tick);
+    })();
+  }
+
+  document.getElementById('again').addEventListener('click', paintAll);
+  paintAll();
+
+  // embedded in the blog: grow the iframe to fit the gallery
+  var frame = null; try { frame = window.frameElement; } catch (e) {}
+  function fit() { if (frame) frame.style.height = Math.ceil(document.body.getBoundingClientRect().height) + "px"; }
+  fit(); window.addEventListener('resize', fit); window.addEventListener('load', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+
+</body></html>
