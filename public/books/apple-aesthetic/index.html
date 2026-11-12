@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>少，但更好</title>
+<meta name="description" content="分析苹果的审美：从包豪斯到 Liquid Glass。">
+<style>
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f5f5f7;
+  --card: #ffffff;
+  --ink: #1d1d1f;
+  --ink-2: #6e6e73;
+  --ink-3: #86868b;
+  --line: #d2d2d7;
+  --blue: #0071e3;
+  --link: #0066cc;
+  --fill: #fbfbfd;
+  --scr: #e8e8ed;
+  --nav: rgba(251, 251, 253, .78);
+  --dark: #000000;
+  --dark-ink: #f5f5f7;
+  --dark-ink-2: #a1a1a6;
+  --dark-card: #1d1d1f;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000; --bg-alt: #101012; --card: #1d1d1f; --ink: #f5f5f7; --ink-2: #a1a1a6; --ink-3: #86868b;
+    --line: #424245; --link: #2997ff; --fill: #1d1d1f; --scr: #2c2c2e; --nav: rgba(22, 22, 23, .78);
+    --dark: #101012; --dark-card: #1d1d1f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #000000; --bg-alt: #101012; --card: #1d1d1f; --ink: #f5f5f7; --ink-2: #a1a1a6; --ink-3: #86868b;
+  --line: #424245; --link: #2997ff; --fill: #1d1d1f; --scr: #2c2c2e; --nav: rgba(22, 22, 23, .78);
+  --dark: #101012; --dark-card: #1d1d1f; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 52px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font); font-size: 17px; line-height: 1.6; letter-spacing: -.01em;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- nav ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 10; height: 52px;
+  background: var(--nav); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+.nav-in { max-width: 1024px; height: 100%; margin: 0 auto; padding: 0 22px; display: flex; align-items: center; gap: 24px; }
+.nav b { font-size: 21px; font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }
+.nav ul { list-style: none; margin: 0 0 0 auto; padding: 0; display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; }
+.nav ul::-webkit-scrollbar { display: none; }
+.nav li a { color: var(--ink); font-size: 12px; opacity: .8; white-space: nowrap; }
+.nav li a:hover { opacity: 1; text-decoration: none; }
+
+/* ---------- sections ---------- */
+section { padding: clamp(72px, 12vw, 140px) 22px; }
+.alt { background: var(--bg-alt); }
+.dark { background: var(--dark); color: var(--dark-ink); --ink-2: var(--dark-ink-2); --card: var(--dark-card); --line: #424245; --fill: #1d1d1f; --scr: #2c2c2e; }
+.in { max-width: 980px; margin: 0 auto; }
+.eyebrow { font-size: clamp(17px, 2vw, 21px); font-weight: 600; color: var(--ink-2); margin: 0 0 8px; letter-spacing: -.01em; }
+h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: -.025em; line-height: 1.08; }
+h2 { font-size: clamp(40px, 7vw, 80px); }
+h3 { font-size: clamp(24px, 3vw, 32px); line-height: 1.15; letter-spacing: -.02em; }
+.lede { font-size: clamp(19px, 2.4vw, 24px); line-height: 1.45; color: var(--ink-2); max-width: 34em; margin: 24px 0 0; font-weight: 500; letter-spacing: -.015em; }
+.lede strong { color: var(--ink); font-weight: 600; }
+.center { text-align: center; }
+.center .lede { margin-left: auto; margin-right: auto; }
+
+/* reveal */
+.js .rv { opacity: 0; transform: translateY(32px); transition: opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1); }
+.js .rv.on { opacity: 1; transform: none; }
+.js .rv.d1 { transition-delay: .08s; } .js .rv.d2 { transition-delay: .16s; } .js .rv.d3 { transition-delay: .24s; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .rv { opacity: 1; transform: none; transition: none; }
+  .hero-phone path, .hero-phone rect { animation: none !important; stroke-dashoffset: 0 !important; }
+}
+
+/* ---------- hero ---------- */
+.hero { background: #000; color: #f5f5f7; padding-top: clamp(80px, 12vw, 120px); padding-bottom: 0; overflow: hidden; text-align: center; }
+.hero .eyebrow { color: #a1a1a6; }
+.hero h1 {
+  font-size: clamp(64px, 14vw, 156px); letter-spacing: -.04em; line-height: 1;
+  background: linear-gradient(180deg, #ffffff 30%, #8e8e93 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero .lede { color: #a1a1a6; margin-left: auto; margin-right: auto; }
+.hero-phone { display: block; width: min(300px, 62vw); margin: 64px auto 0; color: #f5f5f7; }
+.hero-phone .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s cubic-bezier(.6,0,.2,1) .3s forwards; }
+.hero-phone .draw.l { animation-delay: 1.1s; animation-duration: 1.6s; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.hero-glow { position: relative; }
+.hero-glow::before {
+  content: ""; position: absolute; left: 50%; top: 40%; width: 520px; height: 520px; max-width: 120vw; transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgba(0,113,227,.35), transparent); filter: blur(10px); pointer-events: none;
+}
+
+/* ---------- product drawings ---------- */
+.prod { display: block; width: 100%; height: auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.prod .f { fill: var(--fill); }
+.prod .scr { fill: var(--scr); stroke-width: 1; }
+.prod .dk { fill: #2b2b2e; }
+.prod .dk2 { fill: #48484c; }
+.prod .paper { fill: #efe4cf; stroke: #8a7a5c; }
+.prod .glass { fill: url(#glassG); }
+.prod .bondi { fill: url(#bondiG); }
+.prod .hl { stroke: rgba(255,255,255,.35); }
+.prod .thin { stroke-width: 1; }
+
+/* ---------- origin ---------- */
+.lineage { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px; margin-top: 64px; }
+.lin { background: var(--card); border-radius: 28px; padding: 32px 30px; }
+.lin .yr { font-size: 14px; color: var(--ink-3); font-weight: 600; font-variant-numeric: tabular-nums; }
+.lin h3 { font-size: 24px; margin: 6px 0 10px; }
+.lin p { margin: 0; color: var(--ink-2); font-size: 16px; line-height: 1.55; }
+.pair { margin-top: 20px; background: var(--card); border-radius: 28px; padding: clamp(28px, 5vw, 56px); display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; text-align: center; }
+.pair figure { margin: 0; }
+.pair .prod { max-width: 240px; margin: 0 auto; color: var(--ink); }
+.pair figcaption { margin-top: 12px; font-size: 14px; color: var(--ink-2); }
+.pair figcaption b { display: block; font-size: 19px; color: var(--ink); font-weight: 600; }
+.pair .vs { font-size: 15px; color: var(--ink-3); font-weight: 600; }
+.pair-note { grid-column: 1 / -1; margin: 8px auto 0; max-width: 36em; color: var(--ink-2); font-size: 16px; }
+
+/* ---------- bento ---------- */
+.bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; margin-top: 64px; }
+.tile { background: var(--card); border-radius: 28px; padding: 32px; overflow: hidden; position: relative; min-height: 380px; display: flex; flex-direction: column; }
+.tile .k { font-size: 14px; font-weight: 600; color: var(--ink-3); }
+.tile h3 { margin: 6px 0 10px; }
+.tile p { margin: 0; color: var(--ink-2); font-size: 16px; line-height: 1.55; }
+.t-space { grid-column: span 6; min-height: 460px; }
+.t-space .void { flex: 1; display: grid; place-items: center; font-size: clamp(28px, 4vw, 40px); font-weight: 600; letter-spacing: -.02em; }
+.t-round { grid-column: span 3; }
+.t-type { grid-column: span 3; }
+.t-mat { grid-column: span 6; }
+.t-bw { grid-column: span 6; padding: 0; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; }
+.t-bw > div { padding: 40px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+.t-bw .w { background: #fff; color: #1d1d1f; }
+.t-bw .b { background: #000; color: #f5f5f7; }
+.t-bw .prod { width: 120px; margin: 8px 0 4px; }
+.t-bw .w .prod .f { fill: #fbfbfd; } .t-bw .w .prod .scr { fill: #e8e8ed; }
+.t-bw .b .prod .f { fill: #2b2b2e; } .t-bw .b .prod .scr { fill: #3a3a3c; }
+.t-bw b { font-size: 21px; font-weight: 600; }
+.t-bw span { font-size: 14px; opacity: .65; }
+
+.sq-stage { flex: 1; display: grid; place-items: center; margin: 18px 0 14px; }
+.sq-stage svg { width: min(220px, 100%); height: auto; overflow: visible; }
+.sq-stage path { fill: none; stroke-width: 2.5; transition: opacity .5s, stroke .5s; }
+.sq-a { stroke: #ff375f; } .sq-b { stroke: var(--blue); }
+.seg { display: inline-flex; align-self: center; background: var(--bg-alt); border-radius: 999px; padding: 3px; gap: 2px; }
+.dark .seg, .tile .seg { background: color-mix(in srgb, var(--ink) 8%, transparent); }
+.seg button { border: 0; background: none; border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer; color: var(--ink-2); transition: background .3s, color .3s; white-space: nowrap; }
+.seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+.legend { display: flex; gap: 16px; justify-content: center; font-size: 13px; color: var(--ink-2); margin-top: 12px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+
+.spec { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 6px; margin: 18px 0; }
+.spec .big { font-size: clamp(56px, 8vw, 88px); font-weight: 700; letter-spacing: -.045em; line-height: 1; }
+.spec .mid { font-size: 24px; font-weight: 600; letter-spacing: -.02em; }
+.spec .sm { font-size: 12px; letter-spacing: .02em; color: var(--ink-2); }
+.weights { display: flex; gap: 14px; font-size: 26px; margin-top: 10px; flex-wrap: wrap; }
+.weights span:nth-child(1) { font-weight: 200; } .weights span:nth-child(2) { font-weight: 400; }
+.weights span:nth-child(3) { font-weight: 600; } .weights span:nth-child(4) { font-weight: 800; }
+
+.swatches { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 32px; }
+.sw { text-align: center; font-size: 13px; color: var(--ink-2); }
+.sw i { display: block; aspect-ratio: 1; border-radius: 50%; margin: 0 auto 10px; width: 100%; max-width: 96px;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,.6), inset 0 -2px 6px rgba(0,0,0,.18), 0 6px 16px rgba(0,0,0,.12); }
+.sw b { display: block; color: var(--ink); font-weight: 600; font-size: 14px; }
+
+/* ---------- product carousel ---------- */
+#products { padding-left: 0; padding-right: 0; }
+#products .in { padding: 0 22px; }
+.rail {
+  display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  padding: 64px max(22px, calc((100vw - 980px) / 2)) 24px; scroll-padding: 0 max(22px, calc((100vw - 980px) / 2));
+}
+.rail::-webkit-scrollbar { display: none; }
+.pcard {
+  flex: 0 0 auto; width: min(320px, 78vw); scroll-snap-align: start; background: var(--card); border-radius: 28px;
+  padding: 28px 28px 30px; display: flex; flex-direction: column; transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s;
+}
+.pcard:hover { transform: scale(1.015); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
+.pcard .yr { font-size: 14px; font-weight: 600; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.pcard h3 { font-size: 26px; margin: 4px 0 0; }
+.pcard .art { margin: 18px 0 18px; aspect-ratio: 1; display: grid; place-items: center; color: var(--ink); }
+.pcard .art .prod { width: 86%; }
+.pcard p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.rail-ctl { display: flex; justify-content: flex-end; gap: 14px; max-width: 980px; margin: 0 auto; padding: 0 22px; }
+.rail-ctl button {
+  width: 36px; height: 36px; border-radius: 50%; border: 0; cursor: pointer; background: color-mix(in srgb, var(--ink) 10%, transparent);
+  display: grid; place-items: center; transition: background .3s, opacity .3s;
+}
+.rail-ctl button:hover { background: color-mix(in srgb, var(--ink) 16%, transparent); }
+.rail-ctl button:disabled { opacity: .35; cursor: default; }
+.rail-ctl svg { width: 14px; height: 14px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- interface swing ---------- */
+.swing { margin: 56px auto 0; max-width: 760px; }
+.swing-bar { position: relative; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #a2845e, #8e8e93 50%, var(--blue)); }
+.swing-bar i { position: absolute; top: 50%; width: 14px; height: 14px; border-radius: 50%; background: var(--dark-ink); transform: translate(-50%, -50%); box-shadow: 0 0 0 4px rgba(255,255,255,.12); }
+.swing-ends { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-2); margin-top: 12px; }
+.phones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 64px; }
+.ph { text-align: center; }
+.ph .yr { display: block; font-size: 13px; color: var(--ink-2); font-weight: 600; margin-top: 22px; font-variant-numeric: tabular-nums; }
+.ph h3 { font-size: 22px; margin: 4px 0 8px; }
+.ph p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+.dev { width: 100%; max-width: 200px; margin: 0 auto; aspect-ratio: 9 / 19; border-radius: 34px; padding: 7px; background: #2c2c2e; box-shadow: inset 0 0 0 1.5px #5a5a5e, 0 20px 50px rgba(0,0,0,.5); }
+.scrn { width: 100%; height: 100%; border-radius: 27px; overflow: hidden; position: relative; display: flex; flex-direction: column; padding: 30px 12px 10px; }
+.scrn .bar { position: absolute; top: 9px; left: 50%; width: 32%; height: 12px; transform: translateX(-50%); border-radius: 8px; background: #000; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 9px; }
+.ico { aspect-ratio: 1; border-radius: 24%; }
+.dock { margin-top: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; padding: 8px; border-radius: 20px; }
+.widget { height: 22%; border-radius: 16px; margin-bottom: 14px; }
+
+.u1 .scrn { background: repeating-linear-gradient(45deg, #2f3238 0 2px, #383c43 2px 4px); }
+.u1 .ico { border-radius: 22%; box-shadow: 0 2px 3px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.5); background-image: linear-gradient(180deg, rgba(255,255,255,.55) 0 46%, rgba(255,255,255,.08) 50%, rgba(0,0,0,.15)); }
+.u1 .dock { border-radius: 0; margin: auto -12px -10px; padding: 12px 20px 14px; background: linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,.1) 40%, rgba(0,0,0,.4)); border-top: 1px solid rgba(255,255,255,.5); }
+.u1 .widget { background: linear-gradient(#8b5a35, #6b4226); border: 1.5px dashed rgba(255,230,190,.55); outline: 3px solid #6b4226; outline-offset: -5px; box-shadow: 0 2px 4px rgba(0,0,0,.6); }
+
+.u2 .scrn { background: linear-gradient(160deg, #d3e8f8, #f3dbe8 60%, #fbefd8); }
+.u2 .ico { border-radius: 24%; }
+.u2 .dock { background: rgba(255,255,255,.55); border-radius: 0; margin: auto -12px -10px; padding: 12px 20px 14px; }
+.u2 .widget { background: rgba(255,255,255,.7); border-radius: 4px; }
+
+.u3 .scrn { background: linear-gradient(170deg, #1b2a4a, #0e1424); }
+.u3 .ico { box-shadow: 0 4px 10px rgba(0,0,0,.45); }
+.u3 .dock { background: rgba(255,255,255,.14); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.u3 .widget { background: linear-gradient(135deg, #ff9f0a, #ff375f); box-shadow: 0 8px 18px rgba(0,0,0,.5); }
+
+.u4 .scrn { background: radial-gradient(circle at 20% 20%, #ff6b9a, transparent 45%), radial-gradient(circle at 85% 40%, #5ac8fa, transparent 50%), radial-gradient(circle at 40% 90%, #ffd60a, transparent 50%), #5e5ce6; }
+.u4 .ico, .u4 .dock, .u4 .widget {
+  background: rgba(255,255,255,.18) !important; backdrop-filter: blur(8px) saturate(160%); -webkit-backdrop-filter: blur(8px) saturate(160%);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,.8), inset 0 -1px 2px rgba(255,255,255,.25), 0 6px 14px rgba(0,0,0,.18);
+}
+.u4 .dock { border-radius: 24px; }
+.u4 .widget { border-radius: 20px; }
+
+/* ---------- logic ---------- */
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 64px; }
+.trio > div { background: var(--bg-alt);border-radius: 28px; padding: 36px 30px; }
+.trio svg { width: 56px; height: 56px; fill: none; stroke: var(--blue); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 20px; }
+.trio h3 { font-size: 24px; margin-bottom: 10px; }
+.trio p { margin: 0; color: var(--ink-2); font-size: 16px; line-height: 1.55; }
+.big-quote { margin: 72px auto 0; max-width: 820px; text-align: center; font-size: clamp(28px, 4.4vw, 48px); font-weight: 700; letter-spacing: -.03em; line-height: 1.2; }
+.big-quote span { color: var(--ink-2); }
+
+/* ---------- cost ---------- */
+.costs { margin-top: 56px; border-top: 1px solid var(--line); }
+.cost { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.cost b { font-size: 21px; font-weight: 600; letter-spacing: -.02em; }
+.cost p { margin: 0; color: var(--ink-2); font-size: 17px; }
+.verdict { margin: 72px auto 0; text-align: center; font-size: clamp(26px, 4vw, 44px); font-weight: 700; letter-spacing: -.03em; line-height: 1.25; max-width: 18em; }
+.verdict .g { background: linear-gradient(90deg, #30d158, #64d2ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.verdict .r { background: linear-gradient(90deg, #ff9f0a, #ff375f); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* ---------- takeaways ---------- */
+.tips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 64px; counter-reset: tip; }
+.tip { background: var(--card); border-radius: 28px; padding: 32px 30px 34px; counter-increment: tip; }
+.tip::before { content: counter(tip, decimal-leading-zero); display: block; font-size: 15px; font-weight: 600; color: var(--blue); margin-bottom: 40px; font-variant-numeric: tabular-nums; }
+.tip h3 { font-size: 22px; margin-bottom: 8px; }
+.tip p { margin: 0; color: var(--ink-2); font-size: 15px; line-height: 1.55; }
+
+/* ---------- footer ---------- */
+footer { background: var(--bg-alt); color: var(--ink-3); font-size: 12px; line-height: 1.7; padding: 28px 22px 40px; }
+footer .in { border-top: 1px solid var(--line); padding-top: 18px; }
+footer p { margin: 0 0 6px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .t-round, .t-type { grid-column: span 6; }
+  .phones { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; }
+  .trio, .tips { grid-template-columns: 1fr; }
+  .swatches { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .nav ul { display: none; }
+  .pair { grid-template-columns: 1fr; }
+  .t-bw { grid-template-columns: 1fr; }
+  .cost { grid-template-columns: 1fr; gap: 6px; }
+  .tile { padding: 28px 24px; min-height: 0; }
+  .t-space { min-height: 320px; }
+  .lin { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="bondiG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9f6f9" stop-opacity=".9"/>
+      <stop offset=".55" stop-color="#9fd8e3" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#0095b6" stop-opacity=".75"/>
+    </linearGradient>
+    <linearGradient id="glassG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5a5a60"/>
+      <stop offset=".5" stop-color="#1c1c1e"/>
+      <stop offset="1" stop-color="#3a3a40"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<nav class="nav" aria-label="章节">
+  <div class="nav-in">
+    <b>苹果的审美</b>
+    <ul>
+      <li><a href="#origin">源头</a></li>
+      <li><a href="#language">视觉语言</a></li>
+      <li><a href="#products">产品</a></li>
+      <li><a href="#interface">界面</a></li>
+      <li><a href="#logic">商业</a></li>
+      <li><a href="#cost">代价</a></li>
+      <li><a href="#takeaways">借鉴</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="in">
+    <p class="eyebrow rv">分析苹果的审美</p>
+    <h1 class="rv d1">少，但更好。</h1>
+    <p class="lede rv d2">苹果卖的是一种克制的奢侈：<strong style="color:#f5f5f7">把复杂藏起来，把注意力留给人和内容。</strong></p>
+  </div>
+  <div class="hero-glow">
+    <svg class="prod hero-phone" viewBox="0 0 200 300" aria-hidden="true" style="stroke-width:1.1">
+      <rect class="draw" pathLength="1" x="30" y="10" width="140" height="300" rx="30"/>
+      <rect class="draw l" pathLength="1" x="36" y="16" width="128" height="300" rx="25"/>
+      <rect class="draw l" pathLength="1" x="82" y="26" width="36" height="11" rx="5.5"/>
+      <path class="draw l" pathLength="1" d="M171 90v34M29 80v14M29 104v24"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ORIGIN -->
+<section id="origin" class="alt">
+  <div class="in">
+    <p class="eyebrow rv">源头</p>
+    <h2 class="rv d1">极简，不是<br>少放东西。</h2>
+    <p class="lede rv d2">苹果的审美有清楚的来路。它要求的是：<strong>每一样东西都有存在的理由</strong>，说不出理由的就拿掉。</p>
+
+    <div class="lineage">
+      <div class="lin rv"><span class="yr">1919 · 德国</span><h3>包豪斯</h3><p>形式追随功能。去掉装饰，让结构本身成为美。</p></div>
+      <div class="lin rv d1"><span class="yr">1955– · Braun</span><h3>Dieter Rams</h3><p>“少，但更好。”早期 iPod 和 iOS 计算器，几乎就是在向 Braun 致敬。</p></div>
+      <div class="lin rv d2"><span class="yr">禅 · 侘寂</span><h3>日本美学</h3><p>乔布斯深受禅宗影响，偏爱空、静和一个焦点。留白本身就是内容。</p></div>
+      <div class="lin rv"><span class="yr">1972 · 里德学院</span><h3>一堂书法课</h3><p>乔布斯旁听过书法课。后来 Mac 成了第一台认真对待字体的电脑。</p></div>
+      <div class="lin rv d1"><span class="yr">1992–2019</span><h3>Jony Ive</h3><p>材料和工艺。一体成型铝机身：东西怎么做出来，就该长成什么样。</p></div>
+    </div>
+
+    <div class="pair rv">
+      <figure>
+        <svg class="prod" viewBox="0 0 200 200" aria-label="Braun 便携收音机线稿" id="braun"></svg>
+        <figcaption><b>1958</b>Braun 便携收音机</figcaption>
+      </figure>
+      <span class="vs">→ 43 年 →</span>
+      <figure>
+        <svg class="prod" viewBox="0 0 200 200" aria-label="iPod 线稿" data-p="ipod"></svg>
+        <figcaption><b>2001</b>iPod</figcaption>
+      </figure>
+      <p class="pair-note">左边一块格栅，右边一个圆形转盘，正面没有多余的东西。两者隔了四十多年，长得像同一家人。</p>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGE -->
+<section id="language">
+  <div class="in">
+    <p class="eyebrow rv">视觉语言</p>
+    <h2 class="rv d1">在看不见的地方<br>较真。</h2>
+    <p class="lede rv d2">留白、圆角、字体、材料、黑白。每一项单拎出来都很普通，<strong>但它们放在一起，就成了一种辨识度。</strong></p>
+
+    <div class="bento">
+      <div class="tile alt t-space rv" style="background:var(--bg-alt)">
+        <span class="k">留白</span>
+        <h3>一屏，只讲一件事。</h3>
+        <p>一张大图，一句短标题，大量空白。空白在传达自信：我不需要堆卖点。</p>
+        <div class="void">一件事。</div>
+      </div>
+
+      <div class="tile t-round rv" style="background:var(--bg-alt)">
+        <span class="k">圆角</span>
+        <h3>连续曲率</h3>
+        <p>普通圆角在直线和圆弧相接处曲率会突变。苹果的圆角是平滑过渡的，看起来更像一个整体。</p>
+        <div class="sq-stage">
+          <svg viewBox="-110 -110 220 220" aria-label="普通圆角与连续曲率圆角的对比">
+            <path class="sq-a" id="sqA"/>
+            <path class="sq-b" id="sqB"/>
+          </svg>
+        </div>
+        <div class="seg" role="group" aria-label="切换圆角">
+          <button type="button" data-sq="a" aria-pressed="false">普通圆角</button>
+          <button type="button" data-sq="both" aria-pressed="true">叠在一起</button>
+          <button type="button" data-sq="b" aria-pressed="false">连续曲率</button>
+        </div>
+        <div class="legend"><span><i style="background:#ff375f"></i>普通</span><span><i style="background:var(--blue)"></i>连续</span></div>
+      </div>
+
+      <div class="tile t-type rv d1" style="background:var(--bg-alt)">
+        <span class="k">字体</span>
+        <h3>标题大胆，正文克制</h3>
+        <p>层级靠字号和字重拉开，不靠颜色。SF Pro 还会按字号调字距：大字收紧，小字放松。</p>
+        <div class="spec">
+          <div class="big">Aa 苹方</div>
+          <div class="mid">大字收紧一点</div>
+          <div class="sm">小字放松一点，才看得清</div>
+          <div class="weights"><span>细</span><span>常</span><span>中</span><span>粗</span></div>
+        </div>
+      </div>
+
+      <div class="tile t-mat rv" style="background:var(--bg-alt)">
+        <span class="k">材料</span>
+        <h3>颜色是从材料里长出来的。</h3>
+        <p>苹果很少“涂颜色”。铝是银色，钛是灰色，玻璃是透明的。就算出彩色款，饱和度也压得很低。</p>
+        <div class="swatches">
+          <div class="sw"><i style="background:radial-gradient(circle at 35% 30%,#fff,#d6d7d9 45%,#a9abae)"></i><b>银</b>铝</div>
+          <div class="sw"><i style="background:radial-gradient(circle at 35% 30%,#a5a6a8,#6e6f72 45%,#45464a)"></i><b>深空灰</b>阳极氧化铝</div>
+          <div class="sw"><i style="background:radial-gradient(circle at 35% 30%,#5a6474,#2e3642 50%,#1b2029)"></i><b>午夜</b>低饱和深蓝</div>
+          <div class="sw"><i style="background:radial-gradient(circle at 35% 30%,#fffaf0,#efe3cf 50%,#d4c4a8)"></i><b>星光</b>暖白</div>
+          <div class="sw"><i style="background:radial-gradient(circle at 35% 30%,#dce8f3,#a7c1d9 50%,#7c98b3)"></i><b>远峰蓝</b>灰调蓝</div>
+          <div class="sw"><i style="background:radial-gradient(circle at 35% 30%,#e7e2da,#bfb8ad 50%,#8f887d)"></i><b>原色钛</b>金属本色</div>
+        </div>
+      </div>
+
+      <div class="tile t-bw rv">
+        <div class="w">
+          <svg class="prod" viewBox="0 0 200 200" aria-hidden="true" data-p="ipod"></svg>
+          <b>白</b><span>纯净，科技里的无菌室</span>
+        </div>
+        <div class="b">
+          <svg class="prod" viewBox="0 0 200 200" aria-hidden="true" data-p="ipod"></svg>
+          <b>黑</b><span>专业、沉稳、Pro</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="alt">
+  <div class="in">
+    <p class="eyebrow rv">产品</p>
+    <h2 class="rv d1">四十年，<br>同一种克制。</h2>
+    <p class="lede rv d2">往右滑，看一看每一件产品各自<strong>拿掉了什么</strong>。</p>
+  </div>
+  <div class="rail" id="rail" tabindex="0" aria-label="产品时间线，可左右滑动"></div>
+  <div class="rail-ctl">
+    <button type="button" id="prev" aria-label="上一个"><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5"/></svg></button>
+    <button type="button" id="next" aria-label="下一个"><svg viewBox="0 0 16 16"><path d="m6 3 5 5-5 5"/></svg></button>
+  </div>
+</section>
+
+<!-- INTERFACE -->
+<section id="interface" class="dark">
+  <div class="in center">
+    <p class="eyebrow rv">界面</p>
+    <h2 class="rv d1">像现实，<br>还是像屏幕？</h2>
+    <p class="lede rv d2">苹果的界面在两头之间来回摆。<strong style="color:var(--dark-ink)">用户需要引导时就像现实，熟练之后就去掉装饰，太素了再把触感加回来。</strong></p>
+    <div class="swing rv">
+      <div class="swing-bar"><i style="left:6%"></i><i style="left:94%"></i><i style="left:58%"></i><i style="left:30%"></i></div>
+      <div class="swing-ends"><span>像真实物体</span><span>纯数字</span></div>
+    </div>
+  </div>
+  <div class="in">
+    <div class="phones">
+      <div class="ph rv"><div class="dev u1"><div class="scrn" data-ui></div></div><span class="yr">2007 – 2012</span><h3>拟物化</h3><p>皮革、木纹、毛毡。第一次摸触屏的人需要熟悉感。</p></div>
+      <div class="ph rv d1"><div class="dev u2"><div class="scrn" data-ui></div></div><span class="yr">2013 · iOS 7</span><h3>扁平化</h3><p>纹理全部去掉，换成细字和模糊。用户已经会用了。</p></div>
+      <div class="ph rv d2"><div class="dev u3"><div class="scrn" data-ui></div></div><span class="yr">2014 – 2024</span><h3>立体回归</h3><p>字变粗，阴影和卡片回来了，修正太“飘”的问题。</p></div>
+      <div class="ph rv d3"><div class="dev u4"><div class="scrn" data-ui></div></div><span class="yr">2025 · Liquid Glass</span><h3>新拟物</h3><p>界面像一块会折射的玻璃。模仿的是苹果自己的硬件。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGIC -->
+<section id="logic">
+  <div class="in">
+    <p class="eyebrow rv">商业</p>
+    <h2 class="rv d1">审美，就是<br>溢价本身。</h2>
+    <p class="lede rv d2">芯片、硬件、系统、包装、门店都在自己手里，审美才能从头统一到尾。<strong>极简的意思是：我们替你做了取舍。</strong></p>
+    <div class="trio">
+      <div class="rv">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8 22h40v26a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2z"/><path d="M6 14h44v8H6z"/><path d="M20 10l8 4 8-4"/></svg>
+        <h3>开箱是一场仪式</h3><p>盒盖缓缓滑落的阻尼是设计出来的。打开盒子的那几秒，也算产品的一部分。</p>
+      </div>
+      <div class="rv d1">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><path d="M10 20 28 10l18 10v22L28 52 10 42z"/><path d="M10 20l18 10 18-10M28 30v22"/></svg>
+        <h3>门店是展柜</h3><p>浅色木桌、大块玻璃、通透的空间。店本身就是一件放大的苹果产品。</p>
+      </div>
+      <div class="rv d2">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><rect x="6" y="16" width="44" height="30" rx="6"/><circle cx="28" cy="31" r="9"/><path d="M20 16l3-6h10l3 6"/></svg>
+        <h3>广告讲感受</h3><p>少讲参数，多用用户拍的照片当广告。产品自己退到后面。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST -->
+<section id="cost" class="dark">
+  <div class="in">
+    <p class="eyebrow rv">代价</p>
+    <h2 class="rv d1">好看，<br>有时不好用。</h2>
+    <div class="costs">
+      <div class="cost rv"><b>执着于薄</b><p>蝶式键盘（2015–2019）故障频发，最后整条产品线退回剪刀式键盘。</p></div>
+      <div class="cost rv"><b>反常识的细节</b><p>Magic Mouse 的充电口在底部，充电的时候不能用。</p></div>
+      <div class="cost rv"><b>把妥协包装成设计</b><p>刘海一开始是没办法的办法，后来变成了灵动岛，成了一种设计语言。</p></div>
+      <div class="cost rv"><b>透明的可读性</b><p>Liquid Glass 叠在复杂背景上时文字对比度下降，测试版里改过好几次。</p></div>
+      <div class="cost rv"><b>行业同质化</b><p>它影响太大，整个行业的手机、官网、图标都越来越像苹果。</p></div>
+    </div>
+    <p class="verdict rv">最好的设计，是<span class="g">功能定义形式</span>；<br>最差的设计，是<span class="r">形式绑架功能</span>。</p>
+  </div>
+</section>
+
+<!-- TAKEAWAYS -->
+<section id="takeaways" class="alt">
+  <div class="in">
+    <p class="eyebrow rv">借鉴</p>
+    <h2 class="rv d1">拿回去用的<br>六件事。</h2>
+    <p class="lede rv d2">做网站、做作品都能用。这一页就是照着这六条做的。</p>
+    <div class="tips">
+      <div class="tip rv"><h3>一屏一个重点</h3><p>敢于留白，不怕空。删掉的东西越多，剩下的越清楚。</p></div>
+      <div class="tip rv d1"><h3>字号对比要大</h3><p>标题大胆，正文克制。层级用字号和字重拉开，不靠颜色。</p></div>
+      <div class="tip rv d2"><h3>颜色要少</h3><p>一个中性底色，一个强调色。饱和度往低处放。</p></div>
+      <div class="tip rv"><h3>圆角统一</h3><p>全站同一套圆角半径，最好用平滑过渡的圆角。</p></div>
+      <div class="tip rv d1"><h3>动效要有物理感</h3><p>缓入缓出，带一点阻尼。不做没有意义的弹跳。</p></div>
+      <div class="tip rv d2"><h3>删比加重要</h3><p>每一个元素都问一句：它为什么在这里？</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="in">
+    <p>本页所有产品插画都是用代码手绘的示意线稿，不是官方图片，比例和细节都做了简化。</p>
+    <p>Apple、iPhone、iPod、iPad、Mac、Apple Watch、AirPods、Vision Pro 是 Apple Inc. 的商标。本文是个人随笔，与 Apple 无关。</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* ---------- product drawings (viewBox 0 0 200 200) ---------- */
+  var P = {
+    mac: '<rect class="f" x="52" y="16" width="96" height="142" rx="8"/><rect x="63" y="28" width="74" height="60" rx="6"/><rect class="scr" x="69" y="34" width="62" height="48" rx="2"/><path d="M110 122h24"/><path class="thin" d="M62 146h8"/><path class="f" d="M56 158l4 14h80l4-14"/>',
+    imac: '<path class="bondi" d="M42 34q0-16 16-16h84q16 0 16 16l8 108q2 20-18 20H52q-20 0-18-20z"/><rect class="f" x="56" y="30" width="88" height="70" rx="10"/><rect class="scr" x="63" y="37" width="74" height="56" rx="3"/><path d="M86 136h28"/><path class="thin" d="M76 162l-6 16h60l-6-16"/>',
+    ipod: '<rect class="f" x="64" y="14" width="72" height="172" rx="14"/><rect class="scr" x="73" y="26" width="54" height="44" rx="4"/><circle cx="100" cy="130" r="31"/><circle cx="100" cy="130" r="11"/>',
+    iphone: '<rect class="f" x="64" y="8" width="72" height="184" rx="17"/><rect class="scr" x="71" y="32" width="58" height="136" rx="2"/><path d="M91 20h18"/><circle cx="100" cy="180" r="6.5"/>',
+    air: '<path class="paper" d="M26 76l22-30h104l22 30"/><rect class="f" x="40" y="30" width="120" height="74" rx="5"/><path class="thin" d="M40 38h120"/><path class="paper" d="M26 76h148v94a4 4 0 0 1-4 4H30a4 4 0 0 1-4-4z"/><path class="paper" style="fill:none" d="M26 78l74 52 74-52"/>',
+    ipad: '<rect class="f" x="40" y="16" width="120" height="168" rx="13"/><rect class="scr" x="50" y="29" width="100" height="136" rx="2"/><circle cx="100" cy="174" r="5"/>',
+    macpro: '<path class="dk" d="M62 36v126a38 10 0 0 0 76 0V36"/><ellipse class="dk2" cx="100" cy="36" rx="38" ry="10"/><ellipse class="dk" cx="100" cy="36" rx="22" ry="5.5"/><path class="hl" d="M76 48v112M124 48v112"/>',
+    watch: '<path class="f" d="M76 62V22q0-10 10-10h28q10 0 10 10v40"/><path class="f" d="M76 138v40q0 10 10 10h28q10 0 10-10v-40"/><rect class="f" x="64" y="56" width="72" height="88" rx="20"/><rect class="scr" x="72" y="64" width="56" height="72" rx="14"/><rect x="136" y="84" width="6" height="16" rx="2"/><path d="M138 110v8"/>',
+    airpods: '<rect class="f" x="70" y="76" width="13" height="88" rx="6.5"/><circle class="f" cx="80" cy="64" r="18"/><circle class="scr" cx="86" cy="62" r="5"/><rect class="f" x="117" y="76" width="13" height="88" rx="6.5"/><circle class="f" cx="120" cy="64" r="18"/><circle class="scr" cx="114" cy="62" r="5"/>',
+    vision: '<path class="thin" d="M30 110q-12 34 28 46h84q40-12 28-46"/><path class="glass" d="M26 100q0-36 46-36h56q46 0 46 36q0 34-38 34q-20 0-36-14q-16 14-36 14q-38 0-38-34z"/><path class="hl" d="M44 84q16-10 40-10"/><rect x="166" y="62" width="10" height="7" rx="3"/>'
+  };
+  var products = [
+    ['1984', 'Macintosh', 'mac', '一体式机身，把屏幕、主机、软驱塞进一个米色盒子。电脑第一次有了一张“脸”。'],
+    ['1998', 'iMac G3', 'imac', '半透明的邦迪蓝塑料，让人看得见里面。电脑从灰盒子变成了可以摆在家里的东西。'],
+    ['2001', 'iPod', 'ipod', '一块屏幕，一个转盘。把一千首歌装进口袋，却只给你一种操作方式。'],
+    ['2007', 'iPhone', 'iphone', '正面只剩一块玻璃和一个按键。键盘交给软件，屏幕就是全部。'],
+    ['2008', 'MacBook Air', 'air', '从牛皮纸信封里拿出来的笔记本。用一个动作讲完了“薄”。'],
+    ['2010', 'iPad', 'ipad', '没有键盘，没有支架，只有一块可以捧在手里的屏幕。'],
+    ['2013', 'Mac Pro', 'macpro', '一根黑色圆柱，散热、结构、外形是同一件事。好看，代价是很难扩展。'],
+    ['2015', 'Apple Watch', 'watch', '把圆角矩形缩到手腕上，表冠留下来，变成新的滚轮。'],
+    ['2016', 'AirPods', 'airpods', '去掉那根线。刚出来时被笑像牙刷头，后来满街都是。'],
+    ['2024', 'Vision Pro', 'vision', '一整块弯曲玻璃加铝框，把手机上那套材料语言戴到了脸上。']
+  ];
+
+  document.querySelectorAll('svg[data-p]').forEach(function (s) { s.innerHTML = P[s.getAttribute('data-p')]; });
+
+  var rail = document.getElementById('rail');
+  rail.innerHTML = products.map(function (p) {
+    return '<article class="pcard"><span class="yr">' + p[0] + '</span><h3>' + p[1] + '</h3>' +
+      '<div class="art"><svg class="prod" viewBox="0 0 200 200" role="img" aria-label="' + p[1] + ' 线稿">' + P[p[2]] + '</svg></div>' +
+      '<p>' + p[3] + '</p></article>';
+  }).join('');
+
+  var prev = document.getElementById('prev'), next = document.getElementById('next');
+  function step() { var c = rail.querySelector('.pcard'); return c ? c.getBoundingClientRect().width + 20 : 300; }
+  function sync() {
+    prev.disabled = rail.scrollLeft < 4;
+    next.disabled = rail.scrollLeft + rail.clientWidth > rail.scrollWidth - 4;
+  }
+  prev.onclick = function () { rail.scrollBy({ left: -step(), behavior: 'smooth' }); };
+  next.onclick = function () { rail.scrollBy({ left: step(), behavior: 'smooth' }); };
+  rail.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync);
+  sync();
+
+  /* ---------- Braun radio ---------- */
+  var b = '<rect class="f" x="28" y="56" width="144" height="88" rx="8"/>';
+  for (var r = 0; r < 6; r++) for (var c = 0; c < 8; c++)
+    b += '<circle cx="' + (44 + c * 9) + '" cy="' + (73 + r * 11) + '" r="2" style="fill:currentColor;stroke:none"/>';
+  b += '<circle cx="144" cy="100" r="20"/><circle cx="144" cy="100" r="5"/><path class="thin" d="M144 80v6"/>';
+  document.getElementById('braun').innerHTML = b;
+
+  /* ---------- squircle vs rounded rect ---------- */
+  var S = 90, R = 40;
+  var a = 'M' + (-S + R) + ' ' + (-S) + 'H' + (S - R) + 'A' + R + ' ' + R + ' 0 0 1 ' + S + ' ' + (-S + R) +
+    'V' + (S - R) + 'A' + R + ' ' + R + ' 0 0 1 ' + (S - R) + ' ' + S + 'H' + (-S + R) +
+    'A' + R + ' ' + R + ' 0 0 1 ' + (-S) + ' ' + (S - R) + 'V' + (-S + R) + 'A' + R + ' ' + R + ' 0 0 1 ' + (-S + R) + ' ' + (-S) + 'Z';
+  var n = 4.2, pts = [];
+  for (var i = 0; i <= 360; i++) {
+    var t = i / 360 * Math.PI * 2, ct = Math.cos(t), st = Math.sin(t);
+    pts.push((Math.sign(ct) * Math.pow(Math.abs(ct), 2 / n) * S).toFixed(2) + ' ' + (Math.sign(st) * Math.pow(Math.abs(st), 2 / n) * S).toFixed(2));
+  }
+  var sqA = document.getElementById('sqA'), sqB = document.getElementById('sqB');
+  sqA.setAttribute('d', a);
+  sqB.setAttribute('d', 'M' + pts.join('L') + 'Z');
+  document.querySelectorAll('[data-sq]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var m = btn.getAttribute('data-sq');
+      document.querySelectorAll('[data-sq]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === btn)); });
+      sqA.style.opacity = m === 'b' ? 0 : 1;
+      sqB.style.opacity = m === 'a' ? 0 : 1;
+    });
+  });
+
+  /* ---------- phone UIs ---------- */
+  var cols = ['#34c759', '#0a84ff', '#ff9f0a', '#ff375f', '#5e5ce6', '#64d2ff', '#ffd60a', '#bf5af2', '#ff6482', '#30d158', '#ac8e68', '#8e8e93'];
+  var flat = ['#4cd964', '#5ac8fa', '#ff9500', '#ff2d55', '#5856d6', '#34aadc', '#ffcc00', '#c644fc', '#ff3b30', '#4cd964', '#8e8e93', '#007aff'];
+  document.querySelectorAll('[data-ui]').forEach(function (el, k) {
+    var pal = k === 1 ? flat : cols, h = '<span class="bar"></span>';
+    if (k !== 1) h += '<div class="widget"></div>';
+    h += '<div class="grid">';
+    for (var j = 0; j < (k === 1 ? 12 : 8); j++) h += '<i class="ico" style="background-color:' + pal[j] + '"></i>';
+    h += '</div><div class="dock">';
+    for (var d = 0; d < 4; d++) h += '<i class="ico" style="background-color:' + pal[(d * 3 + 1) % 12] + '"></i>';
+    el.innerHTML = h + '</div>';
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('on'); }); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+</body>
+</html>
