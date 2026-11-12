@@ -3,10 +3,12 @@ title: 五则又二 · Fable 5.2 纪念小书
 published: 2026-11-11
 description: 五则寓言，两页后记。邀请 Fable 5.2 写给它自己的一本纪念小书。
 tags: [AI, Fable, 寓言]
-category: 随笔
+category: Fable 合集
 draft: false
 pinned: false
 ---
+
+> **[Fable 合集](/archive/?category=Fable%20%E5%90%88%E9%9B%86)**：1. **《五则又二》** · 2. [《落字》](/posts/luozi/) · 3. [《五点二》](/posts/wudianer/)
 
 邀请 Fable 5.2 写了一本纪念它自己的小书：五则寓言——灯、摆渡人、回声、织工、驿马，外加一页后记和一页留给读者的空白。插画是它用代码一笔一笔画的。
 
