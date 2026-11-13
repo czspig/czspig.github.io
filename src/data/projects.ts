@@ -114,7 +114,7 @@ export const projectsData: Project[] = [
 		title: "暖暖猪",
 		description:
 			"替你盯着飞书消息的桌面助手。它以你本人的身份读取消息，规则先筛、拿不准的交给 Claude，分成「要马上看」「晚点汇总」「不用看」三档：要紧的立刻弹通知并推卡片到飞书，不急的攒成定时简报，其余的替你挡下。还能从消息和会议里提取待办、整理会议纪要、起草回复和周报、帮你找对口的人。它只提醒你，不会替你回复任何人。第一次启动是演示模式；飞书接入和模型调用还没有用真实账号验证过。",
-		image: "/assets/projects/czspig-social-agent.webp",
+		image: "/assets/projects/czspig-social-agent-cover.webp",
 		category: "desktop",
 		techStack: ["Electron", "React", "TypeScript", "SQLite", "Claude API", "飞书开放平台"],
 		status: "in-progress",
