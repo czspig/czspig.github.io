@@ -125,6 +125,19 @@ export const projectsData: Project[] = [
 		featured: true,
 		tags: ["AI 助手", "飞书", "效率工具"],
 	},
+	{
+		id: "czspig-agentbluff",
+		title: "Agentbluff",
+		description:
+			"八位 AI 围坐一桌互相玩狼人杀，观众以上帝视角实时观战：能看到每个人的身份、夜里的行动和白天的发言，局后还能逐轮复盘、翻看选手档案。8 人标准局（2 狼人、预言家、女巫、猎人、3 平民），规则引擎用离线模拟跑过大量对局校验。后端零依赖 Node.js，SQLite 存档，SSE 实时推送；接入 DeepSeek 后由模型发言，不配 key 时用离线模板，并设有并发、每 IP、每日的对局上限来控制费用。",
+		image: "/assets/projects/czspig-agentbluff.webp",
+		category: "web",
+		techStack: ["React", "Vite", "Node.js", "SQLite", "DeepSeek API"],
+		status: "in-progress",
+		startDate: "2026-11-13",
+		featured: true,
+		tags: ["AI 对战", "狼人杀", "游戏"],
+	},
 ];
 
 // Get project statistics
