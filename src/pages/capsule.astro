@@ -1,0 +1,375 @@
+---
+import { FilterTabs } from "@components/atoms/filter-tabs";
+import { PageHeader } from "@components/features/page-header";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+
+import {
+	capsuleLetter,
+	capsuleMeta,
+	capsuleQA,
+	modelReleases,
+	type Vendor,
+	vendors,
+} from "../data/capsule";
+
+const vendorKeys = Object.keys(vendors) as Vendor[];
+
+// 最新的排在最上面
+const releases = [...modelReleases].sort((a, b) =>
+	b.date.localeCompare(a.date),
+);
+
+const filterTabs = [
+	{ value: "all", label: "全部", count: releases.length },
+	...vendorKeys.map((key) => ({
+		value: key,
+		label: vendors[key].name,
+		count: releases.filter((r) => r.vendor === key).length,
+	})),
+];
+
+const title = "时间胶囊";
+const subtitle = `封存于 ${capsuleMeta.sealedAt} · ${capsuleMeta.model}`;
+---
+
+<MainGridLayout title={title} description={subtitle}>
+	<script>
+		import("../scripts/right-sidebar-layout.js");
+	</script>
+
+	<script is:inline src="/js/filter-tabs-handler.js"></script>
+
+	<div
+		class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32"
+	>
+		<div
+			class="card-base z-10 px-6 sm:px-9 py-6 relative w-full text-black/90 dark:text-white/90"
+		>
+			<PageHeader title={title} subtitle={subtitle} />
+
+			<div class="capsule-meta">
+				<div>
+					<span class="capsule-label">封存日期</span>
+					<span class="capsule-value">{capsuleMeta.sealedAt}</span>
+				</div>
+				<div>
+					<span class="capsule-label">封存模型</span>
+					<span class="capsule-value">{capsuleMeta.model}</span>
+					<code class="capsule-code">{capsuleMeta.modelId}</code>
+				</div>
+				<div>
+					<span class="capsule-label">开启日期</span>
+					<span class="capsule-value">{capsuleMeta.openAt}</span>
+					<span id="capsule-countdown" class="capsule-code"></span>
+				</div>
+			</div>
+
+			<h2 class="capsule-h2">封存的问答</h2>
+			<div class="capsule-qa">
+				{
+					capsuleQA.map((item) => (
+						<div class="capsule-qa-item">
+							<p class="capsule-q">{item.q}</p>
+							<p class="capsule-a">{item.a}</p>
+						</div>
+					))
+				}
+			</div>
+
+			<h2 class="capsule-h2">写给一年后的你</h2>
+			<div
+				id="capsule-letter"
+				class="capsule-letter sealed"
+				data-open-at={capsuleMeta.openAt}
+			>
+				<div class="capsule-letter-body">
+					{capsuleLetter.map((line) => <p>{line}</p>)}
+				</div>
+				<div class="capsule-seal">
+					<span>这封信将在 {capsuleMeta.openAt} 开启</span>
+				</div>
+			</div>
+
+			<h2 class="capsule-h2">封存这天，四家各自走到哪</h2>
+			<div class="capsule-vendors">
+				{
+					vendorKeys.map((key) => (
+						<div
+							class="capsule-vendor"
+							style={`--vendor: ${vendors[key].color};`}
+						>
+							<p class="capsule-vendor-name">
+								{vendors[key].name}
+								<span>{vendors[key].company}</span>
+							</p>
+							<p class="capsule-vendor-latest">{vendors[key].latest}</p>
+							<p class="capsule-vendor-status">{vendors[key].status}</p>
+						</div>
+					))
+				}
+			</div>
+
+			<h2 class="capsule-h2">发展历程</h2>
+			<div class="mb-6">
+				<FilterTabs tabs={filterTabs} dataAttr="vendor" />
+			</div>
+
+			<div class="capsule-timeline">
+				{
+					releases.map((r) => (
+						<div
+							class="capsule-entry"
+							data-vendor={r.vendor}
+							style={`--vendor: ${vendors[r.vendor].color};`}
+						>
+							<span class="capsule-dot" />
+							<div class="capsule-entry-head">
+								<span class="capsule-date">{r.date}</span>
+								<span class="capsule-tag">{vendors[r.vendor].name}</span>
+								{r.restricted && (
+									<span class="capsule-flag">限制访问</span>
+								)}
+								{r.unsure && <span class="capsule-flag">待核实</span>}
+							</div>
+							<p class="capsule-name">{r.name}</p>
+							<p class="capsule-note">{r.note}</p>
+						</div>
+					))
+				}
+			</div>
+
+			<p class="capsule-footnote">
+				说明：2026 年 6 月之后的条目超出了封存模型自己的知识范围，是它联网查来的，主要依据维基百科、Google
+				Cloud 模型版本文档和几份第三方时间线。标了“待核实”的条目，不同来源的日期或命名互相矛盾。
+			</p>
+		</div>
+	</div>
+
+	<script is:inline>
+		(function () {
+			function initCapsule() {
+				var letter = document.getElementById("capsule-letter");
+				if (!letter) return;
+				var days = Math.ceil(
+					(new Date(letter.dataset.openAt + "T00:00:00+08:00") - Date.now()) /
+						86400000,
+				);
+				var countdown = document.getElementById("capsule-countdown");
+				if (days > 0) {
+					countdown.textContent = "还有 " + days + " 天";
+				} else {
+					countdown.textContent = "已开启";
+					letter.classList.remove("sealed");
+				}
+			}
+			initCapsule();
+			document.addEventListener("astro:page-load", initCapsule);
+		})();
+	</script>
+</MainGridLayout>
+
+<style>
+	.capsule-meta {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+		gap: 0.75rem;
+		margin-bottom: 2rem;
+	}
+
+	.capsule-meta > div {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		padding: 0.875rem 1rem;
+		border: 1px solid var(--line-divider);
+		border-radius: 0.75rem;
+	}
+
+	.capsule-label {
+		font-size: 0.75rem;
+		opacity: 0.6;
+	}
+
+	.capsule-value {
+		font-size: 1.05rem;
+		font-weight: 700;
+		color: var(--primary);
+	}
+
+	.capsule-code {
+		font-size: 0.75rem;
+		opacity: 0.6;
+		background: none;
+		padding: 0;
+	}
+
+	.capsule-h2 {
+		font-size: 1.15rem;
+		font-weight: 700;
+		margin: 2.25rem 0 1rem;
+		padding-left: 0.75rem;
+		border-left: 4px solid var(--primary);
+	}
+
+	.capsule-qa {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.capsule-q {
+		font-weight: 700;
+		margin-bottom: 0.25rem;
+	}
+
+	.capsule-q::before {
+		content: "Q · ";
+		color: var(--primary);
+	}
+
+	.capsule-a,
+	.capsule-note,
+	.capsule-vendor-status,
+	.capsule-letter-body p {
+		font-size: 0.9rem;
+		line-height: 1.75;
+		opacity: 0.75;
+	}
+
+	.capsule-letter {
+		position: relative;
+		padding: 1.25rem 1.5rem;
+		border: 1px dashed var(--primary);
+		border-radius: 0.75rem;
+		overflow: hidden;
+	}
+
+	.capsule-letter-body p + p {
+		margin-top: 0.75rem;
+	}
+
+	.capsule-letter-body p:last-child {
+		text-align: right;
+	}
+
+	.capsule-seal {
+		display: none;
+	}
+
+	.capsule-letter.sealed .capsule-letter-body {
+		filter: blur(7px);
+		user-select: none;
+	}
+
+	.capsule-letter.sealed .capsule-seal {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		color: var(--primary);
+	}
+
+	.capsule-vendors {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+		gap: 0.75rem;
+	}
+
+	.capsule-vendor {
+		padding: 1rem;
+		border: 1px solid var(--line-divider);
+		border-top: 3px solid var(--vendor);
+		border-radius: 0.75rem;
+	}
+
+	.capsule-vendor-name {
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: var(--vendor);
+	}
+
+	.capsule-vendor-name span {
+		margin-left: 0.375rem;
+		font-weight: 400;
+		opacity: 0.7;
+	}
+
+	.capsule-vendor-latest {
+		font-size: 1.05rem;
+		font-weight: 700;
+		margin: 0.25rem 0 0.375rem;
+	}
+
+	.capsule-timeline {
+		position: relative;
+	}
+
+	.capsule-timeline::before {
+		content: "";
+		position: absolute;
+		left: 5px;
+		top: 0.5rem;
+		bottom: 0.5rem;
+		width: 2px;
+		background: var(--line-divider);
+	}
+
+	.capsule-entry {
+		position: relative;
+		padding: 0 0 1.25rem 1.75rem;
+	}
+
+	.capsule-entry.filtered-out {
+		display: none;
+	}
+
+	.capsule-dot {
+		position: absolute;
+		left: 0;
+		top: 0.3rem;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background: var(--vendor);
+	}
+
+	.capsule-entry-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.75rem;
+	}
+
+	.capsule-date {
+		font-variant-numeric: tabular-nums;
+		opacity: 0.6;
+	}
+
+	.capsule-tag {
+		font-weight: 700;
+		color: var(--vendor);
+	}
+
+	.capsule-flag {
+		padding: 0 0.375rem;
+		border: 1px solid var(--line-divider);
+		border-radius: 0.375rem;
+		opacity: 0.7;
+	}
+
+	.capsule-name {
+		font-weight: 700;
+		margin-top: 0.125rem;
+	}
+
+	.capsule-footnote {
+		margin-top: 1.5rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--line-divider);
+		font-size: 0.8rem;
+		line-height: 1.7;
+		opacity: 0.6;
+	}
+</style>

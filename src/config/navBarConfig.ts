@@ -149,6 +149,11 @@ export const navBarConfig: NavBarConfig = {
 					url: "/categories/",
 					icon: "material-symbols:category",
 				},
+				{
+					name: "时间胶囊",
+					url: "/capsule/",
+					icon: "material-symbols:hourglass-top",
+				},
 			],
 		},
 		LinkPreset.About,
