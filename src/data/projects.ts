@@ -134,6 +134,7 @@ export const projectsData: Project[] = [
 		category: "web",
 		techStack: ["React", "Vite", "Node.js", "SQLite", "DeepSeek API"],
 		status: "in-progress",
+		sourceCode: "https://github.com/czspig/AgentBluff",
 		startDate: "2026-11-13",
 		featured: true,
 		tags: ["AI 对战", "狼人杀", "游戏"],
