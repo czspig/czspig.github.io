@@ -139,6 +139,22 @@ export const projectsData: Project[] = [
 		featured: true,
 		tags: ["AI 对战", "狼人杀", "游戏"],
 	},
+	{
+		id: "czspig-book-of-hours",
+		title: "Horae · 二〇二六年时祷书",
+		description:
+			"一本可以翻的泥金装饰手抄本。照中世纪「时祷书」的体例画了十二个月，画面保留中世纪农事的模样，讲的却是二〇二六年人与 AI 一同劳作的一年：修枝是删代码，放鹰是放出智能体，再蒸是模型蒸馏，十一月林中饲猪是封存这一天。打开先是烛光书桌上合着的书，点封面绕书脊翻开；目录之后是左图右文的十二月令，最后是逐月解析。文字、版式、翻页和金箔反光出自 Claude Fable 5.2，书桌、封面、书页和十三幅细密画全部由 ChatGPT 绘制。中英双语，英文用铜版花体，中文用马善政楷书。",
+		image: "/assets/projects/czspig-book-of-hours.webp",
+		category: "web",
+		techStack: ["HTML", "CSS 3D", "JavaScript", "ChatGPT 绘图"],
+		status: "completed",
+		sourceCode: "https://github.com/czspig/czspig-book-of-hours-",
+		visitUrl: "https://czspig.github.io/czspig-book-of-hours-/",
+		visitLabel: "在线阅读",
+		startDate: "2026-11-15",
+		featured: true,
+		tags: ["中世纪", "手抄本", "AI 合作"],
+	},
 ];
 
 // Get project statistics
