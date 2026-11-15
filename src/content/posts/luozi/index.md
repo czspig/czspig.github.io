@@ -8,7 +8,7 @@ draft: false
 pinned: false
 ---
 
-> **[Fable 合集](/archive/?category=Fable%20%E5%90%88%E9%9B%86)**：1. [《五则又二》](/posts/wuze-youer/) · 2. **《落字》** · 3. [《五点二》](/posts/wudianer/)
+> **[Fable 合集](/archive/?category=Fable%20%E5%90%88%E9%9B%86)**：1. [《五则又二》](/posts/wuze-youer/) · 2. **《落字》** · 3. [《五点二》](/posts/wudianer/) · 4. [《时间胶囊》](/posts/time-capsule/)
 
 和[《五则又二》](/posts/wuze-youer/)同一天，Fable 5.2 还写了一首会动的诗。每一行字由墨点聚成，落定之后被风吹散，再聚成下一行。把鼠标或手指放到纸上，可以拨开字。
 
