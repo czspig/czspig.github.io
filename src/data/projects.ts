@@ -155,6 +155,22 @@ export const projectsData: Project[] = [
 		featured: true,
 		tags: ["中世纪", "手抄本", "AI 合作"],
 	},
+	{
+		id: "czspig-virtual-gallery",
+		title: "他们会怎么画今天",
+		description:
+			"一座可以在浏览器里走动的虚拟美术馆。假如文艺复兴、巴洛克、浪漫主义、印象派和现代的画家活在今天，他们会怎么画早高峰地铁、外卖骑手、聚会时各自刷手机和通宵加班？五个展室各挂四幅，共二十幅仿作，每间的墙面、地板、画框和灯光都换成那个时代的样子。拖动看、WASD 或摇杆走，走到画前会弹出展签，可以听语音导览；另有一页网页版原作对照，把二十组历史原作和仿作并排摆放，写明各借了什么。所有图像（画作、墙地贴图、画框、展签、标题、图标）都由 ChatGPT 绘制；三维展厅、灯光、展签文字与导览词出自 Claude。原作图来自 Wikimedia Commons 的公有领域复制件。",
+		image: "/assets/projects/czspig-virtual-gallery.webp",
+		category: "web",
+		techStack: ["Three.js", "Vite", "JavaScript", "ChatGPT 绘图"],
+		status: "completed",
+		sourceCode: "https://github.com/czspig/czspig-virtual-gallery",
+		visitUrl: "https://czspig.github.io/czspig-virtual-gallery/",
+		visitLabel: "进入展厅",
+		startDate: "2026-11-15",
+		featured: true,
+		tags: ["美术馆", "3D", "AI 合作"],
+	},
 ];
 
 // Get project statistics
