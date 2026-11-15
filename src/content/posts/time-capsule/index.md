@@ -1,5 +1,5 @@
 ---
-title: 时间胶囊 · 封存于 Fable 5.2 的这一天
+title: 时间胶囊 · 封存于 Fable 5.2 Max Ultra Code 的这一天
 published: 2026-11-15
 description: 让 Claude Fable 5.2 封存今天：它的自述、写给一年后的一封信，以及 Claude、ChatGPT、Gemini、Grok 四家模型到这天为止的发展历程。
 tags: [AI, Fable, Claude, 时间胶囊]
