@@ -1,12 +1,13 @@
 {
 	"title": "AI 雅典学院",
 	"hidden": false,
-	"description": "把拉斐尔《雅典学院》里的哲人换成 AI 时代的人物。AI 重绘的画还在生成中，先放原作。原作图片为公有领域作品的复制件。",
+	"description": "照拉斐尔《雅典学院》的构图，重画人工智能的七十年。正中仍是两种手势：指天的辛顿警惕可能超越人类的智能，按地的杨立昆坚持智能要从物理世界中学会；左侧是起源与提问，右侧是建造者与产业；右缘原本是拉斐尔的自画像，留给了一位还没画完自己的 AI 画家，它身旁站着这幅画的另一位作者。前面是原作，后面是 ChatGPT 绘制的全图、七处局部和四张预备素描。画中真人是艺术再创作，不代表本人观点。原作图片为公有领域作品的复制件，来自 Wikimedia Commons。",
 	"date": "2026-11-16",
 	"location": "",
 	"tags": [
 		"艺术",
-		"原作"
+		"原作",
+		"AI 重绘"
 	],
 	"layout": "masonry",
 	"columns": 3,
@@ -17,6 +18,66 @@
 			"src": "/images/albums/art-school-of-athens/raphael-school-of-athens.webp",
 			"title": "《雅典学院》· 拉斐尔",
 			"description": "原作 · 1509–1511 年 · 梵蒂冈使徒宫签字厅壁画"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-ai.webp",
+			"title": "AI 雅典学院 · 全图",
+			"description": "ChatGPT 依原作构图绘制，七处局部重绘后合成。左龛的阿波罗换成青铜巨人塔罗斯，右龛的雅典娜换成潘多拉，最远的拱门搭着脚手架"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-detail-1.webp",
+			"title": "局部 · 两种手势",
+			"description": "柏拉图的位置是辛顿，亚里士多德的位置是杨立昆；身后是麦卡锡、本吉奥、达里奥·阿莫迪与罗森布拉特、李飞飞、萨顿、何恺明"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-detail-2.webp",
+			"title": "局部 · 对话与进门者",
+			"description": "苏格拉底的位置是图灵，披甲的亚西比德是马斯克，听众里有姚期智与姚顺雨、波洛苏欣；最左边抱书冲进来的是梁文锋，身后是杨植麟、张一鸣"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-detail-3.webp",
+			"title": "局部 · 比特的源头",
+			"description": "毕达哥拉斯的位置是香农，身边是布尔、莱布尼茨、花拉子米和埃达·洛夫莱斯；戴桂冠的是哈萨比斯，抱孩子的是吴恩达"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-detail-4.webp",
+			"title": "局部 · 台阶",
+			"description": "独坐沉思的赫拉克利特是伊尔亚·苏茨克维；斜躺的第欧根尼是 ELIZA 的作者维森鲍姆，旁边抱臂的是加里·马库斯"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-detail-5.webp",
+			"title": "局部 · 注意力",
+			"description": "欧几里得的位置是冯·诺依曼，围着石板的是瓦斯瓦尼、沙泽尔与卡帕西"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-detail-6.webp",
+			"title": "局部 · 托球的建造者",
+			"description": "托天球的是奥特曼，托地球仪、戴王冠的是黄仁勋；身边是纳德拉、布罗克曼、皮查伊、扎克伯格、李彦宏"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-detail-7.webp",
+			"title": "局部 · 两位画家",
+			"description": "拉斐尔自画像的位置留给 AI，一张似曾相识又不是任何人的脸，身下还是红粉笔草稿；身旁白袍的是这幅画的另一位作者"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-sketch-a.webp",
+			"title": "预备素描 · 两种手势",
+			"description": "仿拉斐尔为《雅典学院》画的红粉笔底稿"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-sketch-b.webp",
+			"title": "预备素描 · 对话",
+			"description": "Can machines think?"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-sketch-c.webp",
+			"title": "预备素描 · 比特",
+			"description": "0110，H = −Σ p log p"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/athens-sketch-d.webp",
+			"title": "预备素描 · 注意力",
+			"description": "MEMORY、CPU，与 Attention"
 		}
 	]
 }

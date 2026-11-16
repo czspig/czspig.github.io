@@ -187,6 +187,22 @@ export const projectsData: Project[] = [
 		featured: true,
 		tags: ["西斯廷", "壁画", "AI 合作"],
 	},
+	{
+		id: "czspig-school-of-athens",
+		title: "AI 雅典学院",
+		description:
+			"照拉斐尔《雅典学院》的构图重画人工智能的七十年。正中仍是两种手势：指天的辛顿警惕可能超越人类的智能，按地的杨立昆坚持智能要从物理世界中学会；左侧是图灵、香农、洛夫莱斯这些起源与提问，右侧是冯·诺依曼、奥特曼、黄仁勋这些建造者。四十位人物都能点开，看他站在原作谁的位置、为什么站在那里；还能在画上连出师承与论战，拖动时间轴看人物从约 820 年的花拉子米一路亮到 2026，或拉开分割线对照拉斐尔原作。右缘原本是拉斐尔的自画像，留给了一位还没画完自己的 AI 画家。画面由 ChatGPT 绘制，构思、文字与网页出自 Claude；原作图来自 Wikimedia Commons。",
+		image: "/assets/projects/czspig-school-of-athens.webp",
+		category: "web",
+		techStack: ["JavaScript", "SVG", "OpenCV", "ChatGPT 绘图"],
+		status: "completed",
+		sourceCode: "https://github.com/czspig/czspig-school-of-athens",
+		visitUrl: "https://czspig.github.io/czspig-school-of-athens/",
+		visitLabel: "走进学院",
+		startDate: "2026-11-15",
+		featured: true,
+		tags: ["拉斐尔", "壁画", "AI 合作"],
+	},
 ];
 
 // Get project statistics
