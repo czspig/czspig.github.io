@@ -1,7 +1,7 @@
 {
 	"title": "AI 雅典学院",
 	"hidden": false,
-	"description": "照拉斐尔《雅典学院》的构图，重画人工智能的七十年。正中仍是两种手势：指天的辛顿警惕可能超越人类的智能，按地的杨立昆坚持智能要从物理世界中学会；左侧是起源与提问，右侧是建造者与产业；右缘原本是拉斐尔的自画像，留给了一位还没画完自己的 AI 画家，它身旁站着这幅画的另一位作者。前面是原作，后面是 ChatGPT 绘制的全图、七处局部和四张预备素描。画中真人是艺术再创作，不代表本人观点。原作图片为公有领域作品的复制件，来自 Wikimedia Commons。",
+	"description": "照拉斐尔《雅典学院》的构图，重画人工智能的七十年。正中仍是两种手势：指天的辛顿警惕可能超越人类的智能，按地的杨立昆坚持智能要从物理世界中学会；左侧是起源与提问，右侧是建造者与产业；右缘原本是拉斐尔的自画像，留给了一位还没画完自己的 AI 画家，它身旁站着这幅画的另一位作者。前面是原作，接着是 ChatGPT 绘制的全图、七处局部和四张预备素描，最后是重绘时交给 ChatGPT 的人物参考照片（只收 Wikimedia Commons 上可自由使用的照片，各图注明作者与授权；何恺明、梁文锋、杨植麟、姚顺雨、沙泽尔、瓦斯瓦尼、波洛苏欣没有可自由使用的照片，未收录）。画中真人是艺术再创作，不代表本人观点。原作图片为公有领域作品的复制件，来自 Wikimedia Commons。",
 	"date": "2026-11-16",
 	"location": "",
 	"tags": [
@@ -78,6 +78,156 @@
 			"src": "/images/albums/art-school-of-athens/athens-sketch-d.webp",
 			"title": "预备素描 · 注意力",
 			"description": "MEMORY、CPU，与 Attention"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-hinton.webp",
+			"title": "参考照片 · 杰弗里·辛顿",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Cmichel67 · CC BY-SA 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-lecun.webp",
+			"title": "参考照片 · 杨立昆",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Jérémy Barande · CC BY-SA 2.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-mccarthy.webp",
+			"title": "参考照片 · 约翰·麦卡锡",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 \"null0\" · CC BY-SA 2.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-bengio.webp",
+			"title": "参考照片 · 约书亚·本吉奥",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Xuthoria · CC BY-SA 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-dario.webp",
+			"title": "参考照片 · 达里奥·阿莫迪",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 TechCrunch · CC BY 2.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-rosenblatt.webp",
+			"title": "参考照片 · 弗兰克·罗森布拉特",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 佚名 · CC BY-SA 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-feifei.webp",
+			"title": "参考照片 · 李飞飞",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 ITU Pictures · CC BY 2.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-sutton.webp",
+			"title": "参考照片 · 理查德·萨顿",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Xuthoria · CC BY-SA 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-turing.webp",
+			"title": "参考照片 · 艾伦·图灵",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Elliott & Fry · 公有领域 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-musk.webp",
+			"title": "参考照片 · 埃隆·马斯克",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Gage Skidmore · CC BY-SA 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-yaoqizhi.webp",
+			"title": "参考照片 · 姚期智",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 David.Monniaux · CC BY-SA 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-zhangyiming.webp",
+			"title": "参考照片 · 张一鸣",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 CEO Magazine · CC BY-SA 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-shannon.webp",
+			"title": "参考照片 · 克劳德·香农",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 佚名 · CC BY 2.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-boole.webp",
+			"title": "参考照片 · 乔治·布尔",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 佚名 · 公有领域 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-leibniz.webp",
+			"title": "参考照片 · 莱布尼茨",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Christoph Bernhard Francke · 公有领域 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-lovelace.webp",
+			"title": "参考照片 · 埃达·洛夫莱斯",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Antoine Claudet · 公有领域 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-hassabis.webp",
+			"title": "参考照片 · 戴密斯·哈萨比斯",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 John Sears · CC BY-SA 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-andrewng.webp",
+			"title": "参考照片 · 吴恩达",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 TechCrunch · CC BY 2.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-ilya.webp",
+			"title": "参考照片 · 伊尔亚·苏茨克维",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Eladkarmel · CC BY-SA 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-weizenbaum.webp",
+			"title": "参考照片 · 约瑟夫·维森鲍姆",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Rochester Institute of Technology · 公有领域 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-marcus.webp",
+			"title": "参考照片 · 加里·马库斯",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Web Summit · CC BY 2.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-vonneumann.webp",
+			"title": "参考照片 · 约翰·冯·诺依曼",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 洛斯阿拉莫斯国家实验室 · 署名使用 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-karpathy.webp",
+			"title": "参考照片 · 安德烈·卡帕西",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Gladwin Analytics · CC BY 3.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-altman.webp",
+			"title": "参考照片 · 萨姆·奥特曼",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 日本内阁广报室 · CC BY 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-nadella.webp",
+			"title": "参考照片 · 萨提亚·纳德拉",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Brian Smale and Microsoft · CC BY-SA 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-jensen.webp",
+			"title": "参考照片 · 黄仁勋",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Anderseidesvik · CC BY-SA 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-brockman.webp",
+			"title": "参考照片 · 格雷格·布罗克曼",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 TechCrunch · CC BY 2.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-pichai.webp",
+			"title": "参考照片 · 桑达尔·皮查伊",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 Lukasz Kobus (European Commission) · CC BY 4.0 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-zuckerberg.webp",
+			"title": "参考照片 · 马克·扎克伯格",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 The White House · 公有领域 · Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-school-of-athens/ref-robinli.webp",
+			"title": "参考照片 · 李彦宏",
+			"description": "重绘时给 ChatGPT 的参考照 · 作者 中国新闻网 · CC BY 3.0 · Wikimedia Commons"
 		}
 	]
 }
