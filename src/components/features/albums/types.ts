@@ -8,4 +8,5 @@ export interface PhotoCardProps {
 	src: string;
 	alt?: string;
 	albumId: string;
+	caption?: { title?: string; description: string };
 }

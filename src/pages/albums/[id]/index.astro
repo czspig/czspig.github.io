@@ -1,5 +1,5 @@
 ---
-import { PhotoCard } from "@components/features/albums";
+import { AlbumCard, PhotoCard } from "@components/features/albums";
 import PasswordProtection from "@components/features/auth/PasswordProtection.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { encryptContent } from "@utils/crypto-utils";
@@ -19,15 +19,24 @@ export const getStaticPaths = async () => {
 	const albumsData = await scanAlbums();
 	return albumsData.map((album) => ({
 		params: { id: album.id },
-		props: { album },
+		props: {
+			album,
+			parent: albumsData.find((a) => a.id === album.parentId),
+		},
 	}));
 };
 
 interface Props {
 	album: AlbumGroup;
+	parent?: AlbumGroup;
 }
 
-const { album } = Astro.props;
+const { album, parent } = Astro.props;
+// 小相册返回它所属的大相册
+const backHref = parent ? `/albums/${parent.id}/` : "/albums/";
+const backText = parent
+	? `返回「${parent.title}」`
+	: i18n(I18nKey.albumsBackToList);
 
 if (!album) {
 	return Astro.redirect("/404/");
@@ -78,14 +87,14 @@ if (isEncrypted) {
 
 					{/* Back button */}
 					<a
-						href="/albums/"
+						href={backHref}
 						class="absolute top-4 left-4 inline-flex items-center gap-1.5 text-sm text-white/90 hover:text-white bg-black/30 hover:bg-black/50 backdrop-blur-sm px-3 py-1.5 rounded-lg transition-colors"
 					>
 						<Icon
 							name="material-symbols:arrow-back"
 							class="text-base"
 						/>
-						{i18n(I18nKey.albumsBackToList)}
+						{backText}
 					</a>
 
 					{/* Album info overlay */}
@@ -140,14 +149,14 @@ if (isEncrypted) {
 			) : (
 				<div class="card-base px-6 py-4">
 					<a
-						href="/albums/"
+						href={backHref}
 						class="inline-flex items-center gap-1 text-sm text-(--primary) hover:underline mb-3"
 					>
 						<Icon
 							name="material-symbols:arrow-back"
 							class="text-base"
 						/>
-						{i18n(I18nKey.albumsBackToList)}
+						{backText}
 					</a>
 					<div class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-100">
 						{album.title}
@@ -179,6 +188,23 @@ if (isEncrypted) {
 		}
 	</div>
 
+	{
+		album.children && album.children.length > 0 && (
+			<div class="w-full rounded-(--radius-large) overflow-hidden relative mt-4">
+				<div class="card-base z-10 px-6 py-6 relative w-full">
+					<div class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+						小相册
+					</div>
+					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+						{album.children.map((child) => (
+							<AlbumCard album={child} />
+						))}
+					</div>
+				</div>
+			</div>
+		)
+	}
+
 	<!-- Photo Masonry Grid -->
 	<div class="w-full rounded-(--radius-large) overflow-hidden relative mt-4">
 		<div class="card-base z-10 px-6 py-6 relative w-full">
@@ -195,6 +221,14 @@ if (isEncrypted) {
 								src={photo.src}
 								alt={photo.alt || photo.title || ""}
 								albumId={album.id}
+								caption={
+									photo.description
+										? {
+												title: photo.title,
+												description: photo.description,
+											}
+										: undefined
+								}
 							/>
 						))}
 					</div>

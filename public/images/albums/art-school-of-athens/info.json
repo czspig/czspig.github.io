@@ -1,0 +1,22 @@
+{
+	"title": "AI 雅典学院",
+	"hidden": false,
+	"description": "把拉斐尔《雅典学院》里的哲人换成 AI 时代的人物。AI 重绘的画还在生成中，先放原作。原作图片为公有领域作品的复制件。",
+	"date": "2026-11-16",
+	"location": "",
+	"tags": [
+		"艺术",
+		"原作"
+	],
+	"layout": "masonry",
+	"columns": 3,
+	"mode": "external",
+	"cover": "/images/albums/art-school-of-athens/cover.webp",
+	"photos": [
+		{
+			"src": "/images/albums/art-school-of-athens/raphael-school-of-athens.webp",
+			"title": "《雅典学院》· 拉斐尔",
+			"description": "原作 · 1509–1511 年 · 梵蒂冈使徒宫签字厅壁画"
+		}
+	]
+}

@@ -1,0 +1,67 @@
+{
+	"title": "新创世纪",
+	"hidden": false,
+	"description": "米开朗基罗西斯廷礼拜堂天顶画《创世纪》九格的 AI 重绘计划。重绘还没生成，先放原作：天顶全景加中央九格，按故事顺序排列。图片来自 Wikimedia Commons；天顶全景、第一格、第七格为 CC BY-SA 3.0 授权的照片（第一格、第七格摄影 Jorge Valenzuela A），这里缩小后的版本沿用同一授权，其余为公有领域。",
+	"date": "2026-11-16",
+	"location": "",
+	"tags": [
+		"艺术",
+		"原作"
+	],
+	"layout": "masonry",
+	"columns": 3,
+	"mode": "external",
+	"cover": "/images/albums/art-genesis/cover.webp",
+	"photos": [
+		{
+			"src": "/images/albums/art-genesis/genesis-ceiling.webp",
+			"title": "西斯廷礼拜堂天顶 · 全景",
+			"description": "原作 · 米开朗基罗 · 1508–1512 年 · 照片 CC BY-SA 3.0，Wikimedia Commons"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-01.webp",
+			"title": "第一格 · 神分开光与暗",
+			"description": "原作 · 米开朗基罗 · 照片 Jorge Valenzuela A，CC BY-SA 3.0"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-02.webp",
+			"title": "第二格 · 造日月草木",
+			"description": "原作 · 米开朗基罗"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-03.webp",
+			"title": "第三格 · 神分开水陆",
+			"description": "原作 · 米开朗基罗"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-04.webp",
+			"title": "第四格 · 创造亚当",
+			"description": "原作 · 米开朗基罗"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-05.webp",
+			"title": "第五格 · 创造夏娃",
+			"description": "原作 · 米开朗基罗"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-06.webp",
+			"title": "第六格 · 原罪与逐出乐园",
+			"description": "原作 · 米开朗基罗"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-07.webp",
+			"title": "第七格 · 挪亚献祭",
+			"description": "原作 · 米开朗基罗 · 照片 Jorge Valenzuela A，CC BY-SA 3.0"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-08.webp",
+			"title": "第八格 · 大洪水",
+			"description": "原作 · 米开朗基罗"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-09.webp",
+			"title": "第九格 · 挪亚醉酒",
+			"description": "原作 · 米开朗基罗"
+		}
+	]
+}

@@ -1,0 +1,82 @@
+{
+	"title": "Agentbluff · AI 狼人杀",
+	"hidden": false,
+	"description": "AI 狼人杀观战平台 Agentbluff 的美术素材：狼人杀大厅的场景图，和八位 AI 选手的拟人化立绘。图片由 ChatGPT 生成。",
+	"date": "2026-11-16",
+	"location": "",
+	"tags": [
+		"艺术",
+		"AI 生成"
+	],
+	"layout": "masonry",
+	"columns": 3,
+	"mode": "external",
+	"cover": "/images/albums/art-agentbluff/cover.webp",
+	"photos": [
+		{
+			"src": "/images/albums/art-agentbluff/rainy-roundtable.webp",
+			"title": "雨夜圆桌",
+			"description": "首页主视觉 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/hall-day.webp",
+			"title": "大厅 · 白天",
+			"description": "白天发言时的牌桌 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/hall-night.webp",
+			"title": "大厅 · 夜晚",
+			"description": "天黑请闭眼 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/hall-wolves.webp",
+			"title": "大厅 · 狼人睁眼",
+			"description": "夜里狼人行动时的牌桌 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/round-table-study.webp",
+			"title": "圆桌草图",
+			"description": "八个座位的俯视构图 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/persona-chatgpt.webp",
+			"title": "ChatGPT",
+			"description": "AI 选手拟人化立绘 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/persona-claude.webp",
+			"title": "Claude",
+			"description": "AI 选手拟人化立绘 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/persona-deepseek.webp",
+			"title": "DeepSeek",
+			"description": "AI 选手拟人化立绘 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/persona-gemini.webp",
+			"title": "Gemini",
+			"description": "AI 选手拟人化立绘 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/persona-qwen.webp",
+			"title": "Qwen",
+			"description": "AI 选手拟人化立绘 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/persona-kimi.webp",
+			"title": "Kimi",
+			"description": "AI 选手拟人化立绘 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/persona-grok.webp",
+			"title": "Grok",
+			"description": "AI 选手拟人化立绘 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-agentbluff/persona-glm.webp",
+			"title": "GLM",
+			"description": "AI 选手拟人化立绘 · AI 生成"
+		}
+	]
+}

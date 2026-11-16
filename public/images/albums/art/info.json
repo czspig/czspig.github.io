@@ -1,0 +1,22 @@
+{
+	"title": "艺术项目",
+	"hidden": false,
+	"description": "最近几个艺术项目里的图：参考的原画，和 ChatGPT 仿照生成的画。按项目分成小相册。",
+	"date": "2026-11-16",
+	"location": "",
+	"tags": [
+		"艺术"
+	],
+	"layout": "masonry",
+	"columns": 3,
+	"mode": "external",
+	"cover": "/images/albums/art/cover.webp",
+	"photos": [],
+	"children": [
+		"art-agentbluff",
+		"art-school-of-athens",
+		"art-genesis",
+		"art-virtual-gallery",
+		"art-book-of-hours"
+	]
+}

@@ -23,4 +23,8 @@ export interface AlbumGroup {
 	photos: Photo[];
 	password?: string;
 	passwordHint?: string;
+	/** 大相册：info.json 的 children 里列出的小相册 id */
+	childIds?: string[];
+	children?: AlbumGroup[];
+	parentId?: string;
 }

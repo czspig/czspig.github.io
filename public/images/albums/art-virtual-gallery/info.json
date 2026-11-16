@@ -1,0 +1,218 @@
+{
+	"title": "他们会怎么画今天",
+	"hidden": false,
+	"description": "五个画派、四个当代题材：早高峰地铁、深夜外卖骑手、刷手机的聚会、通宵加班。每一组先放参考的历史原作，再放 ChatGPT 按那个画派画的今天。原作图片来自 Wikimedia Commons，均为公有领域作品的复制件。",
+	"date": "2026-11-16",
+	"location": "",
+	"tags": [
+		"艺术",
+		"原作",
+		"AI 生成"
+	],
+	"layout": "masonry",
+	"columns": 3,
+	"mode": "external",
+	"cover": "/images/albums/art-virtual-gallery/cover.webp",
+	"photos": [
+		{
+			"src": "/images/albums/art-virtual-gallery/renaissance-1-subway-original.webp",
+			"title": "《基督受鞭笞》· 皮耶罗·德拉·弗朗切斯卡",
+			"description": "原作 · 文艺复兴 · 对应「早高峰地铁」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/renaissance-1-subway-ai.webp",
+			"title": "文艺复兴 · 早高峰地铁",
+			"description": "AI 仿作 · ChatGPT 按文艺复兴画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/renaissance-2-rider-original.webp",
+			"title": "《约翰·霍克伍德骑马纪念像》· 保罗·乌切洛",
+			"description": "原作 · 文艺复兴 · 对应「深夜外卖骑手」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/renaissance-2-rider-ai.webp",
+			"title": "文艺复兴 · 深夜外卖骑手",
+			"description": "AI 仿作 · ChatGPT 按文艺复兴画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/renaissance-3-phones-original.webp",
+			"title": "《最后的晚餐》· 列奥纳多·达·芬奇",
+			"description": "原作 · 文艺复兴 · 对应「刷手机的聚会」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/renaissance-3-phones-ai.webp",
+			"title": "文艺复兴 · 刷手机的聚会",
+			"description": "AI 仿作 · ChatGPT 按文艺复兴画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/renaissance-4-overtime-original.webp",
+			"title": "《书房中的圣杰罗姆》· 安东内洛·达·梅西纳",
+			"description": "原作 · 文艺复兴 · 对应「通宵加班」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/renaissance-4-overtime-ai.webp",
+			"title": "文艺复兴 · 通宵加班",
+			"description": "AI 仿作 · ChatGPT 按文艺复兴画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/baroque-1-subway-original.webp",
+			"title": "《圣马太蒙召》· 卡拉瓦乔",
+			"description": "原作 · 巴洛克 · 对应「早高峰地铁」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/baroque-1-subway-ai.webp",
+			"title": "巴洛克 · 早高峰地铁",
+			"description": "AI 仿作 · ChatGPT 按巴洛克画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/baroque-2-rider-original.webp",
+			"title": "《烟焰前的抹大拉的马利亚》· 乔治·德·拉图尔",
+			"description": "原作 · 巴洛克 · 对应「深夜外卖骑手」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/baroque-2-rider-ai.webp",
+			"title": "巴洛克 · 深夜外卖骑手",
+			"description": "AI 仿作 · ChatGPT 按巴洛克画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/baroque-3-phones-original.webp",
+			"title": "《以马忤斯的晚餐》· 卡拉瓦乔",
+			"description": "原作 · 巴洛克 · 对应「刷手机的聚会」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/baroque-3-phones-ai.webp",
+			"title": "巴洛克 · 刷手机的聚会",
+			"description": "AI 仿作 · ChatGPT 按巴洛克画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/baroque-4-overtime-original.webp",
+			"title": "《沉思的哲学家》· 伦勃朗",
+			"description": "原作 · 巴洛克 · 对应「通宵加班」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/baroque-4-overtime-ai.webp",
+			"title": "巴洛克 · 通宵加班",
+			"description": "AI 仿作 · ChatGPT 按巴洛克画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/romantic-1-subway-original.webp",
+			"title": "《雨、蒸汽和速度——大西部铁路》· J. M. W. 透纳",
+			"description": "原作 · 浪漫主义 · 对应「早高峰地铁」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/romantic-1-subway-ai.webp",
+			"title": "浪漫主义 · 早高峰地铁",
+			"description": "AI 仿作 · ChatGPT 按浪漫主义画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/romantic-2-rider-original.webp",
+			"title": "《冲锋的帝国近卫骑兵军官》· 泰奥多尔·席里柯",
+			"description": "原作 · 浪漫主义 · 对应「深夜外卖骑手」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/romantic-2-rider-ai.webp",
+			"title": "浪漫主义 · 深夜外卖骑手",
+			"description": "AI 仿作 · ChatGPT 按浪漫主义画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/romantic-3-phones-original.webp",
+			"title": "《两人观月》· 卡斯帕·大卫·弗里德里希",
+			"description": "原作 · 浪漫主义 · 对应「刷手机的聚会」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/romantic-3-phones-ai.webp",
+			"title": "浪漫主义 · 刷手机的聚会",
+			"description": "AI 仿作 · ChatGPT 按浪漫主义画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/romantic-4-overtime-original.webp",
+			"title": "《雾海上的漫游者》· 卡斯帕·大卫·弗里德里希",
+			"description": "原作 · 浪漫主义 · 对应「通宵加班」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/romantic-4-overtime-ai.webp",
+			"title": "浪漫主义 · 通宵加班",
+			"description": "AI 仿作 · ChatGPT 按浪漫主义画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/impressionist-1-subway-original.webp",
+			"title": "《圣拉扎尔火车站》· 克洛德·莫奈",
+			"description": "原作 · 印象派 · 对应「早高峰地铁」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/impressionist-1-subway-ai.webp",
+			"title": "印象派 · 早高峰地铁",
+			"description": "AI 仿作 · ChatGPT 按印象派画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/impressionist-2-rider-original.webp",
+			"title": "《巴黎街道，雨天》· 古斯塔夫·卡耶博特",
+			"description": "原作 · 印象派 · 对应「深夜外卖骑手」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/impressionist-2-rider-ai.webp",
+			"title": "印象派 · 深夜外卖骑手",
+			"description": "AI 仿作 · ChatGPT 按印象派画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/impressionist-3-phones-original.webp",
+			"title": "《船上的午宴》· 皮埃尔-奥古斯特·雷诺阿",
+			"description": "原作 · 印象派 · 对应「刷手机的聚会」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/impressionist-3-phones-ai.webp",
+			"title": "印象派 · 刷手机的聚会",
+			"description": "AI 仿作 · ChatGPT 按印象派画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/impressionist-4-overtime-original.webp",
+			"title": "《夜晚露天咖啡座》· 文森特·梵高",
+			"description": "原作 · 印象派 · 对应「通宵加班」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/impressionist-4-overtime-ai.webp",
+			"title": "印象派 · 通宵加班",
+			"description": "AI 仿作 · ChatGPT 按印象派画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/modern-1-subway-original.webp",
+			"title": "《街道进入屋内》· 翁贝托·波丘尼",
+			"description": "原作 · 现代 · 对应「早高峰地铁」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/modern-1-subway-ai.webp",
+			"title": "现代 · 早高峰地铁",
+			"description": "AI 仿作 · ChatGPT 按现代画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/modern-2-rider-original.webp",
+			"title": "《柏林街道》· 恩斯特·路德维希·基希纳",
+			"description": "原作 · 现代 · 对应「深夜外卖骑手」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/modern-2-rider-ai.webp",
+			"title": "现代 · 深夜外卖骑手",
+			"description": "AI 仿作 · ChatGPT 按现代画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/modern-3-phones-original.webp",
+			"title": "《巴勃罗·毕加索肖像》· 胡安·格里斯",
+			"description": "原作 · 现代 · 对应「刷手机的聚会」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/modern-3-phones-ai.webp",
+			"title": "现代 · 刷手机的聚会",
+			"description": "AI 仿作 · ChatGPT 按现代画法画的今天"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/modern-4-overtime-original.webp",
+			"title": "《百老汇布吉伍吉》· 皮特·蒙德里安",
+			"description": "原作 · 现代 · 对应「通宵加班」"
+		},
+		{
+			"src": "/images/albums/art-virtual-gallery/modern-4-overtime-ai.webp",
+			"title": "现代 · 通宵加班",
+			"description": "AI 仿作 · ChatGPT 按现代画法画的今天"
+		}
+	]
+}

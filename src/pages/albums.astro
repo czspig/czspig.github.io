@@ -14,7 +14,8 @@ if (!siteConfig.featurePages.albums) {
 	return Astro.redirect("/404/");
 }
 
-const albumsData = await scanAlbums();
+// 小相册只在它所属的大相册里显示
+const albumsData = (await scanAlbums()).filter((a) => !a.parentId);
 
 // Collect all unique tags for filtering
 const allTags = [...new Set(albumsData.flatMap((a) => a.tags || []))].sort();

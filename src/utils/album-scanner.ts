@@ -28,6 +28,19 @@ export async function scanAlbums(): Promise<AlbumGroup[]> {
 		}
 	}
 
+	// 大相册：照片由它包含的小相册汇总
+	for (const album of albums) {
+		if (!album.childIds?.length) continue;
+		album.children = album.childIds
+			.map((id) => albums.find((a) => a.id === id))
+			.filter((a): a is AlbumGroup => !!a);
+		for (const child of album.children) child.parentId = album.id;
+		album.photos = [
+			...album.photos,
+			...album.children.flatMap((c) => c.photos),
+		];
+	}
+
 	return albums;
 }
 
@@ -57,6 +70,7 @@ async function processAlbumFolder(
 		tags?: string[];
 		password?: string;
 		passwordHint?: string;
+		children?: string[];
 	}
 	let info: AlbumInfo;
 	try {
@@ -119,6 +133,7 @@ async function processAlbumFolder(
 		photos,
 		password: info.password || undefined,
 		passwordHint: info.passwordHint || undefined,
+		childIds: info.children,
 	};
 }
 

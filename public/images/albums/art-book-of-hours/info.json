@@ -1,0 +1,87 @@
+{
+	"title": "二〇二六年时祷书",
+	"hidden": false,
+	"description": "仿林堡兄弟《豪华时祷书》的十二月令细密画，把中世纪的农事换成和 AI 一起干活的事。画面全部由 ChatGPT 生成。",
+	"date": "2026-11-16",
+	"location": "",
+	"tags": [
+		"艺术",
+		"AI 生成"
+	],
+	"layout": "masonry",
+	"columns": 3,
+	"mode": "external",
+	"cover": "/images/albums/art-book-of-hours/cover.webp",
+	"photos": [
+		{
+			"src": "/images/albums/art-book-of-hours/hours-cover.webp",
+			"title": "封面",
+			"description": "合着的时祷书 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-01.webp",
+			"title": "一月 · 立愿",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-02.webp",
+			"title": "二月 · 围炉",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-03.webp",
+			"title": "三月 · 修枝",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-04.webp",
+			"title": "四月 · 问答",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-05.webp",
+			"title": "五月 · 放鹰",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-06.webp",
+			"title": "六月 · 割草",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-07.webp",
+			"title": "七月 · 收麦",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-08.webp",
+			"title": "八月 · 打谷",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-09.webp",
+			"title": "九月 · 再蒸",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-10.webp",
+			"title": "十月 · 播种",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-11.webp",
+			"title": "十一月 · 封存",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-12.webp",
+			"title": "十二月 · 留灯",
+			"description": "月令细密画 · AI 生成"
+		},
+		{
+			"src": "/images/albums/art-book-of-hours/hours-13.webp",
+			"title": "书末 · 抄写室",
+			"description": "月令细密画 · AI 生成"
+		}
+	]
+}
