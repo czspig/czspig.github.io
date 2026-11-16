@@ -171,6 +171,22 @@ export const projectsData: Project[] = [
 		featured: true,
 		tags: ["美术馆", "3D", "AI 合作"],
 	},
+	{
+		id: "czspig-genesis",
+		title: "新创世纪",
+		description:
+			"米开朗基罗西斯廷礼拜堂天顶画《创世纪》九格的 AI 时代重绘。打开先是整面天顶，往下滚动就沿着礼拜堂从入口走向祭坛，九格依次拉近，故事从挪亚醉酒一路倒退回神分开光暗。每格先看原作，再随着一层噪点散开变成 AI 版：前三格神不改，只把光、日月、海水换成屏幕冷光、硅晶圆和海底光缆；从「创造亚当」起，造物与被造的换成了这个时代的人和瓷白的人形机器，马斯克、奥特曼、达里奥·阿莫迪、黄仁勋分别站在创造、召唤、守门、献祭的位置。按住画面可以看回原作，「创造亚当」那一格能拖动手指，却永远碰不到。九幅重绘由 ChatGPT 绘制，网页、转场、展签和中英双语文字出自 Claude；原作图来自 Wikimedia Commons。",
+		image: "/assets/projects/czspig-genesis.webp",
+		category: "web",
+		techStack: ["WebGL2", "Vite", "JavaScript", "ChatGPT 绘图"],
+		status: "completed",
+		sourceCode: "https://github.com/czspig/czspig-genesis",
+		visitUrl: "https://czspig.github.io/czspig-genesis/",
+		visitLabel: "抬头看天顶",
+		startDate: "2026-11-15",
+		featured: true,
+		tags: ["西斯廷", "壁画", "AI 合作"],
+	},
 ];
 
 // Get project statistics

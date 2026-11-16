@@ -1,12 +1,13 @@
 {
 	"title": "新创世纪",
 	"hidden": false,
-	"description": "米开朗基罗西斯廷礼拜堂天顶画《创世纪》九格的 AI 重绘计划。重绘还没生成，先放原作：天顶全景加中央九格，按故事顺序排列。图片来自 Wikimedia Commons；天顶全景、第一格、第七格为 CC BY-SA 3.0 授权的照片（第一格、第七格摄影 Jorge Valenzuela A），这里缩小后的版本沿用同一授权，其余为公有领域。",
+	"description": "米开朗基罗西斯廷礼拜堂天顶画《创世纪》九格的 AI 时代重绘。前面是原作：天顶全景加中央九格，按故事顺序排列；后面是 ChatGPT 依原作构图重画的九格：第一到第三格神不改，只把光、日月、海水换成屏幕冷光、硅晶圆和海底光缆；从第四格起，造物与被造的换成了这个时代的人和瓷白的人形机器，马斯克、奥特曼、达里奥·阿莫迪、黄仁勋分别站在创造、召唤、守门、献祭的位置。画中真人是艺术再创作，不代表本人观点。原作图片来自 Wikimedia Commons；天顶全景、第一格、第七格为 CC BY-SA 3.0 授权的照片（第一格、第七格摄影 Jorge Valenzuela A），这里的缩小版及由它们改绘的 AI 重绘沿用同一授权，其余为公有领域。",
 	"date": "2026-11-16",
 	"location": "",
 	"tags": [
 		"艺术",
-		"原作"
+		"原作",
+		"AI 重绘"
 	],
 	"layout": "masonry",
 	"columns": 3,
@@ -62,6 +63,51 @@
 			"src": "/images/albums/art-genesis/genesis-09.webp",
 			"title": "第九格 · 挪亚醉酒",
 			"description": "原作 · 米开朗基罗"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-ai-01.webp",
+			"title": "第一格 · 神分开光与暗 · AI 重绘",
+			"description": "ChatGPT 绘制 · 神不改，被推开的光变成屏幕的冷光 · 依 CC BY-SA 3.0 照片改绘，沿用同一授权"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-ai-02.webp",
+			"title": "第二格 · 造日月草木 · AI 重绘",
+			"description": "ChatGPT 绘制 · 神不改；太阳成了发光的硅晶圆，月亮成了硬盘盘片，草木成了光纤"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-ai-03.webp",
+			"title": "第三格 · 神分开水陆 · AI 重绘",
+			"description": "ChatGPT 绘制 · 神不改；海里穿过发光的海底光缆，手到之处才有了秩序"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-ai-04.webp",
+			"title": "第四格 · 创造亚当 · AI 重绘",
+			"description": "ChatGPT 绘制 · 马斯克在神的位置伸出手指，被造的是一台瓷白人形机器；两根手指仍差一点"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-ai-05.webp",
+			"title": "第五格 · 创造夏娃 · AI 重绘",
+			"description": "ChatGPT 绘制 · 奥特曼召唤；沉睡的是上一台机器，侧腹被打开，起身的是更新的一台"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-ai-06.webp",
+			"title": "第六格 · 原罪与逐出乐园 · AI 重绘",
+			"description": "ChatGPT 绘制 · 缠着线缆的机器递出一颗光做的果子；举剑守门的是达里奥·阿莫迪，被逐出的人低头看手机"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-ai-07.webp",
+			"title": "第七格 · 挪亚献祭 · AI 重绘",
+			"description": "ChatGPT 绘制 · 黄仁勋站在祭坛后，坛上燃着一块 GPU，手稿和画作被送进火里 · 依 CC BY-SA 3.0 照片改绘，沿用同一授权"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-ai-08.webp",
+			"title": "第八格 · 大洪水 · AI 重绘",
+			"description": "ChatGPT 绘制 · 涌来的水里漂满发光的屏幕和纸页，方舟成了一座数据中心"
+		},
+		{
+			"src": "/images/albums/art-genesis/genesis-ai-09.webp",
+			"title": "第九格 · 挪亚醉酒 · AI 重绘",
+			"description": "ChatGPT 绘制 · 无名的老创业者醉倒在机柜旁，年轻员工替他盖上外套"
 		}
 	]
 }
