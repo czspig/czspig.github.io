@@ -5,6 +5,10 @@ on:
     # 每周日 20:00（北京时间）= 12:00 UTC
     - cron: "0 12 * * 0"
   workflow_dispatch:
+    inputs:
+      date:
+        description: "补发用：填那一周的周日日期（如 2026-11-15），留空则按今天"
+        required: false
 
 permissions:
   contents: write
@@ -33,6 +37,7 @@ jobs:
       - name: 生成周报
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          AI_WEEKLY_DATE: ${{ inputs.date }}
         run: pnpm ai-weekly
 
       - name: 提交并发布

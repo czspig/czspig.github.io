@@ -3,6 +3,7 @@
 // 用法：
 //   node scripts/ai-weekly.mjs          生成本周周报（需要环境变量 DEEPSEEK_API_KEY）
 //   node scripts/ai-weekly.mjs --dry    只抓取并打印资讯列表，不调用 DeepSeek、不写文件
+//   AI_WEEKLY_DATE=2026-11-15 ...       补发：按那天（周日）20:00 北京时间生成那一周的周报
 //
 // 本周的文章已存在时直接跳过，所以重复运行是安全的。
 
@@ -12,7 +13,9 @@ import { XMLParser } from "fast-xml-parser";
 
 const DRY = process.argv.includes("--dry");
 const DAY = 24 * 60 * 60 * 1000;
-const now = new Date();
+const now = process.env.AI_WEEKLY_DATE
+	? new Date(`${process.env.AI_WEEKLY_DATE}T20:00:00+08:00`)
+	: new Date();
 const since = new Date(now.getTime() - 7 * DAY);
 const DEEPSEEK_BASE_URL = process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com";
 const DEEPSEEK_MODEL = process.env.DEEPSEEK_MODEL ?? "deepseek-v4-pro";
