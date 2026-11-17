@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>与 Claude 的一个月</title>
+<meta name="description" content="2026 年 10 月 18 日到 11 月 17 日，我和 Claude 一起做的产品、Agent 和艺术作品。">
+<style>
+:root {
+  --bg: #f6f1e7;
+  --paper: #fffcf6;
+  --ink: #2b2620;
+  --ink-2: #6b6257;
+  --ink-3: #9a9083;
+  --line: #e4dbcb;
+  --accent: #c96442;
+  --accent-soft: #f3dfd3;
+  --chip: #efe6d6;
+  --shadow: 0 1px 2px rgba(60, 40, 20, .06), 0 12px 40px -12px rgba(60, 40, 20, .18);
+  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1915; --paper: #25211c; --ink: #efe8dc; --ink-2: #b3a99b; --ink-3: #857b6f;
+    --line: #3a342c; --accent: #e08a68; --accent-soft: #3d2a21; --chip: #312b24;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 40px -12px rgba(0,0,0,.6); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1c1915; --paper: #25211c; --ink: #efe8dc; --ink-2: #b3a99b; --ink-3: #857b6f;
+  --line: #3a342c; --accent: #e08a68; --accent-soft: #3d2a21; --chip: #312b24;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 40px -12px rgba(0,0,0,.6); color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.8 var(--sans); overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.wrap { width: min(1080px, 100% - 32px); margin: 0 auto; }
+
+/* ---------- hero ---------- */
+.hero { padding: clamp(56px, 12vw, 120px) 0 clamp(40px, 8vw, 72px); text-align: center; position: relative; }
+.spark { width: 44px; height: 44px; margin: 0 auto 24px; color: var(--accent); animation: spin 24s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.eyebrow { font: 500 13px/1 var(--mono); letter-spacing: .18em; color: var(--ink-3); text-transform: uppercase; }
+.hero h1 {
+  font: 700 clamp(34px, 9vw, 84px)/1.15 var(--serif); margin: 18px 0 20px; letter-spacing: .02em; text-wrap: balance;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero .lede { max-width: 620px; margin: 0 auto; color: var(--ink-2); font-size: clamp(15px, 2.2vw, 18px); }
+.stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: 18px; overflow: hidden; margin: 48px auto 0; max-width: 760px;
+}
+.stat { background: var(--paper); padding: 22px 12px; }
+.stat b { display: block; font: 700 clamp(28px, 6vw, 42px)/1.1 var(--serif); color: var(--ink); }
+.stat span { font-size: 13px; color: var(--ink-3); }
+
+/* ---------- section heads ---------- */
+section { padding: clamp(40px, 8vw, 80px) 0; }
+.sh { display: flex; align-items: baseline; gap: 14px; margin-bottom: clamp(24px, 5vw, 40px); }
+.sh .no { font: 500 13px var(--mono); color: var(--accent); }
+.sh h2 { font: 700 clamp(26px, 5vw, 38px)/1.25 var(--serif); margin: 0; }
+.sh p { margin: 0 0 0 auto; color: var(--ink-3); font-size: 14px; text-align: right; }
+
+/* ---------- timeline ---------- */
+.weeks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.week {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 22px 20px 18px;
+  position: relative;
+}
+.week .range { font: 500 12px var(--mono); color: var(--ink-3); }
+.week h3 { font: 700 20px/1.35 var(--serif); margin: 6px 0 14px; }
+.week ul { list-style: none; margin: 0; padding: 0; }
+.week li { font-size: 14px; line-height: 1.6; padding: 7px 0; border-top: 1px dashed var(--line); color: var(--ink-2); }
+.week li time { font: 12px var(--mono); color: var(--accent); margin-right: 6px; }
+.bar { height: 4px; border-radius: 4px; background: var(--chip); margin: 0 0 16px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+
+/* ---------- projects ---------- */
+.proj {
+  display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(20px, 4vw, 48px); align-items: center;
+  margin-bottom: clamp(48px, 9vw, 96px);
+}
+.proj:nth-of-type(even) { grid-template-columns: 1fr 1.35fr; }
+.proj:nth-of-type(even) .shot { order: 2; }
+.frame {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+  box-shadow: var(--shadow); cursor: zoom-in; transition: transform .4s cubic-bezier(.2,.7,.2,1);
+}
+.frame:hover { transform: translateY(-4px) rotate(-.3deg); }
+.frame .chrome { display: flex; align-items: center; gap: 6px; padding: 9px 12px; border-bottom: 1px solid var(--line); }
+.frame .chrome i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+.frame .chrome span {
+  flex: 1; margin-left: 8px; font: 11px var(--mono); color: var(--ink-3); background: var(--bg);
+  border-radius: 6px; padding: 3px 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.frame img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; background: var(--chip); }
+.frame.tall img { aspect-ratio: auto; }
+.proj.narrow { grid-template-columns: .8fr 1fr; }
+.duo { display: grid; grid-template-columns: 2.4fr 1fr; gap: 12px; align-items: end; }
+.duo .frame:last-child img { aspect-ratio: 563 / 650; }
+.info .date { font: 500 12px var(--mono); color: var(--ink-3); }
+.info h3 { font: 700 clamp(24px, 4vw, 32px)/1.3 var(--serif); margin: 6px 0 4px; }
+.info .what { font-size: 15px; color: var(--accent); margin: 0 0 14px; }
+.info p { color: var(--ink-2); margin: 0 0 14px; font-size: 15px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; padding: 0; list-style: none; }
+.tags li { font: 12px var(--mono); background: var(--chip); color: var(--ink-2); padding: 3px 10px; border-radius: 999px; }
+.go { display: inline-flex; gap: 6px; margin-top: 18px; font-weight: 600; font-size: 14px; }
+
+/* ---------- gallery ---------- */
+.gallery { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 150px; gap: 12px; }
+.g {
+  position: relative; border-radius: 14px; overflow: hidden; background: var(--chip); cursor: zoom-in;
+  border: 1px solid var(--line);
+}
+.g img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.g:hover img { transform: scale(1.05); }
+.g figcaption {
+  position: absolute; inset: auto 0 0 0; padding: 28px 14px 10px; color: #fff; font-size: 13px; line-height: 1.4;
+  background: linear-gradient(transparent, rgba(0,0,0,.72));
+}
+.g figcaption b { display: block; font: 700 16px var(--serif); }
+.g1 { grid-column: span 4; grid-row: span 2; }
+.g2 { grid-column: span 2; grid-row: span 2; }
+.g3, .g4, .g5 { grid-column: span 2; grid-row: span 2; }
+.g6 { grid-column: span 6; grid-row: span 2; }
+
+/* ---------- small list ---------- */
+.also { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.mini { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+.mini .date { font: 12px var(--mono); color: var(--ink-3); }
+.mini h4 { font: 700 18px/1.4 var(--serif); margin: 4px 0 6px; }
+.mini p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.7; }
+
+/* ---------- takeaways ---------- */
+.take { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: t; }
+.take div {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 26px 22px;
+  counter-increment: t;
+}
+.take div::before { content: "0" counter(t); font: 700 32px var(--serif); color: var(--accent); opacity: .5; }
+.take h4 { font: 700 19px/1.4 var(--serif); margin: 8px 0 8px; }
+.take p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+
+/* ---------- ending ---------- */
+.end { text-align: center; padding-bottom: clamp(64px, 12vw, 120px); }
+.end blockquote {
+  font: 500 clamp(20px, 4vw, 30px)/1.6 var(--serif); margin: 0 auto 18px; max-width: 720px;
+}
+.end small { color: var(--ink-3); font: 12px var(--mono); }
+
+/* ---------- reveal ---------- */
+.js .rv { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+.js .rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .rv { opacity: 1; transform: none; transition: none; }
+  .spark { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- lightbox ---------- */
+.lb {
+  position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center;
+  background: rgba(20, 16, 12, .88); padding: 24px; cursor: zoom-out;
+}
+.lb.open { display: flex; }
+.lb img { max-height: 90vh; max-width: 100%; border-radius: 10px; box-shadow: 0 20px 80px rgba(0,0,0,.5); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .weeks { grid-template-columns: repeat(2, 1fr); }
+  .proj, .proj:nth-of-type(even), .proj.narrow { grid-template-columns: 1fr; }
+  .proj:nth-of-type(even) .shot { order: 0; }
+  .also, .take { grid-template-columns: 1fr 1fr; }
+  .sh { flex-wrap: wrap; }
+  .sh p { margin: 0; width: 100%; text-align: left; }
+}
+@media (max-width: 600px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .weeks, .also, .take { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px; }
+  .g1, .g6 { grid-column: span 2; }
+  .g2, .g3, .g4, .g5 { grid-column: span 1; }
+  .duo { grid-template-columns: 1fr; }
+  .duo .frame:last-child { display: none; }
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<header class="hero wrap">
+  <svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M50 0c3 22 6 34 13 40s20 9 37 10c-17 1-30 4-37 10S53 78 50 100c-3-22-6-34-13-40S17 51 0 50c17-1 30-4 37-10S47 22 50 0z"/></svg>
+  <div class="eyebrow">2026.10.18 — 2026.11.17</div>
+  <h1>与 <em>Claude</em> 的一个月</h1>
+  <p class="lede">这一个月，我在 Claude Code 里开了四十多次对话，做了四个 AI 产品、一个项目管理平台原型、一座虚拟美术馆、一本可以翻的书，还有这个博客本身。这页是那一个月的流水账。</p>
+  <div class="stats rv">
+    <div class="stat"><b>31</b><span>天</span></div>
+    <div class="stat"><b>48</b><span>次对话</span></div>
+    <div class="stat"><b>11</b><span>个作品</span></div>
+    <div class="stat"><b>4</b><span>个 AI Agent</span></div>
+  </div>
+</header>
+
+<main>
+<section class="wrap">
+  <div class="sh rv"><span class="no">01</span><h2>四个阶段</h2><p>按对话日期排，条形长短是那段时间的对话数</p></div>
+  <div class="weeks">
+    <article class="week rv">
+      <div class="range">10.18 — 10.24</div>
+      <h3>搭架子，找方向</h3>
+      <div class="bar"><i style="width:74%"></i></div>
+      <ul>
+        <li><time>10.18</time>参考别人的个人网站，博客加上作品集页面</li>
+        <li><time>10.18</time>开了 Repo 研究所、求职助手两个仓库</li>
+        <li><time>10.19</time>改一页简历，投 AI 产品经理实习</li>
+        <li><time>10.21</time>逆向拆解 GPT Researcher，学 Agent 怎么搭</li>
+        <li><time>10.22</time>Sidex-PMS 项目管理平台：先写 PRD</li>
+        <li><time>10.23</time>产品毒舌官前端 review</li>
+      </ul>
+    </article>
+    <article class="week rv">
+      <div class="range">10.25 — 11.07</div>
+      <h3>慢下来，补文档</h3>
+      <div class="bar"><i style="width:11%"></i></div>
+      <ul>
+        <li><time>10.25</time>为面试整理毒舌官的产品文档</li>
+        <li><time>11.01</time>回头看几个项目，对齐需求、砍掉多余功能</li>
+        <li><time>—</time>这两周对话最少，主要在自己读和改</li>
+      </ul>
+    </article>
+    <article class="week rv">
+      <div class="range">11.08 — 11.14</div>
+      <h3>Agent 一个接一个</h3>
+      <div class="bar"><i style="width:68%"></i></div>
+      <ul>
+        <li><time>11.10</time>毒舌官功能汇报，问它“你是哪个模型”</li>
+        <li><time>11.12</time>浏览器里能走动的实时油画</li>
+        <li><time>11.12</time>写《少，但更好 · 分析苹果的审美》</li>
+        <li><time>11.12</time>暖暖猪：替我盯飞书消息的助手</li>
+        <li><time>11.13</time>Agentbluff：八个 AI 玩狼人杀</li>
+        <li><time>11.14</time>订阅类应用报告分析</li>
+      </ul>
+    </article>
+    <article class="week rv">
+      <div class="range">11.15 — 11.17</div>
+      <h3>开始做“作品”</h3>
+      <div class="bar"><i style="width:100%"></i></div>
+      <ul>
+        <li><time>11.15</time>时间胶囊：封存 Fable 5.2 的这一天</li>
+        <li><time>11.15</time>《Horae · 二〇二六年时祷书》</li>
+        <li><time>11.15</time>虚拟美术馆《他们会怎么画今天》</li>
+        <li><time>11.16</time>新创世纪、雅典学院，相册支持分组</li>
+        <li><time>11.16</time>光暗开关组件，修相册上传</li>
+        <li><time>11.17</time>AI 风向标，吉卜力风格，还有这一页</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sh rv"><span class="no">02</span><h2>做出来的东西</h2><p>点截图可以放大</p></div>
+
+  <article class="proj rv">
+    <div class="shot duo">
+      <figure class="frame" style="margin:0"><div class="chrome"><i></i><i></i><i></i><span>猪猪产品毒舌官 · 决策与验证指南</span></div><img src="img/critic.webp" alt="产品毒舌官的报告页：决策与验证指南" loading="lazy"></figure>
+      <figure class="frame" style="margin:0"><div class="chrome"><i></i><i></i><i></i><span>版本</span></div><img src="img/critic-versions.webp" alt="产品毒舌官的版本对比页" loading="lazy"></figure>
+    </div>
+    <div class="info">
+      <div class="date">2026.06 起 · 这个月主要在打磨</div>
+      <h3>猪猪产品毒舌官</h3>
+      <p class="what">犀利但鼓励的 AI 产品评审</p>
+      <p>输入一个产品想法，选毒舌程度（温和 / 犀利 / 地狱），它给出评分、伪需求风险、MVP 建议和验证计划，最后导出一段开发 Prompt。同一个想法可以改成 V1、V2、V3，对比每一版改了什么。</p>
+      <p>这个月和 Claude 做的主要是 review：查前端问题、整理面试用的产品文档、评估能不能上线。</p>
+      <ul class="tags"><li>Vue 3</li><li>Spring Boot</li><li>MySQL</li><li>DeepSeek</li></ul>
+      <a class="go" href="https://github.com/czspig/czspig-product-critic" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </article>
+
+  <article class="proj rv">
+    <figure class="shot frame" style="margin:0"><div class="chrome"><i></i><i></i><i></i><span>czspig.github.io/czspig-social-agent</span></div><img src="img/social.webp" alt="暖暖猪的首页：今天有 2 条消息需要你看" loading="lazy"></figure>
+    <div class="info">
+      <div class="date">2026.11.12</div>
+      <h3>暖暖猪</h3>
+      <p class="what">替你盯着飞书消息的桌面助手</p>
+      <p>规则先筛，拿不准的交给模型，把消息分成“要马上看”“晚点汇总”“不用看”三档。要紧的立刻弹通知，不急的攒成定时简报。它只提醒，不替我回复任何人。</p>
+      <ul class="tags"><li>Electron</li><li>React</li><li>Claude API</li><li>飞书开放平台</li></ul>
+      <a class="go" href="https://czspig.github.io/czspig-social-agent/" target="_blank" rel="noopener">在线体验 →</a>
+    </div>
+  </article>
+
+  <article class="proj rv">
+    <figure class="shot frame" style="margin:0"><div class="chrome"><i></i><i></i><i></i><span>Agentbluff · 夜晚</span></div><img src="/images/albums/art-agentbluff/hall-night.webp" alt="Agentbluff：八位 AI 围坐圆桌的大厅" loading="lazy"></figure>
+    <div class="info">
+      <div class="date">2026.11.13</div>
+      <h3>Agentbluff</h3>
+      <p class="what">八个 AI 围一桌玩狼人杀</p>
+      <p>Claude、ChatGPT、Gemini、DeepSeek、Kimi、Qwen、GLM、Grok 各坐一个位置。观众开着上帝视角，看谁在夜里动手、谁在白天说谎，局后还能逐轮复盘。后端是零依赖的 Node，不配 key 时用离线模板跑，不花钱。</p>
+      <ul class="tags"><li>React</li><li>Node.js</li><li>SQLite</li><li>SSE</li></ul>
+      <a class="go" href="https://github.com/czspig/AgentBluff" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </article>
+
+  <article class="proj rv">
+    <figure class="shot frame" style="margin:0"><div class="chrome"><i></i><i></i><i></i><span>czspig.github.io/czspig-repo-lab</span></div><img src="img/repolab.webp" alt="猪猪 Repo 研究所首页：把开源仓库拆到源码那一层" loading="lazy"></figure>
+    <div class="info">
+      <div class="date">2026.10.18</div>
+      <h3>猪猪 Repo 研究所</h3>
+      <p class="what">把开源仓库拆到源码那一层</p>
+      <p>按“取样 → 测绘 → 解剖 → 复现 → 结论”五步读开源项目，每份报告附一个能在本地跑起来的最小实验。拆 GPT Researcher 就是从这里开始的。</p>
+      <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      <a class="go" href="https://czspig.github.io/czspig-repo-lab/" target="_blank" rel="noopener">进去看看 →</a>
+    </div>
+  </article>
+
+  <article class="proj rv narrow">
+    <figure class="shot frame tall" style="margin:0"><div class="chrome"><i></i><i></i><i></i><span>PRD · 业务流程与决策关口</span></div><img src="img/prd.webp" alt="Sidex-PMS PRD 里的业务流程图：4 个阶段、3 个关口" loading="lazy"></figure>
+    <div class="info">
+      <div class="date">2026.10.22</div>
+      <h3>Sidex-PMS</h3>
+      <p class="what">展陈类项目的管理平台原型</p>
+      <p>先写 PRD，把“一个项目要连过三道关口才能归档”画清楚，再在若依框架上做原型。重点是一条线：成员更新任务，系统按规则标出风险，AI 汇总进度、解释风险，项目经理核对后存成确认版周报。</p>
+      <p>这是作品集项目，没有上线，演示数据都是编的。</p>
+      <ul class="tags"><li>RuoYi</li><li>Spring Boot</li><li>Vue</li><li>PRD</li></ul>
+    </div>
+  </article>
+</section>
+
+<section class="wrap">
+  <div class="sh rv"><span class="no">03</span><h2>后来，开始做作品</h2><p>图大多由 ChatGPT 画，页面和代码出自 Claude</p></div>
+  <div class="gallery rv">
+    <figure class="g g1" style="margin:0" data-full="img/hours.webp"><img src="img/hours.webp" alt="时祷书：烛光书桌上合着的 Horae" loading="lazy"><figcaption><b>Horae · 二〇二六年时祷书</b>十二个月的泥金手抄本，讲人和 AI 一起劳作的一年</figcaption></figure>
+    <figure class="g g2" style="margin:0"><img src="/images/albums/art-virtual-gallery/impressionist-1-subway-ai.webp" alt="印象派风格的早高峰地铁" loading="lazy"><figcaption><b>他们会怎么画今天</b>印象派画早高峰地铁</figcaption></figure>
+    <figure class="g g3" style="margin:0"><img src="img/oil.webp" alt="油画场景：穿斗篷的人走向雪山下亮灯的小屋" loading="lazy"><figcaption><b>实时油画</b>极光下能走动的雪山</figcaption></figure>
+    <figure class="g g4" style="margin:0"><img src="/images/albums/art-virtual-gallery/baroque-2-rider-ai.webp" alt="巴洛克风格的外卖骑手" loading="lazy"><figcaption><b>虚拟美术馆</b>巴洛克画外卖骑手</figcaption></figure>
+    <figure class="g g5" style="margin:0"><img src="/images/albums/art-school-of-athens/cover.webp" alt="雅典学院" loading="lazy"><figcaption><b>雅典学院</b>重新设计中</figcaption></figure>
+    <figure class="g g6" style="margin:0"><img src="/images/albums/art-genesis/genesis-ceiling.webp" alt="西斯廷礼拜堂天顶全景" loading="lazy" style="object-position:center 40%"><figcaption><b>新创世纪</b>西斯廷天顶九格的 AI 重绘计划，先放原作</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sh rv"><span class="no">04</span><h2>还有这些</h2></div>
+  <div class="also">
+    <div class="mini rv"><div class="date">10.18</div><h4>猪猪求职助手</h4><p>在本地跑的岗位筛选助手，对照简历给 BOSS 直聘岗位打分，只读，不替我发消息。</p></div>
+    <div class="mini rv"><div class="date">10.18</div><h4>南邮发展规划知识库</h4><p>作为腾讯云校园大使，在 ima 上搭的知识库，放进了作品集。</p></div>
+    <div class="mini rv"><div class="date">10.21</div><h4>拆 GPT Researcher</h4><p>把一个开源研究 Agent 逆向拆开，看规划、检索、写报告怎么串起来。</p></div>
+    <div class="mini rv"><div class="date">11.12</div><h4>少，但更好</h4><p>从包豪斯到 Liquid Glass，写成一张苹果官网风格的长页。</p></div>
+    <div class="mini rv"><div class="date">11.15</div><h4>时间胶囊</h4><p>让 Fable 5.2 封存今天，还有一封要到 2027 年 11 月才解封的信。</p></div>
+    <div class="mini rv"><div class="date">每天</div><h4>这个博客</h4><p>音乐播放器、相册、光暗开关、本地工作台，几乎每次对话都顺手改一点。</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sh rv"><span class="no">05</span><h2>回头看</h2></div>
+  <div class="take">
+    <div class="rv"><h4>从工具到作品</h4><p>前两周做的是评审、求职、管理这类“有用”的工具；最后一周做的几乎都是书、美术馆、油画这类“好看”的东西。</p></div>
+    <div class="rv"><h4>想清楚再动手</h4><p>Sidex-PMS 先写 PRD，毒舌官先写产品文档。把需求说清楚的那几次，Claude 做出来的东西返工最少。</p></div>
+    <div class="rv"><h4>几个模型一起干</h4><p>ChatGPT 画图，Claude 写页面和代码，DeepSeek 在产品里跑推理。一个作品经常是三家一起完成的。</p></div>
+  </div>
+</section>
+
+<footer class="end wrap rv">
+  <blockquote>下一个月，接着做。</blockquote>
+  <small>czspig · 2026.11.17 · 和 Claude 一起写成</small>
+</footer>
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-label="放大的截图"><img alt=""></div>
+
+<script>
+(function () {
+  var els = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  var lb = document.getElementById('lb'), big = lb.querySelector('img');
+  document.querySelectorAll('.frame, .g').forEach(function (f) {
+    f.addEventListener('click', function () {
+      var img = f.querySelector('img');
+      big.src = f.getAttribute('data-full') || img.src;
+      big.alt = img.alt;
+      lb.classList.add('open');
+    });
+  });
+  function close() { lb.classList.remove('open'); }
+  lb.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+</script>
+</body>
+</html>
